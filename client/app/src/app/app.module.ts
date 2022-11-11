@@ -9,7 +9,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { EditListingComponent } from './edit-listing/edit-listing.component';
-
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ListingDetailsComponent } from './listing-details/listing-details.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,16 @@ import { EditListingComponent } from './edit-listing/edit-listing.component';
     RegisterPageComponent,
     CreateListingComponent,
     EditListingComponent,
+    ProfilePageComponent,
+    ListingDetailsComponent
   ],
   imports: [
     BrowserModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
