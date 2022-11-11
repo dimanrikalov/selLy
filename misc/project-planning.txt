@@ -21,6 +21,7 @@ movie forum
 
 --- todo
 	-----pages
+		fix navigation instantly hiding after refresh
 		fix navigation to hide after 15px of scrolling up
 		make a saved listings page (<3)
 		chat with seller page / leave comments under listing ??????
