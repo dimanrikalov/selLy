@@ -1,0 +1,212 @@
+.login {
+    width: 1100px;
+    height: 800px;
+    margin: 32px auto;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+    border: 1px solid rgb(216, 216, 216);
+    border-left: none;
+}
+
+.login .left-side {
+    width: 550px;
+}
+
+.login .left-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login .right-side {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 16px;
+}
+
+.login .logo {
+    margin-top: 64px;
+    font-size: 64px;
+    color: var(--blue-main);
+
+}
+
+.login .welcome {
+    text-align: center;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login .welcome h1 {
+    font-weight: 400;
+    font-size: 36px;
+    font-weight: 600;
+    color: rgb(66, 66, 66);
+}
+
+.login .welcome p {
+    color: grey;
+}
+
+.login form {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.login form .features {
+    display: flex;
+    gap: 48px;
+    justify-content: space-between;
+    align-items: center;
+    color: grey;
+}
+
+.login form .features div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.login .email-div input,
+.login .pass-div input {
+    font-weight: 600;
+    font-family: var(--font-main);
+    color: rgb(103, 103, 103);
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 9px;
+    border: 2px solid rgb(212, 212, 212);
+    background-color: var(--white-background);
+}
+
+.login .email-div input::placeholder,
+.login .pass-div input::placeholder {
+    color: rgb(160, 160, 160);
+}
+
+.login .email-div input:focus {
+    border: 2px solid transparent;
+    outline: 2px solid var(--blue-main);
+}
+
+.login .pass-div input:focus {
+    border: 2px solid transparent;
+    outline: 2px solid var(--blue-main);
+}
+
+.login .login-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.login .login-btns button {
+    width: 100%;
+    color: var(--blue-main);
+    background-color: var(--white-main);
+    border: 2px solid var(--blue-main);
+    border-radius: 9px;
+    padding: 12px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 350ms ease-in-out;
+    font-weight: 600;
+}
+
+.login-btns span {
+    color: grey;
+}
+
+.login .login-btns a {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--blue-main);
+    border: 2px solid var(--blue-main);
+    color: var(--white-main);
+    padding: 12px 0px;
+    border-radius: 9px;
+    transition: 350ms ease-in-out;
+    font-weight: 600;
+}
+
+.login .login-btns button:hover {
+    color: var(--white-main);
+    background-color: var(--blue-main);
+}
+
+.login .login-btns a:hover {
+    background-color: var(--white-main);
+    color: var(--blue-main);
+}
+
+.login .sign-up {
+    display: flex;
+    gap: 32px;
+    margin-top: 94px;
+    color: grey;
+}
+
+
+.login form .features a,
+.login .sign-up a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--blue-main);
+}
+
+.login .sign-up {
+    display: flex;
+    gap: 32px;
+    margin-top: 64px;
+    color: grey;
+}
+
+
+.login form .features a,
+.login .sign-up a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--blue-main);
+    transition: 300ms ease-in-out;
+}
+
+.login .sign-up a:hover
+,.login form .features a:hover {
+    transform: scale(1.2);
+}
+
+
+.login form .features a,
+.login .sign-in a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--blue-main);
+    transition: 300ms ease-in-out;
+}
+
+.login .sign-in a:hover {
+    transform: scale(1.2);
+}
+
+.features .remember-me,
+.features .remember-me-label {
+    font-size: 18px;
+    transition: 350ms all;
+}
+
+.features .remember-me:checked + .remember-me-label {
+    color: var(--blue-main);
+}
