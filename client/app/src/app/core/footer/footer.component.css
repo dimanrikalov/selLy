@@ -1,0 +1,80 @@
+footer {
+  padding: 64px 0px 32px 0px;
+  background-color: var(--blue-main);
+  color: white;
+  border-radius: 32px 32px 0px 0px;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-flex .navigation {
+  display: block;
+}
+
+.footer-flex .navigation h2 {
+  margin-left: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-flex nav ul {
+  list-style-type: none;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 16px;
+}
+
+.footer-flex nav ul a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+
+.footer-flex .contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 18px;
+}
+
+footer .copyright {
+  margin-top: 32px;
+  text-align: center;
+}
+
+footer .copyright a {
+  color: white;
+  font-weight: 600;
+  transition: 350ms ease-in-out;
+}
+
+footer .copyright a:hover {
+  font-size: 21px;
+}
+
+.contacts .socials {
+  display: flex;
+  gap: 16px;
+}
+
+.social-contacts {
+  display: flex;
+  gap: 16px;
+}
+
+.social-contacts i {
+  transition: 200ms ease-in-out;
+}
+
+.social-contacts i:hover {
+  transform: scale(1.3);
+}
+
+.social-contacts {
+  font-size: 21px;
+}

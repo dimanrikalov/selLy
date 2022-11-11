@@ -31,3 +31,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* setting main font */
+* {
+    font-family: var(--font-main);
+}
