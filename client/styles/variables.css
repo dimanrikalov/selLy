@@ -1,0 +1,14 @@
+:root {
+
+    /* colors */
+
+    --blue-main: #1DA1F2;
+    --white-main: #FFFFFF;
+    --white-background: whitesmoke;
+
+
+    /* fonts */
+    
+    --font-main: "Poppins";
+    --font-secondary: "Source Sans Pro";
+}

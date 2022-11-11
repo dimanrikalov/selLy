@@ -1,0 +1,132 @@
+.home {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.home .content{
+    position: absolute;
+    top: 25vh;
+    z-index: 2;
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vw;
+    align-items: center;
+}
+
+.home .content .left-side {
+    flex-direction: column;
+    display: flex;
+    gap: 16px;
+    z-index: 2;
+    top: 30vh;
+    left: 15vw;
+    color: white;
+}
+
+.home .content .left-side h1 {
+    font-size: 64px;
+}
+
+.home .content .left-side p {
+    font-size: 18px;
+    width: 500px;
+}
+
+.home .content .left-side a {
+    margin-top: 64px;
+    padding: 12px 24px;
+    background-color: white;
+    color: var(--blue-main);
+    font-size: 24px;
+    border-radius: 16px;
+    width: fit-content;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 15px 15px 25px rgb(24, 33, 73);
+    transition: 350ms ease-in-out;
+}
+
+.home .content .left-side a:hover {
+    transform: scale(1.25);
+    background-color: var(--blue-main);
+    color: white;
+}
+
+.home .content .right-side .grid {
+    display: grid;
+    gap: 32px;
+    width: 500px;
+    list-style-type: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "review-score pleased-customers"
+        "shipping shipping";
+}
+
+.home .content .right-side .grid li {
+    background-color: white;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--blue-main);
+    height: 240px;
+    padding: 24px 36px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    transition: 350ms ease-in-out;
+    box-shadow: 15px 15px 25px rgb(24, 33, 73);
+    align-items: center;
+}
+
+.home .content .right-side .grid li span {
+    font-weight: 800;
+}
+
+.home .content .right-side .grid .review-score,
+.home .content .right-side .grid .pleaseed-customers {
+    height: 240px;
+    width: 240px;
+}
+
+.home .content .right-side .grid .review-score {
+    grid-area: review-score;
+}
+
+.home .content .right-side .grid .pleaseed-customers {
+    grid-area: pleased-customers;
+} 
+
+.home .content .right-side .grid .shipping {
+    grid-area: shipping;
+    width: 500px;
+}
+
+.home .content .right-side .grid li:hover {
+    background-color: var(--blue-main);
+    color: white;
+    transform: scale(1.25);
+    z-index: 3;
+}
+
+
+.home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: rgba(36, 67, 145, 0.62);
+    width: 98.9vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.home img {
+    width: 98.9vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

@@ -1,0 +1,223 @@
+.profile-page {
+    border-radius: 24px;
+    padding: 64px;
+    margin: 32px 64px;
+    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+    border-left: 1px solid rgb(216, 216, 216);
+}
+
+
+.profile-page .info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "profile-picture my-listings my-listings my-listings"
+    "info            my-listings my-listings my-listings"
+    "stats           my-listings my-listings my-listings";
+    gap: 16px;
+    margin: 32px 64px;
+}
+
+
+.welcome {
+    display: flex;
+    padding: 0px 64px;
+    justify-content: space-between;
+}
+
+.welcome div {
+    transition: 250ms ease-in-out;
+}
+.welcome div:hover {
+    transform: scale(1.2);
+}
+
+.welcome div h1 {
+    display: flex;
+    background-color: var(--blue-main);
+    color: var(--white-main);
+    padding: 12px 24px;
+    border-radius: 12px;
+    width: 250px;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+}
+
+.search-my-listings {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.my-listings-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-my-listings .search-input {
+    height: 54px;
+    font-weight: 600;
+    font-family: var(--font-main);
+    color: rgb(103, 103, 103);
+    width: 500px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 9px;
+    border: 2px solid rgb(212, 212, 212);
+    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+    background-color: var(--white-background);
+}
+
+.search-my-listings .search-input::placeholder,
+.search-my-listings .search-input::placeholder {
+    color: rgb(160, 160, 160);
+}
+
+.search-my-listings .search-input:focus {
+    border: 2px solid transparent;
+    outline: 2px solid var(--blue-main);
+}
+
+.info-grid .image {
+    grid-area: profile-picture;
+    border-radius: 24px;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+}
+
+
+.info-grid .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.info-grid .info,
+.info-grid .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 16px;
+    width: 250px;
+    color:white;
+    background-color: var(--blue-main);
+    box-shadow: 15px 15px 15px rgb(135, 135, 135);
+}
+.info-grid .info {
+    grid-area: info;
+}
+
+.info-grid .stats {
+    grid-area: stats;
+}
+
+.info-grid .my-listings {
+    height: 500px;
+    grid-area: my-listings;
+    border-radius: 24px;
+    background-color: var(--white-background);
+    box-shadow: 15px 15px 15px rgb(135, 135, 135);
+    border-left: 1px solid rgb(216, 216, 216);
+    border-top: 1px solid rgb(216, 216, 216);
+    overflow-y: scroll;
+    padding: 64px 36px;
+}
+
+.my-listings::-webkit-scrollbar {
+    width: 15px;
+}
+.my-listings::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 16px;
+}
+.my-listings::-webkit-scrollbar-thumb {
+    background: rgb(154, 154, 154);
+    border: 2px solid white;
+    border-radius: 16px;
+}
+
+
+.info-grid ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 52px;
+}
+
+.info-grid ul .listing {
+    width: 220px;
+    height: 350px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 15px 15px 15px rgb(135, 135, 135);
+    border-left: 1px solid rgb(216, 216, 216);
+    border-top: 1px solid rgb(216, 216, 216);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    transition: 250ms ease-in-out;
+}
+
+.info-grid ul .listing:hover {
+    transform: scale(1.2);
+}
+
+.info-grid ul .listing img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.info-grid ul .listing .listing-img {
+    border-radius: 16px 16px 0px 0px;
+    overflow: hidden;
+}
+
+.info-grid ul .listing .listing-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--blue-main);
+    border-radius: 0px 0px 16px 16px;
+    color: white;
+    padding: 12px;
+}
+
+.search-my-listings button {
+    padding: 16px;
+    font-size: 16px;
+    color: var(--blue-main);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+    background-color: var(--white-main);
+    border: 2px solid transparent;
+    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+}
+
+.search-my-listings button:hover {
+    color: var(--white-main);
+    background-color: var(--blue-main);
+    border: 2px solid transparent;
+}
+.search-my-listings button i {
+    font-size: 24px;
+    transition: 250ms ease-in-out;
+}
+
+.search-my-listings button:hover > i {
+    transform: rotate(90deg);
+}

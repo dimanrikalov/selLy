@@ -1,0 +1,101 @@
+.sell-form form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    width: 800px;
+    margin: 64px auto;
+    background-color: var(--white-main);
+    padding: 64px 128px;
+    border-radius: 15px;
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+}
+
+.sell-form form h1 {
+    color: rgb(92, 92, 92);
+}
+
+.sell-form form div input {
+    width: 100%;
+    font-weight: 600;
+    font-family: var(--font-main);
+    color: rgb(103, 103, 103);
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 9px;
+    border: 2px solid rgb(212, 212, 212);
+    background-color: var(--white-background);
+}
+
+.sell-form form div input::placeholder {
+    color: rgb(160, 160, 160);
+}
+
+.sell-form form div input:focus {
+    border: 2px solid transparent;
+    outline: 2px solid var(--blue-main);
+}
+
+.sell-form form div textarea {
+    width: 100%;
+    font-weight: 600;
+    font-family: var(--font-main);
+    color: rgb(103, 103, 103);
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 9px;
+    border: 2px solid rgb(212, 212, 212);
+    background-color: var(--white-background);
+}
+
+.sell-form form div textarea::placeholder {
+    color: rgb(160, 160, 160);
+}
+
+.sell-form form div textarea:focus {
+    border: 2px solid transparent;
+    outline: 2px solid var(--blue-main);
+}
+
+.sell-form form div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sell-form form div label {
+    font-size: 17px;
+    font-family: var(--font-main);
+    color: rgb(103, 103, 103);
+}
+
+.sell-form form div .submit-btn {
+    align-self: center;
+    width: 40%;
+    color: var(--blue-main);
+    background-color: var(--white-main);
+    border: 2px solid var(--blue-main);
+    border-radius: 9px;
+    padding: 12px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 350ms ease-in-out;
+    font-weight: 600;
+}
+
+.sell-form form div .submit-btn:hover {
+    color: var(--white-main);
+    background-color: var(--blue-main);
+}
+
+form .ribbon {
+    position: absolute;
+    width: 112px;
+    top: 0;
+    right: 9px;
+}
+
+  

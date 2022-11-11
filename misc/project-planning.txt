@@ -1,0 +1,59 @@
+----- concept
+olx copy paste - chosen option
+movie forum
+
+
+-------------------- business logic
+
+	chatting options:
+		1. one direct chat with a seller regardless of the listing (imame veche email na sellera obache)
+		2. comments under the listing visible to anyone logged in
+
+	user (seller)
+		can edit an item (imgs, price, description)
+
+	user (buyer) 
+		can message seller
+		can add item to a cart
+		can save someone else's item as favourite
+
+	guest
+
+--- todo
+	-----pages
+		fix navigation to hide after 15px of scrolling up
+		make a saved listings page (<3)
+		chat with seller page / leave comments under listing ??????
+		add a check when making the comments section whether the id is the same as the listing creator
+		on edit click transfer the text inside the textarea, on submit edit the comment,
+		empty the textarea and add a "edited" tag somwhere inside the comment div
+		
+	-----documentation 
+
+
+	-----server
+		catalog page
+		add a remove a comment functionality
+		add an edit comment functionality
+		make everything inside the models REQUIRED!!!! (after login functionality is implemented)
+
+----- layouts
+	use apple store design cards
+	check pinterest saves
+	check dribbble saves
+
+----- icons
+	fontawesome icons
+	font.google icons
+
+----- fonts
+	Source Sans Pro
+	Poppins
+	Rubik
+	Lato
+
+
+
+	Roboto
+	Montserrat
+	Nunito

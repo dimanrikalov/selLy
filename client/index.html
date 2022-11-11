@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/main.css" />
+        <script src="./cardDynamics/vanilla-tilt.js" defer></script>
+        <script src="./navbarDynamics/dynamicNavbar.js" defer></script>
+        <title>Prodavalnik</title>
+    </head>
+    <body>
+        <header>
+            <a href="#">SelLy</a>
+            <nav>
+                <!-- change to a logo png/svg and add a greeting "Hello, username" -->
+                <ul class="navigation">
+                    <li>
+                        <a href="#"><i class="fa-solid fa-heart heart"></i></a>
+                    </li>
+                    <li><a class="link" href="#">Sell Item</a></li>
+                    <li><a class="link" href="#">Login</a></li>
+                    <li><a class="link" href="#">Register</a></li>
+                    <li><a class="link" href="#">My Profile</a></li>
+                    <li><a class="link" href="#">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="home">
+                <div class="overlay"></div>
+                <img
+                    src="assets/imgs/pexels-johannes-plenio-1103970.jpg"
+                    alt=""
+                />
+                <div class="content">
+                    <div class="left-side">
+                        <h1>Welcome, Diman!</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Corporis quia, ipsam unde debitis est in
+                            ratione quod. Quaerat et fugiat, commodi neque
+                            cupiditate quae eaque, laudantium, fugit distinctio
+                            nam porro.
+                        </p>
+                        <a href="#">Catalog</a>
+                    </div>
+                    <div class="right-side">
+                        <ul class="grid">
+                            <li class="review-score">
+                                <p>Review Score: <span>9.8/10</span></p>
+                            </li>
+                            <li class="pleased-customers">
+                                <p>Customers Pleased: <span>94%</span></p>
+                            </li>
+                            <li class="shipping">
+                                <p>
+                                    <span>99%</span> of sellers ship within the
+                                    next day
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-404">
+                <div class="left-side">
+                    <h1>Something isn't right...</h1>
+                    <p>
+                        Seems like you are looking for something that doesn't
+                        exist. You can head back home by clicking
+                        <a href="#">here</a>.
+                    </p>
+                </div>
+                <div class="right-side">
+                    <div id="error-card" data-tilt>
+                        <div id="error-card-inner">
+                            <h1>404</h1>
+                            <p>Page not found!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-params">
+                <form action="">
+                    <input
+                        type="text"
+                        name="searchInput"
+                        id=""
+                        class="textbox"
+                    />
+                    <select name="sort-type" id="sort-type">
+                        <option value="price-ascending">Price Ascending</option>
+                        <option value="price-descending">
+                            Price Descending
+                        </option>
+                        <option value="date-descending">Newest First</option>
+                        <option value="date-ascending">Oldest First</option>
+                    </select>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+            <ul class="catalog">
+                <li class="card">
+                    <div class="image">
+                        <img src="./assets/imgs/iphone-14" alt="iphone-14" />
+                    </div>
+                    <div class="info">
+                        <h2>iPhone 14 Pro</h2>
+                        <h4>Apple</h4>
+                        <h3>1100&euro;</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="image">
+                        <img
+                            src="./assets/imgs/magickeyboardspacegray-800x224.webp"
+                            alt="iphone-14"
+                        />
+                    </div>
+                    <div class="info">
+                        <h2>iPhone 14 Pro</h2>
+                        <h4>Apple</h4>
+                        <h3>1100&euro;</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="image">
+                        <img
+                            src="./assets/imgs/iphone-13-blue-select-2021__08080.1635344242.webp"
+                            alt="iphone-14"
+                        />
+                    </div>
+                    <div class="info">
+                        <h2>iPhone 14 Pro</h2>
+                        <h4>Apple</h4>
+                        <h3>1100&euro;</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="image">
+                        <img src="./assets/imgs/iphone-14" alt="iphone-14" />
+                    </div>
+                    <div class="info">
+                        <h2>iPhone 14 Pro</h2>
+                        <h4>Apple</h4>
+                        <h3>1100&euro;</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="image">
+                        <img
+                            src="./assets/imgs/magickeyboardspacegray-800x224.webp"
+                            alt="iphone-14"
+                        />
+                    </div>
+                    <div class="info">
+                        <h2>iPhone 14 Pro</h2>
+                        <h4>Apple</h4>
+                        <h3>1100&euro;</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="image">
+                        <img
+                            src="./assets/imgs/iphone-13-blue-select-2021__08080.1635344242.webp"
+                            alt="iphone-14"
+                        />
+                    </div>
+                    <div class="info">
+                        <h2>iPhone 14 Pro</h2>
+                        <h4>Apple</h4>
+                        <h3>1100&euro;</h3>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="details-page">
+                <div class="listing" data-tilt="">
+                    <img
+                        src="./assets/imgs/iphone-14"
+                        alt="iphone-14"
+                    />
+                    <div class="info">
+                        <h1>Item: iPhone 14 Pro</h1>
+                        <h2>Brand: Apple</h2>
+                        <div>
+                            <h3>Location: Plovdiv</h3>
+                            <h3>Seller: Jordan Genoff</h3>
+                        </div>
+                        <div class="description">
+                            <h3>Description:</h3>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur. Lorem
+                                ipsum dolor sit amet consectetur adipisicing
+                                elit. Sint animi nihil corporis odit deleniti
+                                nulla natus aliquid totam, excepturi deserunt
+                                sit ut ab porro neque suscipit sequi doloribus
+                                ea molestias? Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Officiis similique
+                                laudantium consectetur laboriosam nesciunt? Vel,
+                                nihil magnam dicta minima ducimus veniam
+                                perferendis omnis sint! Qui, magnam saepe! Qui,
+                                quae rem!
+                            </p>
+                            <h2>Price: 1100&euro;</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments-div">
+                    <ol class="comments">
+                        <li class="comment">
+                            <div class="head">
+                                <div class="author">
+                                    <img
+                                        src="./assets/imgs/leclerc.png"
+                                        alt=""
+                                    />
+                                    <span>Charles Leclerc</span>
+                                </div>
+                            </div>
+                            <p>Hello! Interested in the listing.</p>
+                        </li>
+                        <li class="comment">
+                            <div class="head">
+                                <div class="author">
+                                    <img
+                                        src="./assets/imgs/leclerc.png"
+                                        alt=""
+                                    />
+                                    <span>Charles Leclerc</span>
+                                </div>
+                            </div>
+                            <p>Is the price negotiable?</p>
+                        </li>
+
+                        <li class="comment listing-creator">
+                            <div class="head">
+                                <div class="author">
+                                    <img
+                                        src="./assets/imgs/4763222.jpg"
+                                        alt=""
+                                    />
+                                    <span>Jordan Genoff</span>
+                                </div>
+                                <div class="operations">
+                                    <a href="#"
+                                        ><i
+                                            class="fa-solid fa-pen-to-square"
+                                        ></i
+                                    ></a>
+                                    <a href="#"
+                                        ><i class="fa-solid fa-circle-xmark"></i
+                                    ></a>
+                                </div>
+                            </div>
+                            <p>Yes.</p>
+                        </li>
+                        <li class="comment listing-creator">
+                            <div class="head">
+                                <div class="author">
+                                    <img
+                                        src="./assets/imgs/4763222.jpg"
+                                        alt=""
+                                    />
+                                    <span>Jordan Genoff</span>
+                                </div>
+                                <div class="operations">
+                                    <a href="#"
+                                        ><i
+                                            class="fa-solid fa-pen-to-square"
+                                        ></i
+                                    ></a>
+                                    <a href="#"
+                                        ><i class="fa-solid fa-circle-xmark"></i
+                                    ></a>
+                                </div>
+                            </div>
+                            <p>Send me a DM so we can discuss it.</p>
+                        </li>
+                        <li class="comment">
+                            <div class="head">
+                                <div class="author">
+                                    <img
+                                        src="./assets/imgs/leclerc.png"
+                                        alt=""
+                                    />
+                                    <span>Charles Leclerc</span>
+                                </div>
+                            </div>
+                            <p>Texting you right now...</p>
+                        </li>
+                    </ol>
+                    <div class="text-input">
+                        <textarea
+                            name="comment-input"
+                            id="comment-input"
+                            class="comment-input"
+                            cols="30"
+                            rows="10"
+                            placeholder="Type here..."
+                        ></textarea>
+                        <button>Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sell-form">
+                <form action="">
+                    <h1>Create a Listing:</h1>
+                    <img
+                        src="./assets/imgs/ribbon-black-shape.png"
+                        alt="ribbon"
+                        class="ribbon"
+                    />
+                    <div>
+                        <label for="title">What are you selling?</label>
+                        <input
+                            type="text"
+                            name="title"
+                            id="title"
+                            placeholder="Laptop Apple MacBook..."
+                        />
+                    </div>
+                    <div>
+                        <label for="image-url"
+                            >A valid URL link to an image of whatever you are
+                            selling</label
+                        >
+                        <input
+                            type="url"
+                            name="image-url"
+                            id="image-url"
+                            placeholder="https://product-image-url.com"
+                        />
+                    </div>
+                    <div>
+                        <label for="title"
+                            >Describe what you are selling exactly? (condition,
+                            origin, etc...)</label
+                        >
+                        <textarea
+                            name="description"
+                            id="description"
+                            cols="30"
+                            rows="3"
+                            placeholder="A very well preserved laptop."
+                        ></textarea>
+                    </div>
+                    <div>
+                        <label for="title"
+                            >Where is the item/seller located?</label
+                        >
+                        <input
+                            type="text"
+                            name="location"
+                            id="location"
+                            placeholder="Plovdiv, Bulgaria"
+                        />
+                    </div>
+                    <div>
+                        <label for="title"
+                            >What is your asking price for the item?</label
+                        >
+                        <input
+                            type="number"
+                            name="price"
+                            id="price"
+                            placeholder="350&euro;"
+                        />
+                    </div>
+                    <div>
+                        <button class="submit-btn">Create a Listing</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="login">
+                <div class="left-side">
+                    <img
+                        src="./assets/imgs/pexels-cottonbro-3206080.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="right-side">
+                    <i class="fa-brands fa-css3 logo"></i>
+                    <div class="welcome">
+                        <h1>Hello Again!</h1>
+                        <p>Error Message</p>
+                    </div>
+                    <form action="">
+                        <div class="email-div">
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Email"
+                            />
+                        </div>
+                        <div class="pass-div">
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="Password"
+                            />
+                        </div>
+                        <div class="features">
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="remember-me"
+                                    class="remember-me"
+                                />
+                                <label
+                                    for="remember-me"
+                                    class="remember-me-label"
+                                    >Remember me</label
+                                >
+                            </div>
+                            <a href="#">Forgotten password?</a>
+                        </div>
+                        <div class="login-btns">
+                            <button>Login</button>
+                            <span>or</span>
+                            <a href="#"
+                                ><i class="fa-brands fa-google"></i> Sign in
+                                with Google</a
+                            >
+                        </div>
+                    </form>
+                    <div class="sign-up">
+                        <span>Don't have and account yet?</span>
+                        <a href="#">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="register">
+                <div class="left-side">
+                    <i class="fa-brands fa-css3 logo"></i>
+                    <div class="welcome">
+                        <h1>Welcome!</h1>
+                        <p>Error Message</p>
+                    </div>
+                    <form action="">
+                        <div class="email-div">
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Email"
+                            />
+                        </div>
+                        <div class="pass-div">
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="Password"
+                            />
+                        </div>
+                        <div class="conf-pass-div">
+                            <input
+                                type="password"
+                                name="password"
+                                id="conf-password"
+                                placeholder="Confirm password"
+                            />
+                        </div>
+                        <div class="tac">
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="terms-and-conditions"
+                                    class="terms-and-conditions"
+                                />
+                                <label
+                                    class="tac-label"
+                                    for="terms-and-conditions"
+                                    >I agree with the terms and
+                                    conditions.</label
+                                >
+                            </div>
+                        </div>
+                        <div class="register-btns">
+                            <button>Sign Up</button>
+                            <span>or</span>
+                            <a href="#"
+                                ><i class="fa-brands fa-google"></i> Sign up
+                                with Google</a
+                            >
+                        </div>
+                    </form>
+                    <div class="sign-in">
+                        <span>Already have an account yet?</span>
+                        <a href="#">Sign In</a>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <img
+                        src="./assets/imgs/pexels-ivan-samkov-7620569.jpg"
+                        alt=""
+                    />
+                </div>
+            </div>
+
+            <div class="sell-form">
+                <form action="">
+                    <h1>Edit a Listing:</h1>
+                    <img
+                        src="./assets/imgs/ribbon-black-shape.png"
+                        alt="ribbon"
+                        class="ribbon"
+                    />
+                    <div>
+                        <label for="title">What are you selling?</label>
+                        <input
+                            type="text"
+                            name="title"
+                            id="title"
+                            placeholder="Laptop Apple MacBook..."
+                        />
+                    </div>
+                    <div>
+                        <label for="image-url"
+                            >A valid URL link to an image of whatever you are
+                            selling</label
+                        >
+                        <input
+                            type="url"
+                            name="image-url"
+                            id="image-url"
+                            placeholder="https://product-image-url.com"
+                        />
+                    </div>
+                    <div>
+                        <label for="title"
+                            >Describe what you are selling exactly? (condition,
+                            origin, etc...)</label
+                        >
+                        <textarea
+                            name="description"
+                            id="description"
+                            cols="30"
+                            rows="3"
+                            placeholder="A very well preserved laptop."
+                        ></textarea>
+                    </div>
+                    <div>
+                        <label for="title"
+                            >Where is the item/seller located?</label
+                        >
+                        <input
+                            type="text"
+                            name="location"
+                            id="location"
+                            placeholder="Plovdiv, Bulgaria"
+                        />
+                    </div>
+                    <div>
+                        <label for="title"
+                            >What is your asking price for the item?</label
+                        >
+                        <input
+                            type="number"
+                            name="price"
+                            id="price"
+                            placeholder="350&euro;"
+                        />
+                    </div>
+                    <div>
+                        <button class="submit-btn">Edit Listing</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="about">
+                <ul class="about-container">
+                    <li class="about-card logo" data-tilt>
+                        <i class="fa-brands fa-css3"></i>
+                    </li>
+                    <li class="about-card stats" data-tilt>
+                        <h1>Our Stats:</h1>
+                        <ul>
+                            <li>Total Sales: <span>251</span></li>
+                            <li>Total Users: <span>32</span></li>
+                            <li>Total Comments: <span>785</span></li>
+                            <li>Total Saved Listings: <span>1085</span></li>
+                        </ul>
+                    </li>
+                    <li class="about-card mission" data-tilt>
+                        <h1>About Us:</h1>
+                        <p>
+                            SelLy was established in 2022 with the sole idea of
+                            contributing to reducing our waste and carbon
+                            footprint and stimulate the reusability of already
+                            existing goods. Our mission here at SelLy is to help
+                            everyone sell their little or completely unused
+                            possessions in order to limit material waste and
+                            reduce our carbon footprint. For every successful
+                            sale here, we at SelLy promise to plant a tree or
+                            donate up to 3% of the total price of the sold
+                            product. We are currently working closely with some
+                            of the biggest companies in the world to promote
+                            this new movement.
+                        </p>
+                    </li>
+                    <li class="about-card partners" data-tilt>
+                        <h1>Our Partners:</h1>
+                        <ul>
+                            <li><i class="fa-brands fa-stack-overflow"></i></li>
+                            <li><i class="fa-brands fa-apple"></i></li>
+                            <li>
+                                <i class="fa-brands fa-square-facebook"></i>
+                            </li>
+                            <li><i class="fa-brands fa-google"></i></li>
+                            <li><i class="fa-brands fa-amazon"></i></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="profile-page">
+                <div class="welcome">
+                    <div>
+                        <h1>Welcome!</h1>
+                    </div>
+                    <div class="search-my-listings">
+                        <input
+                            type="text"
+                            name="search-my-listings"
+                            id=""
+                            class="search-input"
+                        />
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="info-grid">
+                    <div class="image" data-tilt>
+                        <img
+                            src="https://imgs.search.brave.com/fI5aaTRdSrmLfhfX7ttPyMoH0cy0YSIH0P0x88_wxTs/rs:fit:1200:1182:1/g:ce/aHR0cHM6Ly9mMW9u/bHkuZnIvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjAvMDUvY2hh/cmxlcy1sZWNsZXJj/LWUxNTg5Nzk4NDM3/ODM3LmpwZw"
+                            alt=""
+                        />
+                    </div>
+                    <div class="info" data-tilt>
+                        <p>Email: dimanrikalov@abv.bg</p>
+                        <p>Name: Diman Rikalov</p>
+                    </div>
+                    <div class="stats" data-tilt>
+                        <p>Number of listings: 3</p>
+                        <p>Saved Listings: 5</p>
+                        <p>Comment count: 21</p>
+                    </div>
+                    <div class="my-listings">
+                        <ul class="">
+                            <li class="listing">
+                                <div class="listing-img">
+                                    <img
+                                        src="./assets/imgs/iphone-14"
+                                        alt="iphone-14"
+                                    />
+                                </div>
+                                <div class="listing-info">
+                                    <h2>iPhone 14 Pro</h2>
+                                    <h4>Apple</h4>
+                                    <h3>1100&euro;</h3>
+                                </div>
+                            </li>
+                            <li class="listing">
+                                <div class="listing-img">
+                                    <img
+                                        src="./assets/imgs/magic-keyboard.webp"
+                                        alt="iphone-14"
+                                    />
+                                </div>
+                                <div class="listing-info">
+                                    <h2>iPhone 14 Pro</h2>
+                                    <h4>Apple</h4>
+                                    <h3>1100&euro;</h3>
+                                </div>
+                            </li>
+                            <li class="listing">
+                                <div class="listing-img">
+                                    <img
+                                        src="./assets/imgs/iphone-13-blue-select-2021__08080.1635344242.webp "
+                                        alt="iphone-14"
+                                    />
+                                </div>
+                                <div class="listing-info">
+                                    <h2>iPhone 14 Pro</h2>
+                                    <h4>Apple</h4>
+                                    <h3>1100&euro;</h3>
+                                </div>
+                            </li>
+                            <li class="listing">
+                                <div class="listing-img">
+                                    <img
+                                        src="./assets/imgs/apple_ipad_pro_11_with_1569476.webp"
+                                        alt="iphone-14"
+                                    />
+                                </div>
+                                <div class="listing-info">
+                                    <h2>iPhone 14 Pro</h2>
+                                    <h4>Apple</h4>
+                                    <h3>1100&euro;</h3>
+                                </div>
+                            </li>
+                            <li class="listing">
+                                <div class="listing-img">
+                                    <img
+                                        src="./assets/imgs/7qnwoyNs0MUGMM00fKXk-x3swT3gGWBGzH7mYw5T-Q4.webp"
+                                        alt="iphone-14"
+                                    />
+                                </div>
+                                <div class="listing-info">
+                                    <h2>iPhone 14 Pro</h2>
+                                    <h4>Apple</h4>
+                                    <h3>1100&euro;</h3>
+                                </div>
+                            </li>
+                            <li class="listing">
+                                <div class="listing-img">
+                                    <img
+                                        src="./assets/imgs/nvidia-rtx-3090-release-date_feature.webp"
+                                        alt="iphone-14"
+                                    />
+                                </div>
+                                <div class="listing-info">
+                                    <h2>iPhone 14 Pro</h2>
+                                    <h4>Apple</h4>
+                                    <h3>1100&euro;</h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-flex">
+                <div class="navigation">
+                    <h2>Navigation:</h2>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">My Profile</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Catalog</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Sell</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="contacts">
+                    <h2>Reach us:</h2>
+                    <p>Email: selLy@gmail.com</p>
+                    <p>Phone: +359 999 999 999</p>
+                    <p>Location: Plovdiv, Bulgaria</p>
+
+                    <div class="socials">
+                        Find us on:
+                        <div class="social-contacts">
+                            <i class="fa-brands fa-square-facebook"></i>
+                            <i class="fa-brands fa-square-instagram"></i>
+                            <i class="fa-brands fa-square-twitter"></i>
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">
+                Copyright © 2022
+                <a href="https://linktr.ee/dimanrikalov">Diman Rikalov</a>. All
+                rights reserved.
+            </p>
+        </footer>
+    </body>
+</html>

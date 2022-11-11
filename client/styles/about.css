@@ -1,0 +1,88 @@
+.about {
+    padding: 92px 0px;
+}
+
+.about-container {
+    width: 1050px;
+    height: 640px;
+    margin: 0px auto;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "logo stats partners"
+        "mission mission partners";
+}
+
+.about-container .about-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue-main);
+    color: white;
+    padding: 32px;
+    border-radius: 15px;
+    box-shadow: 15px 15px 25px rgb(84, 100, 136);
+}
+
+.about-container .about-card:hover{
+    z-index: 1;
+}
+
+
+.about-container .stats {
+    grid-area: stats;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.about-container .stats ul {
+    list-style-type: none;
+}
+
+.about-container .stats ul li {
+    font-size: 18px;
+}
+
+.about-container .stats ul li span {
+    font-weight: 700;
+}
+
+.about-container .logo {
+    grid-area: logo;
+    font-size: 128px;
+}
+
+.about-container .partners {
+    grid-area: partners;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+.about-container .partners ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.about-container .partners ul li i {
+    font-size: 64px;
+}
+
+.about-container .mission {
+    grid-area: mission;
+    display: block;
+    padding: 64px;
+}
+
+.about-container .mission h1 {
+    margin-bottom: 32px;
+}
+
+.about-container .mission p {
+    font-size: 18px;
+}
