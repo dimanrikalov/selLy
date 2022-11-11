@@ -5,6 +5,7 @@ const listingSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Item name is mandatory'],
         minLength: [2, 'Item name must be at least 2 characters long.'],
+        maxLength: [20, 'Item name must be at most 20 characters long'],
         validate: {
             validator: function () {
                 const regex = new RegExp('[A-Z][a-z]+');
@@ -55,7 +56,8 @@ const listingSchema = new mongoose.Schema({
     },
     seller: {
         type: mongoose.Types.ObjectId,
-        ref: 'User',
+        // required: [true, 'Seller id is required!'],
+        ref: 'User'
     },
     comments: [
         {

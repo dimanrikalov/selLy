@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 
 
@@ -10,7 +12,9 @@ import { AboutComponent } from './about/about.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    ErrorPageComponent,
+    WelcomePageComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +22,9 @@ import { AboutComponent } from './about/about.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    ErrorPageComponent,
+    WelcomePageComponent
   ]
 })
 export class CoreModule { }

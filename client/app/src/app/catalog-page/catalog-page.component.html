@@ -1,0 +1,28 @@
+<div>
+  <div class="search-params">
+    <form action="">
+      <input type="text" name="searchInput" id="" class="textbox" />
+      <select name="sort-type" id="sort-type">
+        <option value="price-ascending">Price Ascending</option>
+        <option value="price-descending">Price Descending</option>
+        <option value="date-descending">Newest First</option>
+        <option value="date-ascending">Oldest First</option>
+      </select>
+      <button>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+  </div>
+  <ul class="catalog">
+    <li *ngFor="let listing of allListings" class="card">
+      <div class="image">
+        <img src={{listing.imageUrl}} alt="listing-img" />
+      </div>
+      <div class="info">
+        <h2>{{listing.item}}</h2>
+        <h4>{{listing.brand}}</h4>
+        <h3>{{listing.price}}&euro;</h3>
+      </div>
+    </li>
+  </ul>
+</div>
