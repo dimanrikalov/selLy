@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
+import { EditListingComponent } from './edit-listing/edit-listing.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CreateListingComponent } from './create-listing/create-listing.componen
     LoginPageComponent,
     RegisterPageComponent,
     CreateListingComponent,
+    EditListingComponent,
   ],
   imports: [
     BrowserModule,
