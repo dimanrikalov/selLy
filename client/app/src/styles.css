@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* global styles */
+
+/* icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+
+
+/* global variables */
+:root {
+
+    /* colors */
+
+    --blue-main: #1DA1F2;
+    --white-main: #FFFFFF;
+    --white-background: whitesmoke;
+
+
+    /* fonts */
+    
+    --font-main: "Poppins";
+    --font-secondary: "Source Sans Pro";
+}
+
+
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
