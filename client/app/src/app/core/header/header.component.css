@@ -12,6 +12,7 @@ header {
     transition: 350ms ease-in-out;
     box-shadow: 5px 16px 16px rgb(37, 59, 99);
     font-family: var(--font-secondary);
+    height: 75px;
 }
 
 header > a {
