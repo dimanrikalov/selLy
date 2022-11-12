@@ -4,7 +4,8 @@ const isLogged = require('../middlewares/isLogged');
 const isSeller = require('../middlewares/isSeller');
 const userService = require('../services/userService');
 const commentsController = require('./commentsController');
-const commentsMiddleware = require('../middlewares/commentsMiddleware');
+const saveListingController = require('../controllers/saveListingController');
+const passListingIdMiddleware = require('../middlewares/passListingIdMiddleware');
 
 router.get('/', async (req, res) => {
     try {
@@ -123,7 +124,8 @@ router.get('/:listingId/delete', isLogged, isSeller, async (req, res) => {
 });
 
 
-router.use('/:listingId/comments', isLogged, commentsMiddleware, commentsController);
+router.use('/:listingId/comments', isLogged, passListingIdMiddleware, commentsController);
 
+router.use('/:listingId/save', isLogged, passListingIdMiddleware, saveListingController);
 
 module.exports = router;
