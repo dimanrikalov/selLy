@@ -6,8 +6,9 @@ const commentSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Comment content is mandatory!']
     },
-    author: {
+    userId: {
         type: mongoose.Types.ObjectId,
+        required: [true, 'You must be logged in to be able to comment!'],
         ref: 'User'
     }
 });

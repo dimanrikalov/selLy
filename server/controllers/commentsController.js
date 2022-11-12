@@ -16,7 +16,7 @@ router.post('/create', async (req, res) => {
         const user = await userService.getById(req.body.userId);
         const comment = await commentService.createComment({
             content: req.body.content,
-            author: req.body.userId,
+            userId: req.body.userId,
         });
 
         listing.comments.push(comment._id);
