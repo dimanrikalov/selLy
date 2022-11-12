@@ -54,9 +54,9 @@ const listingSchema = new mongoose.Schema({
         required: ['Price for item is mandatory!'],
         min: [0, 'Price cannot be negative!'],
     },
-    seller: {
+    userId: {
         type: mongoose.Types.ObjectId,
-        // required: [true, 'Seller id is required!'],
+        required: [true, 'Seller id is required!'],
         ref: 'User'
     },
     comments: [

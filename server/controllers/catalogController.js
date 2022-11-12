@@ -29,7 +29,7 @@ router.post('/search', async (req, res) => {
     }
 });
 
-router.post('/create', /*isLogged,*/ async (req, res) => {
+router.post('/create', isLogged, async (req, res) => {
     const { item } = req.body;
     const isTaken = await api.getByTitle(item);
 
@@ -41,9 +41,9 @@ router.post('/create', /*isLogged,*/ async (req, res) => {
 
     try {
         const listing = await api.createOne(req.body);
-        // const user = await userService.getById(req.body.userId);
-        // user.listings.push(listing._id);
-        // await userService.updateById(user._id, user);
+        const user = await userService.getById(req.body.userId);
+        user.listings.push(listing._id);
+        await userService.updateById(user._id, user);
 
         res.json({ message: 'Listing added successfully!' });
     } catch (err) {
@@ -61,7 +61,7 @@ router.get('/:listingId/details', async (req, res) => {
     });
 });
 
-router.post('/:listingId/edit', /*isLogged,*/ isSeller, async (req, res) => {
+router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
 
     const listing = await api.getById(req.params.listingId);
     if (!listing) {
@@ -95,7 +95,7 @@ router.post('/:listingId/edit', /*isLogged,*/ isSeller, async (req, res) => {
     }
 });
 
-router.get('/:listingId/delete', /*isLogged,*/ isSeller, async (req, res) => {
+router.get('/:listingId/delete', isLogged, isSeller, async (req, res) => {
     try {
         const listing = await api.getByIdDetailed(req.params.listingId);
         await Promise.all(
@@ -123,7 +123,7 @@ router.get('/:listingId/delete', /*isLogged,*/ isSeller, async (req, res) => {
 });
 
 
-router.use('/:listingId/comments', /*isLogged,*/ commentsMiddleware, commentsController);
+router.use('/:listingId/comments', isLogged, commentsMiddleware, commentsController);
 
 
 module.exports = router;
