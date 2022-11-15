@@ -21,7 +21,7 @@ movie forum
 
 --- todo
 	-----pages
-		fix navigation instantly hiding after refresh
+		fix navigation instantly hiding itself after refresh
 		fix navigation to hide after 15px of scrolling up
 		make a saved listings page (<3)
 		chat with seller page / leave comments under listing ??????
@@ -33,10 +33,7 @@ movie forum
 
 
 	-----server
-		catalog page
-		add a remove a comment functionality
-		add an edit comment functionality
-		make everything inside the models REQUIRED!!!! (after login functionality is implemented)
+
 
 ----- layouts
 	use apple store design cards
