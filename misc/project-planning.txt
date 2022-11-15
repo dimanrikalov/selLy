@@ -1,20 +1,17 @@
------ concept
-olx copy paste - chosen option
-movie forum
-
-
 -------------------- business logic
 
 	chatting options:
-		1. one direct chat with a seller regardless of the listing (imame veche email na sellera obache)
-		2. comments under the listing visible to anyone logged in
+		1. comments under the listing visible to anyone logged in
 
 	user (seller)
+		can create an item
 		can edit an item (imgs, price, description)
-
+		can delete an item
+		can comment
+		can edit comment
+		can delete comment
+		
 	user (buyer) 
-		can message seller
-		can add item to a cart
 		can save someone else's item as favourite
 
 	guest

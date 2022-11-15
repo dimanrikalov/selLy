@@ -1,4 +1,4 @@
-<div class="profile-page">
+<div *ngIf="user" class="profile-page">
     <div class="welcome">
         <div>
             <h1>Welcome!</h1>
@@ -18,99 +18,35 @@
     <div class="info-grid">
         <div class="image tilt">
             <img
-                src="https://imgs.search.brave.com/fI5aaTRdSrmLfhfX7ttPyMoH0cy0YSIH0P0x88_wxTs/rs:fit:1200:1182:1/g:ce/aHR0cHM6Ly9mMW9u/bHkuZnIvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjAvMDUvY2hh/cmxlcy1sZWNsZXJj/LWUxNTg5Nzk4NDM3/ODM3LmpwZw"
+                src="{{user.profileImage}}"
                 alt=""
             />
         </div>
         <div class="info tilt">
-            <p>Email: dimanrikalov@abv.bg</p>
-            <p>Name: Diman Rikalov</p>
+            <p>Email: {{user.email}}</p>
+            <p>Name: {{user.name}}</p>
         </div>
         <div class="stats tilt">
-            <p>Number of listings: 3</p>
-            <p>Saved Listings: 5</p>
-            <p>Comment count: 21</p>
+            <p>Number of listings: {{user.listings.length}}</p>
+            <p>Saved Listings: {{user.savedListings.length}}</p>
+            <p>Comment count: {{user.comments.length}}</p>
         </div>
         <div class="my-listings">
             <ul class="">
-                <li class="listing">
+                <li *ngFor="let listing of user.listings" class="listing">
                     <div class="listing-img">
                         <img
-                            src="./assets/imgs/iphone-14"
-                            alt="iphone-14"
+                            src="{{listing.imageUrl}}"
+                            alt="listing-img"
                         />
                     </div>
                     <div class="listing-info">
-                        <h2>iPhone 14 Pro</h2>
-                        <h4>Apple</h4>
-                        <h3>1100&euro;</h3>
+                        <h2>{{listing.item}}</h2>
+                        <h4>{{listing.brand}}</h4>
+                        <h3>{{listing.price}}&euro;</h3>
                     </div>
                 </li>
-                <li class="listing">
-                    <div class="listing-img">
-                        <img
-                            src="./assets/imgs/magic-keyboard.webp"
-                            alt="iphone-14"
-                        />
-                    </div>
-                    <div class="listing-info">
-                        <h2>iPhone 14 Pro</h2>
-                        <h4>Apple</h4>
-                        <h3>1100&euro;</h3>
-                    </div>
-                </li>
-                <li class="listing">
-                    <div class="listing-img">
-                        <img
-                            src="./assets/imgs/iphone-13-blue-select-2021__08080.1635344242.webp "
-                            alt="iphone-14"
-                        />
-                    </div>
-                    <div class="listing-info">
-                        <h2>iPhone 14 Pro</h2>
-                        <h4>Apple</h4>
-                        <h3>1100&euro;</h3>
-                    </div>
-                </li>
-                <li class="listing">
-                    <div class="listing-img">
-                        <img
-                            src="./assets/imgs/apple_ipad_pro_11_with_1569476.webp"
-                            alt="iphone-14"
-                        />
-                    </div>
-                    <div class="listing-info">
-                        <h2>iPhone 14 Pro</h2>
-                        <h4>Apple</h4>
-                        <h3>1100&euro;</h3>
-                    </div>
-                </li>
-                <li class="listing">
-                    <div class="listing-img">
-                        <img
-                            src="./assets/imgs/7qnwoyNs0MUGMM00fKXk-x3swT3gGWBGzH7mYw5T-Q4.webp"
-                            alt="iphone-14"
-                        />
-                    </div>
-                    <div class="listing-info">
-                        <h2>iPhone 14 Pro</h2>
-                        <h4>Apple</h4>
-                        <h3>1100&euro;</h3>
-                    </div>
-                </li>
-                <li class="listing">
-                    <div class="listing-img">
-                        <img
-                            src="./assets/imgs/nvidia-rtx-3090-release-date_feature.webp"
-                            alt="iphone-14"
-                        />
-                    </div>
-                    <div class="listing-info">
-                        <h2>iPhone 14 Pro</h2>
-                        <h4>Apple</h4>
-                        <h3>1100&euro;</h3>
-                    </div>
-                </li>
+                
             </ul>
         </div>
     </div>

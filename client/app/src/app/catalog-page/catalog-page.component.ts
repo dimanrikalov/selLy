@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { IListing } from '../interfaces/Listing';
+import { Component, OnInit } from '@angular/core';
 import { ListingsApiService } from '../services/listings-api.service';
 
 @Component({

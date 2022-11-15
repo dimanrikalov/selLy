@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const userService = require('../services/userService');
 
-router.get('/', async (req, res) => {
-    const user = await userService.getById(req.body.userId);
-    
+router.post('/', async (req, res) => {
+    const user = await userService.getByIdDetailed(req.body.userId);
+    console.log(user);
     if(user) {
-        return res.json({ user: user });
+        return res.json(user);
     }
     
     return res.status(400).json({ errorMessage: 'User not found!' });

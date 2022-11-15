@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  catalogUrl: 'http://localhost:3000/catalog'
+  catalogUrl: 'http://localhost:3000/catalog',
+  profileUrl: 'http://localhost:3000/profile'
 };
 
 /*
