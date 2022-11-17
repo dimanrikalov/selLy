@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@angular/cli": "^15.0.0",
     "vanilla-tilt": "^1.7.3"
   }
 }
