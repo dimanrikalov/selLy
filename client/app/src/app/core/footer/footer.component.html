@@ -5,13 +5,16 @@
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">My Profile</a></li>
-          <li><a href="#">About</a></li>
           <li><a href="#">Catalog</a></li>
-          <li><a href="#">Register</a></li>
-          <li><a href="#">Sell</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="#">About</a></li>
+
+          <li *ngIf="!userId"><a href="#">Login</a></li>
+          <li *ngIf="!userId"><a href="#">Register</a></li>
+          
+
+          <li *ngIf="userId"><a href="#">My Profile</a></li>
+          <li *ngIf="userId"><a href="#">Sell</a></li>
+          <li *ngIf="userId"><a href="#">Logout</a></li>
         </ul>
       </nav>
     </div>
@@ -22,7 +25,7 @@
       <p>Location: Plovdiv, Bulgaria</p>
 
       <div class="socials">
-        Find us on:
+        <p>Find us on:</p>
         <div class="social-contacts">
           <i class="fa-brands fa-square-facebook"></i>
           <i class="fa-brands fa-square-instagram"></i>
