@@ -1,7 +1,8 @@
+import VanillaTilt from 'vanilla-tilt';
 import { IUser } from '../interfaces/User';
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/profile.service';
-import VanillaTilt from 'vanilla-tilt';
+
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
