@@ -181,6 +181,10 @@
     transition: 250ms ease-in-out;
 }
 
+.comments .comment .head .operations a.operations-color-reversed {
+    color: var(--white-main);
+}
+
 .comments .comment .head .operations a:hover {
     color: rgb(45, 64, 141);
 }

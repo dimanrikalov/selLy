@@ -34,12 +34,26 @@
           </div>
           <div
             class="operations"
-            *ngIf="
-              comment.userId._id.toString() === listing?.userId?._id?.toString()
-            "
+            *ngIf="comment.userId._id.toString() === loggedUserId"
           >
-            <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-            <a href="#"><i class="fa-solid fa-circle-xmark"></i></a>
+            <a
+              href="#"
+              [ngClass]="{
+                'operations-color-reversed':
+                  comment.userId._id.toString() !==
+                  listing?.userId?._id?.toString()
+              }"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></a>
+            <a
+              href="#"
+              [ngClass]="{
+                'operations-color-reversed':
+                  comment.userId._id.toString() !==
+                  listing?.userId?._id?.toString()
+              }"
+              ><i class="fa-solid fa-circle-xmark"></i
+            ></a>
           </div>
         </div>
         <p>{{ comment.content }}</p>
