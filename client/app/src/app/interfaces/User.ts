@@ -13,4 +13,5 @@ export interface IUser {
   listings: IListing[];
   savedListings:IListing[];
   comments: IComment[];
+  _id: string
 }
