@@ -57,7 +57,7 @@
     margin-top: 16px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
 }
 
 .register form .tac div {
@@ -72,6 +72,8 @@
 
 
 .register .email-div input,
+.register .name-div input,
+.register .profile-image-div input,
 .register .pass-div input,
 .register .conf-pass-div input {
     font-family: var(--font-main);
@@ -86,6 +88,8 @@
 }
 
 .register .email-div input::placeholder,
+.register .name-div input::placeholder,
+.register .profile-image-div input::placeholder,
 .register .pass-div input::placeholder,
 .register .conf-pass-div input::placeholder {
     color: rgb(160, 160, 160);
@@ -93,6 +97,8 @@
 
 
 .register .email-div input:focus,
+.register .name-div input:focus,
+.register .profile-image-div input:focus,
 .register .pass-div input:focus,
 .register .conf-pass-div input:focus {
     border: 2px solid transparent;
@@ -124,33 +130,17 @@
     color: grey;
 }
 
-.register .register-btns a {
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid var(--blue-main);
-    color: var(--blue-main);
-    padding: 12px 0px;
-    border-radius: 9px;
-    transition: 350ms ease-in-out;
-    font-weight: 600;
-}
 
 .register .register-btns button:hover {
     background-color: var(--white-main);
     color: var(--blue-main);
 }
 
-.register .register-btns a:hover {
-    color: var(--white-main);
-    background-color: var(--blue-main);
-}
-
 
 .register .sign-in {
     display: flex;
     gap: 32px;
-    margin-top: 42px;
+    margin-top: 16px;
     color: grey;
 }
 
