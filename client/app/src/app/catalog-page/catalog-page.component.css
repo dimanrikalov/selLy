@@ -133,6 +133,7 @@
     z-index: 0;
     background-color: transparent;
     transition: 300ms ease-in-out;  
+    color: black;
 }
 
 .card .info::after {
