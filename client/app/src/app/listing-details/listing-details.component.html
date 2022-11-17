@@ -1,129 +1,52 @@
 <div class="details-page">
-    <div class="listing tilt">
-        <img
-            src="./assets/imgs/iphone-14"
-            alt="iphone-14"
-        />
-        <div class="info">
-            <h1>Item: iPhone 14 Pro</h1>
-            <h2>Brand: Apple</h2>
-            <div>
-                <h3>Location: Plovdiv</h3>
-                <h3>Seller: Jordan Genoff</h3>
-            </div>
-            <div class="description">
-                <h3>Description:</h3>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur. Lorem
-                    ipsum dolor sit amet consectetur adipisicing
-                    elit. Sint animi nihil corporis odit deleniti
-                    nulla natus aliquid totam, excepturi deserunt
-                    sit ut ab porro neque suscipit sequi doloribus
-                    ea molestias? Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Officiis similique
-                    laudantium consectetur laboriosam nesciunt? Vel,
-                    nihil magnam dicta minima ducimus veniam
-                    perferendis omnis sint! Qui, magnam saepe! Qui,
-                    quae rem!
-                </p>
-                <h2>Price: 1100&euro;</h2>
-            </div>
-        </div>
+  <div class="listing tilt">
+    <img src="./assets/imgs/iphone-14" alt="iphone-14" />
+    <div class="info">
+      <h1>Item: {{ listing?.item }}</h1>
+      <h2>Brand: {{ listing?.brand }}</h2>
+      <div>
+        <h3>Location: {{ listing?.location }}</h3>
+        <h3>Seller: {{ listing?.userId?.name }}</h3>
+      </div>
+      <div class="description">
+        <h3>Description:</h3>
+        <p>{{ listing?.description }}</p>
+        <h2>Price: {{ listing?.price }}&euro;</h2>
+      </div>
     </div>
-    <div class="comments-div">
-        <ol class="comments">
-            <li class="comment">
-                <div class="head">
-                    <div class="author">
-                        <img
-                            src="./assets/imgs/leclerc.png"
-                            alt=""
-                        />
-                        <span>Charles Leclerc</span>
-                    </div>
-                </div>
-                <p>Hello! Interested in the listing.</p>
-            </li>
-            <li class="comment">
-                <div class="head">
-                    <div class="author">
-                        <img
-                            src="./assets/imgs/leclerc.png"
-                            alt=""
-                        />
-                        <span>Charles Leclerc</span>
-                    </div>
-                </div>
-                <p>Is the price negotiable?</p>
-            </li>
-
-            <li class="comment listing-creator">
-                <div class="head">
-                    <div class="author">
-                        <img
-                            src="./assets/imgs/4763222.jpg"
-                            alt=""
-                        />
-                        <span>Jordan Genoff</span>
-                    </div>
-                    <div class="operations">
-                        <a href="#"
-                            ><i
-                                class="fa-solid fa-pen-to-square"
-                            ></i
-                        ></a>
-                        <a href="#"
-                            ><i class="fa-solid fa-circle-xmark"></i
-                        ></a>
-                    </div>
-                </div>
-                <p>Yes.</p>
-            </li>
-            <li class="comment listing-creator">
-                <div class="head">
-                    <div class="author">
-                        <img
-                            src="./assets/imgs/4763222.jpg"
-                            alt=""
-                        />
-                        <span>Jordan Genoff</span>
-                    </div>
-                    <div class="operations">
-                        <a href="#"
-                            ><i
-                                class="fa-solid fa-pen-to-square"
-                            ></i
-                        ></a>
-                        <a href="#"
-                            ><i class="fa-solid fa-circle-xmark"></i
-                        ></a>
-                    </div>
-                </div>
-                <p>Send me a DM so we can discuss it.</p>
-            </li>
-            <li class="comment">
-                <div class="head">
-                    <div class="author">
-                        <img
-                            src="./assets/imgs/leclerc.png"
-                            alt=""
-                        />
-                        <span>Charles Leclerc</span>
-                    </div>
-                </div>
-                <p>Texting you right now...</p>
-            </li>
-        </ol>
-        <div class="text-input">
-            <textarea
-                name="comment-input"
-                id="comment-input"
-                class="comment-input"
-                cols="30"
-                rows="10"
-                placeholder="Type here..."
-            ></textarea>
-            <button>Send</button>
+  </div>
+  <div class="comments-div">
+    <ol *ngIf="listing?.comments?.length" class="comments">
+      <li *ngFor="let comment of listing?.comments" class="comment" [ngClass]="{'listing-creator' : comment.userId._id.toString() === listing?.userId?._id?.toString()}">
+        <div class="head">
+          <div>
+            <img src="{{comment.userId.profileImage}}" alt="user-picture" />
+            <span>{{comment.userId.name}}</span>
+          </div>
+          <div class="operations" *ngIf="comment.userId._id.toString() === listing?.userId?._id?.toString()">
+            <a href="#"
+                ><i
+                    class="fa-solid fa-pen-to-square"
+                ></i
+            ></a>
+            <a href="#"
+                ><i class="fa-solid fa-circle-xmark"></i
+            ></a>
         </div>
+        </div>
+        <p>{{comment.content}}</p>
+      </li>
+    </ol>
+    <div class="text-input">
+      <textarea
+        name="comment-input"
+        id="comment-input"
+        class="comment-input"
+        cols="30"
+        rows="10"
+        placeholder="Type here..."
+      ></textarea>
+      <button>Send</button>
     </div>
+  </div>
 </div>
