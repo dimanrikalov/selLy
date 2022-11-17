@@ -1,69 +1,84 @@
 <div class="sell-form">
-    <form action="">
-        <h1>Create a Listing:</h1>
-        <img
-            src="./assets/imgs/ribbon-black-shape.png"
-            alt="ribbon"
-            class="ribbon"
+  <form action="">
+    <h1>Create a Listing</h1>
+    <img
+      src="./assets/imgs/ribbon-black-shape.png"
+      alt="ribbon"
+      class="ribbon"
+    />
+    <div class="item-and-brand">
+      <div class="item">
+        <label for="create-item">What are you selling?</label>
+        <input
+          type="text"
+          name="create-item"
+          id="create-item"
+          placeholder="Example: iPhone 14 Pro"
         />
-        <div>
-            <label for="title">What are you selling?</label>
-            <input
-                type="text"
-                name="title"
-                id="title"
-                placeholder="Laptop Apple MacBook..."
-            />
-        </div>
-        <div>
-            <label for="image-url"
-                >A valid URL link to an image of whatever you are
-                selling.</label
-            >
-            <input
-                type="url"
-                name="image-url"
-                id="image-url"
-                placeholder="https://product-image-url.com"
-            />
-        </div>
-        <div>
-            <label for="title"
-                >Describe what you are selling exactly? (condition,
-                origin, etc...)</label
-            >
-            <textarea
-                name="description"
-                id="description"
-                cols="30"
-                rows="3"
-                placeholder="A very well preserved laptop."
-            ></textarea>
-        </div>
-        <div>
-            <label for="title"
-                >Where is the item/seller located?</label
-            >
-            <input
-                type="text"
-                name="location"
-                id="location"
-                placeholder="Plovdiv, Bulgaria"
-            />
-        </div>
-        <div>
-            <label for="title"
-                >What is your asking price for the item?</label
-            >
-            <input
-                type="number"
-                name="price"
-                id="price"
-                placeholder="350&euro;"
-            />
-        </div>
-        <div>
-            <button class="submit-btn">Create a Listing</button>
-        </div>
-    </form>
+      </div>
+      <div class="brand">
+        <label for="create-brand">What is the brand of the item?</label>
+        <input
+          type="text"
+          name="create-brand"
+          id="create-brand"
+          placeholder="Example: Apple, Oura..."
+        />
+      </div>
+    </div>
+    <div>
+      <label for="create-image-url"
+        >A valid URL link to an image of whatever you are selling.</label
+      >
+      <input
+        type="url"
+        name="create-image-url"
+        id="create-image-url"
+        placeholder="https://product-image-url.com"
+      />
+    </div>
+    <div>
+      <label for="create-description"
+        >Describe what you are selling exactly? (condition, origin,
+        etc...)</label
+      >
+      <textarea
+        name="create-description"
+        id="create-description"
+        cols="30"
+        rows="3"
+        placeholder="A very well preserved phone, bought from the official store..."
+      ></textarea>
+    </div>
+    <div class="location">
+      <div class="city">
+        <label for="create-city">Location of the item (City)</label>
+        <input
+          type="text"
+          name="create-city"
+          id="create-city"
+          placeholder="Plovdiv"
+        />
+      </div>
+      <div class="country">
+        <label for="create-country">Location of the item (Country)</label>
+        <input
+          type="text"
+          name="create-country"
+          id="create-country"
+          placeholder="Bulgaria"
+        />
+      </div>
+    </div>
+    <div>
+      <label for="create-price">What is your asking price for the item?</label>
+      <input
+        type="number"
+        name="create-price"
+        id="create-price"
+        placeholder="350&euro;"
+      />
+    </div>
+    <button class="submit-btn">Create a Listing</button>
+  </form>
 </div>
