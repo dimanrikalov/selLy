@@ -23,8 +23,7 @@
 		fix navigation to hide after 15px of scrolling up
 		make a saved listings page (<3)
 		chat with seller page / leave comments under listing ??????
-		add a check when making the comments section whether the id is the same as the listing creator
-		on edit click transfer the text inside the textarea, on submit edit the comment,
+		on edit click transfer the text inside the textarea,
 		empty the textarea and add a "edited" tag somwhere inside the comment div
 		
 	-----documentation 
