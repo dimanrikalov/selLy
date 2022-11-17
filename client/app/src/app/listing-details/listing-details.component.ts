@@ -17,7 +17,7 @@ export class ListingDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.listingDetailsService.loadListing().subscribe({
       next: (listing) => {
-        localStorage.setItem('userId', '636fea4d871ff87fe625a7aa');
+        // localStorage.setItem('userId', '636fea4d871ff87fe625a7aa');
         console.log(listing);
         this.listing = listing;
       },

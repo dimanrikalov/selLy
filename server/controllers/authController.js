@@ -7,11 +7,7 @@ router.post('/register', async (req, res) => {
         password,
         repeatPassword,
         name,
-        profileImage,
-        country,
-        city,
-        age,
-        gender,
+        profileImage
     } = req.body;
 
     const user = await api.findByEmail(email);
@@ -33,10 +29,6 @@ router.post('/register', async (req, res) => {
             password,
             name,
             profileImage,
-            country,
-            city,
-            age,
-            gender,
         });
 
         const user = await api.loginUser({ email, password });

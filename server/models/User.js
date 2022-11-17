@@ -42,42 +42,6 @@ const userSchema = new mongoose.Schema({
             message: 'Enter a valid URL link!',
         },
     },
-    country: {
-        type: String,
-        required: [true, 'Enter a valid country name is required!'],
-        validate: {
-            validator: function () {
-                const regex = new RegExp('^[A-Z][a-z]+$');
-                return regex.test(this.country);
-            },
-            message: 'Invalid country format!  Example: "Bulgaria".',
-        },
-    },
-    city: {
-        type: String,
-        required: [true, 'Enter a valid city name is required!'],
-        validate: {
-            validator: function () {
-                const regex = new RegExp('^[A-Z][a-z]+$');
-                return regex.test(this.city);
-            },
-            message: 'Invalid city format! Example: "Plovdiv".',
-        },
-    },
-    age: {
-        type: Number,
-        required: [true, 'Enter a valid age!'],
-        min: [10, 'Age must be in range: [10 - 100].'],
-        max: [100, 'Age must be in range: [10 - 100].'],
-    },
-    gender: {
-        type: String,
-        required: [true, 'Valid gender is required!'],
-        enum: {
-            values: ['male', 'female'],
-            message: 'Enter a valid gender! (Male or Female)',
-        },
-    },
     listings: [
         {
             type: mongoose.Types.ObjectId,

@@ -6,10 +6,6 @@ export interface IUser {
   password: string;
   name: string;
   profileImage: string;
-  country: string;
-  city: string;
-  age: string;
-  gender: string;
   listings: IListing[];
   savedListings:IListing[];
   comments: IComment[];
