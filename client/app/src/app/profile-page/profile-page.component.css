@@ -222,3 +222,10 @@
 .search-my-listings button:hover > i {
     transform: rotate(90deg);
 }
+
+.no-listings {
+    text-align: center;
+    margin-top: 150px;
+    font-size: 54px;
+    color:rgb(103, 103, 103);
+}

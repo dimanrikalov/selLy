@@ -32,22 +32,24 @@
             <p>Comment count: {{user.comments.length}}</p>
         </div>
         <div class="my-listings">
-            <ul class="">
+            <ul *ngIf="user.listings.length > 0" class="">
                 <li *ngFor="let listing of user.listings" class="listing">
-                    <div class="listing-img">
-                        <img
-                            src="{{listing.imageUrl}}"
-                            alt="listing-img"
-                        />
-                    </div>
-                    <div class="listing-info">
-                        <h2>{{listing.item}}</h2>
-                        <h4>{{listing.brand}}</h4>
-                        <h3>{{listing.price}}&euro;</h3>
-                    </div>
+                    <a href="{{listing._id}}">
+                        <div class="listing-img">
+                            <img
+                                src="{{listing.imageUrl}}"
+                                alt="listing-img"
+                            />
+                        </div>
+                        <div class="listing-info">
+                            <h2>{{listing.item}}</h2>
+                            <h4>{{listing.brand}}</h4>
+                            <h3>{{listing.price}}&euro;</h3>
+                        </div>
+                    </a>
                 </li>
-                
             </ul>
+            <h1 *ngIf="!user.listings.length" class="no-listings">No listings yet!</h1>
         </div>
     </div>
 </div>
