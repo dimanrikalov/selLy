@@ -1,7 +1,7 @@
 import { IUser } from '../interfaces/User';
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/profile.service';
-
+import VanillaTilt from 'vanilla-tilt';
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
@@ -14,6 +14,7 @@ export class ProfilePageComponent implements OnInit {
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    VanillaTilt.init(document.querySelectorAll('.tilt') as any);
     this.profileService.loadProfile().subscribe({
       next: (user) => {
         console.log(user);

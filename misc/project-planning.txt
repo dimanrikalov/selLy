@@ -17,7 +17,8 @@
 	guest
 
 --- todo
-	-----pages
+	-----pages\
+		fix vanillatilt not working on profile information
 		fix navigation instantly hiding itself after refresh
 		fix navigation to hide after 15px of scrolling up
 		make a saved listings page (<3)
