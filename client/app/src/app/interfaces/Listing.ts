@@ -8,7 +8,7 @@ export interface IListing {
     description: string,
     location: string,
     price: number,
-    seller: IUser,
+    userId: IUser,
     comments: IComment[],
     _id: string
 }

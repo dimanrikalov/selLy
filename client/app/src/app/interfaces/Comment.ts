@@ -2,6 +2,6 @@ import {IUser} from './User';
 
 export interface IComment {
     content: string,
-    author: IUser,
+    userId: IUser,
     _id: string
 }
