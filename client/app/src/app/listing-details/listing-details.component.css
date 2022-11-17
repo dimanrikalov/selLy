@@ -18,7 +18,13 @@
     border-right: none;
 }
 
-.details-page .listing img {
+.details-page .listing .image-div {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.details-page .listing .image-div img {
     width: 100%;
     height: 380px;
     object-fit: contain;
@@ -41,6 +47,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    font-size: 16px;
 }
 .details-page .listing .description h2 {
     margin-top: 24px;
@@ -53,12 +60,9 @@
     transition: 250ms ease-in-out;
 }
 
-.details-page .listing .description h2:hover {
-    transform: scale(1.15);
-}
-
 .details-page .listing .description p {
-    height: 120px;
+    font-size: 14px;
+    height: 80px;
     overflow-y: scroll;
     border-bottom: 1px solid white;
     padding: 6px 0px;
@@ -182,7 +186,7 @@
 }
 
 .text-input {
-    min-height: 220px;
+    height: 196px;
     position: absolute;
     display: flex;
     flex-direction: column;

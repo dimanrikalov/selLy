@@ -1,6 +1,8 @@
 <div class="details-page">
   <div class="listing tilt">
-    <img src="./assets/imgs/iphone-14" alt="iphone-14" />
+    <div class="image-div">
+      <img src="./assets/imgs/iphone-14" alt="iphone-14" />
+    </div>
     <div class="info">
       <h1>Item: {{ listing?.item }}</h1>
       <h2>Brand: {{ listing?.brand }}</h2>
@@ -17,24 +19,30 @@
   </div>
   <div class="comments-div">
     <ol *ngIf="listing?.comments?.length" class="comments">
-      <li *ngFor="let comment of listing?.comments" class="comment" [ngClass]="{'listing-creator' : comment.userId._id.toString() === listing?.userId?._id?.toString()}">
+      <li
+        *ngFor="let comment of listing?.comments"
+        class="comment"
+        [ngClass]="{
+          'listing-creator':
+            comment.userId._id.toString() === listing?.userId?._id?.toString()
+        }"
+      >
         <div class="head">
           <div>
-            <img src="{{comment.userId.profileImage}}" alt="user-picture" />
-            <span>{{comment.userId.name}}</span>
+            <img src="{{ comment.userId.profileImage }}" alt="user-picture" />
+            <span>{{ comment.userId.name }}</span>
           </div>
-          <div class="operations" *ngIf="comment.userId._id.toString() === listing?.userId?._id?.toString()">
-            <a href="#"
-                ><i
-                    class="fa-solid fa-pen-to-square"
-                ></i
-            ></a>
-            <a href="#"
-                ><i class="fa-solid fa-circle-xmark"></i
-            ></a>
+          <div
+            class="operations"
+            *ngIf="
+              comment.userId._id.toString() === listing?.userId?._id?.toString()
+            "
+          >
+            <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="#"><i class="fa-solid fa-circle-xmark"></i></a>
+          </div>
         </div>
-        </div>
-        <p>{{comment.content}}</p>
+        <p>{{ comment.content }}</p>
       </li>
     </ol>
     <div class="text-input">
