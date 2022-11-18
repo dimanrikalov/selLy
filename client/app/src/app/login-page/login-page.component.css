@@ -1,5 +1,6 @@
 .login-page {
     margin: 0 auto;
+    padding: 0 64px;
 }
 
 .login {
@@ -206,7 +207,9 @@
 
 @media screen and (width <= 840px) {
     
-    
+    .login-page {
+        padding: 0px;
+    }
 
     .login {
         margin: 0 auto;
