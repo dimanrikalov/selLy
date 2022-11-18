@@ -1,6 +1,6 @@
 
 header {
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 3;
     display: flex;
@@ -8,7 +8,6 @@ header {
     align-items: center;
     padding: 18px 64px;
     background-color: var(--blue-main);
-    border-radius: 0 0 32px 32px;
     transition: 350ms ease-in-out;
     box-shadow: 5px 16px 16px rgb(37, 59, 99);
     font-family: var(--font-secondary);
@@ -41,7 +40,6 @@ header > a:hover {
     font-size: 18px;
     padding: 12px 24px;
     color: var(--white-main);
-    border-radius: 7px;
     transition: 250ms ease-in-out;
 }
 
@@ -119,6 +117,7 @@ header > a:hover {
 
     .navigation:hover, .nav-container {
         display: block;
+        transition: 200ms;
         border-radius: 16px;
     }
     .navigation li {
