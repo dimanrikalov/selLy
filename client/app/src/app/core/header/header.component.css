@@ -21,6 +21,7 @@ header > a {
     letter-spacing: 1px;
     font-weight: 800;
     font-size: 32px;
+    transition: 200ms ease-in-out;
 }
 
 header > a:hover {

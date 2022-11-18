@@ -156,3 +156,9 @@
 .card:hover .info {
     color: white;
 } 
+
+.no-listings {
+    margin: 256px 0px;
+    text-align: center;
+    color: grey;
+}
