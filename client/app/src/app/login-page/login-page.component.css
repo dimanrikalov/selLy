@@ -1,7 +1,13 @@
+.login-page {
+    margin: 0 auto;
+}
+
 .login {
-    width: 1100px;
-    height: 800px;
-    margin: 32px auto;
+    max-width: 1100px;
+    max-height: 800px;
+    margin: 0 auto;
+    margin-top: 128px;
+    margin-bottom: 64px;
     display: flex;
     border-radius: 15px;
     overflow: hidden;
@@ -56,7 +62,7 @@
 }
 
 .login form {
-    width: 60%;
+    width: 80%;
     margin-top: 16px;
     display: flex;
     flex-direction: column;
@@ -145,6 +151,7 @@
     display: flex;
     gap: 32px;
     margin-top: 32px;
+    margin-bottom: 32px;
     color: grey;
 }
 
@@ -194,4 +201,31 @@
 
 .features .remember-me:checked + .remember-me-label {
     color: var(--blue-main);
+}
+
+
+@media screen and (width <= 840px) {
+    
+    
+
+    .login {
+        margin: 0 auto;
+        margin-top: 64px;
+        margin-bottom: 32px;
+        min-width: 375px;
+        justify-content: center;
+        transform: scale(0.85);
+    }
+
+    .right-side {
+        margin: 0px auto;
+        padding: 24px;
+        min-width: 415px;
+    }
+
+
+    .left-side {
+        margin: 0px auto;
+        display: none;
+    }
 }
