@@ -82,7 +82,7 @@ header > a:hover {
     align-items: center;
     width: fit-content;
     height: fit-content;
-    transition: 200ms ease-in-out;
+    transition: 350ms ease-in-out;
 }
 
 
@@ -119,7 +119,7 @@ header > a:hover {
 
     .navigation:hover, .nav-container {
         display: block;
-        transition: 200ms;
+        transition: 400ms;
         border-radius: 16px;
     }
     .navigation li {

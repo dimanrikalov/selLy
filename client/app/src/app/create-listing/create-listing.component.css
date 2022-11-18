@@ -133,10 +133,10 @@ form .ribbon {
 
     form {
         padding: 12px 24px !important;
-        margin: 128px 12px 64px 12px !important;
+        margin: 128px auto !important;
+        min-width: 338px;
     }
 
-    
 
     .ribbon {
         display: none;
