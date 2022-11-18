@@ -1,4 +1,7 @@
 footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
   padding: 64px 0px 32px 0px;
   background-color: var(--blue-main);
   color: white;
@@ -80,4 +83,14 @@ footer .copyright a:hover {
 
 .social-contacts {
   font-size: 21px;
+}
+
+
+@media screen and (width <= 500px) {
+    .footer-flex {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 32px;
+    }
 }
