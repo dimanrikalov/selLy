@@ -18,7 +18,8 @@
     </div>
   </div>
   <div class="comments-div">
-    <ol *ngIf="listing?.comments?.length" class="comments">
+    <ol class="comments">
+      <h1 class="no-comments" *ngIf="!listing?.comments?.length">No comments yet! Be the first to leave a comment!</h1>
       <li
         *ngFor="let comment of listing?.comments"
         class="comment"

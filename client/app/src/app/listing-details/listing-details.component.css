@@ -90,6 +90,7 @@
     padding: 24px 42px;
 }
 
+
 .details-page .comments-div .comments {
     list-style-type: none;
     display: flex;
@@ -102,6 +103,13 @@
     box-shadow: 5px 5px 15px rgb(135, 135, 135);
     padding: 24px;
     border: 1px solid rgb(216, 216, 216);
+}
+
+.no-comments {
+    color: grey;
+    font-size: 24px;
+    text-align: center;
+    margin: 224px 0px;
 }
 
 .details-page .comments-div .comments::-webkit-scrollbar {

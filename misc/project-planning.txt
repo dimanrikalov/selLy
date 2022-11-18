@@ -17,7 +17,12 @@
 	guest
 
 --- todo
-	-----pages\
+	-----pages
+		when server is down fix:
+			-stats
+			-navigation
+			-??? listing details ???
+			
 		fix vanillatilt not working on profile information
 		fix navigation instantly hiding itself after refresh
 		fix navigation to hide after 15px of scrolling up
