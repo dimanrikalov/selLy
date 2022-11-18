@@ -1,7 +1,8 @@
 .register {
-    width: 1100px;
-    height: 800px;
-    margin: 32px auto;
+    max-width: 1100px;
+    max-height: 800px;
+    margin: 64px auto;
+    margin-top: 128px;
     display: flex;
     border-radius: 15px;
     overflow: hidden;
@@ -24,7 +25,6 @@
     width: 550px;
     display: flex;
     flex-direction: column;
-
     align-items: center;
     gap: 16px;
 }
@@ -140,7 +140,7 @@
 .register .sign-in {
     display: flex;
     gap: 32px;
-    margin-top: 16px;
+    margin: 16px 0px;
     color: grey;
 }
 
@@ -165,4 +165,33 @@
 
 .tac .terms-and-conditions:checked + .tac-label {
     color: var(--blue-main);
+}
+
+@media screen and (width <= 840px) {
+    
+    
+
+    .register {
+        margin: 0 auto;
+        margin-top: 64px;
+        margin-bottom: 32px;
+        min-width: 375px;
+        justify-content: center;
+        transform: scale(0.85);
+    }
+
+    .left-side {
+        margin: 0px auto;
+        padding: 24px;
+        min-width: 415px;
+    }
+
+    .sign-in {
+        margin: 0 !important;
+    }
+
+    .right-side {
+        margin: 0px auto;
+        display: none;
+    }
 }
