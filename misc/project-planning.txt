@@ -18,6 +18,10 @@
 
 --- todo
 	-----pages
+		make responsive:
+			details page
+			profile page
+
 		when server is down fix:
 			-stats
 			-navigation

@@ -1,7 +1,7 @@
 .profile-page {
     border-radius: 24px;
-    padding: 64px;
-    margin: 32px 64px;
+    margin: 136px 64px 74px 94px;
+    padding: 48px 32px;
     box-shadow: 15px 5px 15px rgb(135, 135, 135);
     border-left: 1px solid rgb(216, 216, 216);
 }
@@ -11,6 +11,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
+    "search-my-listings search-my-listings search-my-listings search-my-listings"
     "profile-picture my-listings my-listings my-listings"
     "info            my-listings my-listings my-listings"
     "stats           my-listings my-listings my-listings";
@@ -47,9 +48,11 @@
 }
 
 .search-my-listings {
+    height: 100%;
     display: flex;
     align-items: center;
     gap: 16px;
+    grid-template-columns: search-my-listings;
 }
 
 .my-listings-list {
@@ -120,7 +123,6 @@
 }
 
 .info-grid .my-listings {
-    height: 500px;
     grid-area: my-listings;
     border-radius: 24px;
     background-color: var(--white-background);
@@ -228,4 +230,19 @@
     margin-top: 150px;
     font-size: 54px;
     color:rgb(103, 103, 103);
+}
+
+@media screen and (width <= 1195px) {
+
+    .stats, .image, .info, h1 {
+        display: none !important;
+    }
+
+    .info-grid {
+        grid-template-areas: 
+        "my-listings my-listings my-listings my-listings"
+        "my-listings my-listings my-listings my-listings"
+        "my-listings my-listings my-listings my-listings" !important;
+    }
+
 }

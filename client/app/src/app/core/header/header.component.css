@@ -1,6 +1,7 @@
 
 header {
     position: absolute;
+    top:0;
     width: 100%;
     z-index: 3;
     display: flex;
@@ -9,7 +10,7 @@ header {
     padding: 18px 64px;
     background-color: var(--blue-main);
     transition: 350ms ease-in-out;
-    box-shadow: 5px 16px 16px rgb(37, 59, 99);
+    box-shadow: 5px 5px 5px rgb(145, 145, 145);
     font-family: var(--font-secondary);
     height: 75px;
 }

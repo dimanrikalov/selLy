@@ -5,7 +5,7 @@
     justify-content: center;
     gap: 32px;
     width: 800px;
-    margin: 64px auto;
+    margin: 128px auto 64px auto;
     background-color: var(--white-main);
     padding: 64px 128px;
     border-radius: 15px;
