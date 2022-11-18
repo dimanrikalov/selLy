@@ -21,6 +21,7 @@
 		make responsive:
 			details page
 			profile page
+			login page
 
 		when server is down fix:
 			-stats

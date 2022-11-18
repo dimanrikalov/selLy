@@ -2,7 +2,9 @@
 
 .search-params {
     width: 800px;
-    margin: 64px auto;
+    margin: 0px auto;
+    margin-top: 128px;
+    margin-bottom: 64px;
     display: flex;
     justify-content: center;
 }
@@ -19,6 +21,7 @@
     border-radius: 12px;
     border: 2px solid var(--blue-main);
     background-color: var(--white-background);
+    transition: 200ms;
 }
 
 .search-params form select {
@@ -77,6 +80,7 @@
     background-color: var(--white-background);
     margin: 32px;
     border-radius: 15px;
+    transition: 200ms;
 }
 
 
@@ -104,6 +108,7 @@
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    transition: 200ms;
 }
 
 .card .image {
@@ -162,3 +167,48 @@
     text-align: center;
     color: grey;
 }
+
+
+@media screen and (width <= 920px) {
+
+    .search-params {
+        width: 80% !important;
+    }
+
+    .catalog {
+        padding: 24px;
+        justify-content: center;
+    }
+
+    .textbox {
+        width: 40% !important;
+    }
+
+    .card {
+        transform: scale(1.05);
+    }
+}
+
+@media screen and (width <= 620px) {
+  .catalog {
+    padding: 32px 64px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  .textbox {
+    width: 100% !important;
+  }
+}
+
+@media screen and (width <= 470px) {
+
+    .catalog {
+        padding: 12px;
+    }
+    .card {
+        transform: scale(1);
+    }
+  }
