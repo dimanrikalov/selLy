@@ -70,6 +70,7 @@
 /* catalog */
 
 .catalog {
+    min-height: 540px;
     display: flex;
     flex-wrap: wrap;
     height: calc(80vh - 88px);

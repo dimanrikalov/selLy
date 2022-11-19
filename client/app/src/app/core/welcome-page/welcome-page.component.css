@@ -3,12 +3,17 @@
 .home {
     height: 100vh;
     display: flex;
-    min-height: 400px;
+}
+
+.home,
+.overlay,
+.home > img {
+    min-height: 800px;
 }
 
 .home .content{
     position: absolute;
-    top: 25vh;
+    top: 25%;
     z-index: 2;
     display: flex;
     gap: 42px;
@@ -144,7 +149,14 @@
 
 
 @media screen and (width <= 960px) {
+    .home,
+    .overlay,
+    .home > img {
+        height: 1000px !important;
+    }
+    
     .home .content {
+        margin-top: 92px;
         flex-direction: column;
         align-items: center;
         top: 11vh;
