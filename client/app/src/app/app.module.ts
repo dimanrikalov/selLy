@@ -11,6 +11,7 @@ import { CreateListingComponent } from './create-listing/create-listing.componen
 import { EditListingComponent } from './edit-listing/edit-listing.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
+import { SavedListingsComponent } from './saved-listings/saved-listings.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ListingDetailsComponent } from './listing-details/listing-details.compo
     EditListingComponent,
     ProfilePageComponent,
     ListingDetailsComponent,
+    SavedListingsComponent,
   ],
   imports: [
     BrowserModule,
