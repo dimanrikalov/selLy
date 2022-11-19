@@ -26,11 +26,15 @@
     justify-content: space-between;
 }
 
-.welcome div {
+.welcome div, .info, .stats, .image {
     transition: 250ms ease-in-out;
 }
-.welcome div:hover {
-    transform: scale(1.2);
+.welcome div:hover,
+.image:hover,
+.info:hover,
+.stats:hover {
+    transform: scale(1.1);
+    z-index: 1;
 }
 
 .welcome div h1 {

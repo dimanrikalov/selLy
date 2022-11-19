@@ -15,23 +15,23 @@
             </button>
         </div>
     </div>
-    <div class="info-grid">
-        <div class="image tilt">
+    <ul class="info-grid">
+        <li class="image">
             <img
                 src="{{user.profileImage}}"
                 alt="profile-image"
             />
-        </div>
-        <div class="info tilt">
+        </li>
+        <li class="info">
             <p>Email: {{user.email}}</p>
             <p>Name: {{user.name}}</p>
-        </div>
-        <div class="stats tilt">
+        </li>
+        <li class="stats">
             <p>Number of listings: {{user.listings.length}}</p>
             <p>Saved Listings: {{user.savedListings.length}}</p>
             <p>Comment count: {{user.comments.length}}</p>
-        </div>
-        <div class="my-listings">
+        </li>
+        <li class="my-listings">
             <ul *ngIf="user.listings.length > 0" class="">
                 <li *ngFor="let listing of user.listings" class="listing">
                     <a href="{{listing._id}}">
@@ -50,6 +50,6 @@
                 </li>
             </ul>
             <h1 *ngIf="!user.listings.length" class="no-listings">No listings yet!</h1>
-        </div>
-    </div>
+        </li>
+    </ul>
 </div>
