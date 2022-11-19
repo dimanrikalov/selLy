@@ -4,6 +4,7 @@
     padding: 48px 32px;
     box-shadow: 15px 5px 15px rgb(135, 135, 135);
     border-left: 1px solid rgb(216, 216, 216);
+    transition: 200ms;
 }
 
 
@@ -52,6 +53,7 @@
 }
 
 .search-my-listings {
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -65,17 +67,18 @@
 }
 
 .search-my-listings .search-input {
+    width: 90%;
     height: 54px;
     font-weight: 600;
     font-family: var(--font-main);
     color: rgb(103, 103, 103);
-    width: 500px;
     padding: 12px;
     font-size: 16px;
     border-radius: 9px;
     border: 2px solid rgb(212, 212, 212);
     box-shadow: 15px 5px 15px rgb(135, 135, 135);
     background-color: var(--white-background);
+    transition: 200ms;
 }
 
 .search-my-listings .search-input::placeholder,
@@ -249,4 +252,87 @@
         "my-listings my-listings my-listings my-listings" !important;
     }
 
+
+
+}
+
+@media screen and (width <= 940px) {
+    .search-my-listings {
+        width: 100% !important;
+    }
+
+    .search-input {
+        width: 90% !important;
+    }
+
+    ul {
+        justify-content: center !important;
+    }
+
+    .listing {
+        width: 90% !important;
+    }
+}
+
+@media screen and (width <= 820px) {
+    .profile-page * {
+        max-height: 1000px;
+    }
+
+    .profile-page {
+        margin-top: 108px;
+        padding: 16px 0px;
+    }
+}
+
+@media screen and (width <= 680px) {
+    .profile-page * {
+        max-height: 550px;
+    }
+
+    
+}
+
+@media screen and (width <= 583px) {
+    .profile-page {
+        margin: 92px 12px 32px 12px !important;
+    }
+    .profile-page * {
+        padding: 6px !important;
+        margin: 0 !important;
+    }
+
+   .listing {
+        width: 80% !important;
+   }
+   *:hover {
+        transform: scale(1) !important;
+        z-index: 0;
+    }
+}
+
+@media screen and (width <= 400px) {
+    .profile-page {
+        margin: 92px 12px 32px 12px !important;
+    }
+    .profile-page * {
+        padding: 6px !important;
+        margin: 0 !important;
+    }
+
+    .search-my-listings:hover {
+        transform: scale(1) !important;
+    }
+
+    .search-input {
+        box-shadow: 5px 5px 5px rgb(135 135 135) !important;
+    }
+
+    button {
+        border: 1px solid rgb(217, 217, 217) !important;
+    }
+
+    .listing:hover {
+        transform: scale(1) !important;
+    }
 }
