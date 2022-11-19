@@ -7,7 +7,6 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 
-
 @NgModule({
   declarations: [
     HeaderComponent,

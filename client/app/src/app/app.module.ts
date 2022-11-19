@@ -12,6 +12,7 @@ import { EditListingComponent } from './edit-listing/edit-listing.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,7 @@ import { ListingDetailsComponent } from './listing-details/listing-details.compo
     CreateListingComponent,
     EditListingComponent,
     ProfilePageComponent,
-    ListingDetailsComponent
+    ListingDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import VanullaTilt from 'vanilla-tilt';
+import VanillaTilt from 'vanilla-tilt';
 
 @Component({
   selector: 'app-error-page',
@@ -11,7 +11,7 @@ export class ErrorPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    VanullaTilt.init(document.querySelectorAll('.tilt') as any);
+    VanillaTilt.init(document.querySelectorAll('.tilt') as any);
   }
 
 }
