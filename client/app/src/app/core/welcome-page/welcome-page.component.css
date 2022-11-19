@@ -16,7 +16,7 @@
     top: 25%;
     z-index: 2;
     display: flex;
-    gap: 42px;
+    gap: 72px;
     width: 100%;
     padding: 0 64px;
     justify-content: center;
@@ -40,8 +40,8 @@
 }
 
 .home .content .left-side p {
-    font-size: 18px;
-    max-width: 420px;
+    font-size: 21px;
+    max-width: 460px;
 }
 
 .home .content .right-side {
@@ -49,7 +49,7 @@
 }
 
 .home .content .left-side a {
-    margin-top: 12px;
+    margin-top: 26px;
     padding: 12px 24px;
     background-color: white;
     color: var(--blue-main);
