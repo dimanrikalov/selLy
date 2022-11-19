@@ -1,75 +1,78 @@
-<div class="details-page">
-  <div class="listing tilt">
-    <div class="image-div">
-      <img src="./assets/imgs/iphone-14" alt="iphone-14" />
-    </div>
-    <div class="info">
-      <h1>Item: {{ listing?.item }}</h1>
-      <h2>Brand: {{ listing?.brand }}</h2>
-      <div>
-        <h3>Location: {{ listing?.location }}</h3>
-        <h3>Seller: {{ listing?.userId?.name }}</h3>
+<div class="details-page-container">
+  <div class="details-page">
+    <div class="listing tilt">
+      <div class="image-div">
+        <img src="./assets/imgs/iphone-14" alt="iphone-14" />
       </div>
-      <div class="description">
-        <h3>Description:</h3>
-        <p>{{ listing?.description }}</p>
-        <h2>Price: {{ listing?.price }}&euro;</h2>
-      </div>
-    </div>
-  </div>
-  <div class="comments-div">
-    <ol class="comments">
-      <h1 class="no-comments" *ngIf="!listing?.comments?.length">No comments yet! Be the first to leave a comment!</h1>
-      <li
-        *ngFor="let comment of listing?.comments"
-        class="comment"
-        [ngClass]="{
-          'listing-creator':
-            comment.userId._id.toString() === listing?.userId?._id?.toString()
-        }"
-      >
-        <div class="head">
-          <div>
-            <img src="{{ comment.userId.profileImage }}" alt="user-picture" />
-            <span>{{ comment.userId.name }}</span>
-          </div>
-          <div
-            class="operations"
-            *ngIf="comment.userId._id.toString() === loggedUserId"
-          >
-            <a
-              href="#"
-              [ngClass]="{
-                'operations-color-reversed':
-                  comment.userId._id.toString() !==
-                  listing?.userId?._id?.toString()
-              }"
-              ><i class="fa-solid fa-pen-to-square"></i
-            ></a>
-            <a
-              href="#"
-              [ngClass]="{
-                'operations-color-reversed':
-                  comment.userId._id.toString() !==
-                  listing?.userId?._id?.toString()
-              }"
-              ><i class="fa-solid fa-circle-xmark"></i
-            ></a>
-          </div>
+      <div class="info">
+        <h1>Item: {{ listing?.item }}</h1>
+        <h2>Brand: {{ listing?.brand }}</h2>
+        <div>
+          <h3>Location: {{ listing?.location }}</h3>
+          <h3>Seller: {{ listing?.userId?.name }}</h3>
         </div>
-        <p>{{ comment.content }}</p>
-      </li>
-    </ol>
-    <div class="text-input">
-      <textarea
-        name="comment-input"
-        id="comment-input"
-        class="comment-input"
-        cols="30"
-        rows="10"
-        placeholder="Type here..."
-      ></textarea>
-      <button>Send</button>
+        <div class="description">
+          <h3>Description:</h3>
+          <p>{{ listing?.description }}</p>
+          <h2>Price: {{ listing?.price }}&euro;</h2>
+        </div>
+      </div>
+    </div>
+    <div class="comments-div">
+      <ol class="comments">
+        <h1 class="no-comments" *ngIf="!listing?.comments?.length">No comments yet! Be the first to leave a comment!</h1>
+        <li
+          *ngFor="let comment of listing?.comments"
+          class="comment"
+          [ngClass]="{
+            'listing-creator':
+              comment.userId._id.toString() === listing?.userId?._id?.toString()
+          }"
+        >
+          <div class="head">
+            <div>
+              <img src="{{ comment.userId.profileImage }}" alt="user-picture" />
+              <span>{{ comment.userId.name }}</span>
+            </div>
+            <div
+              class="operations"
+              *ngIf="comment.userId._id.toString() === loggedUserId"
+            >
+              <a
+                href="#"
+                [ngClass]="{
+                  'operations-color-reversed':
+                    comment.userId._id.toString() !==
+                    listing?.userId?._id?.toString()
+                }"
+                ><i class="fa-solid fa-pen-to-square"></i
+              ></a>
+              <a
+                href="#"
+                [ngClass]="{
+                  'operations-color-reversed':
+                    comment.userId._id.toString() !==
+                    listing?.userId?._id?.toString()
+                }"
+                ><i class="fa-solid fa-circle-xmark"></i
+              ></a>
+            </div>
+          </div>
+          <p>{{ comment.content }}</p>
+        </li>
+      </ol>
+      <div class="text-input">
+        <textarea
+          name="comment-input"
+          id="comment-input"
+          class="comment-input"
+          cols="30"
+          rows="10"
+          placeholder="Type here..."
+        ></textarea>
+        <button>Send</button>
+      </div>
     </div>
   </div>
+  
 </div>

@@ -1,8 +1,15 @@
+.details-page-container {
+    display: flex;
+    justify-content: center;
+}
+
 .details-page {
     width: 1500px;
-    margin: 32px auto;
+    margin-top: 128px;
+    margin-bottom: 64px;
     display: flex;
     justify-content: space-evenly;
+    transition: 200ms;
 }
 
 .details-page .listing {
@@ -16,6 +23,7 @@
     overflow: hidden;
     border-bottom: none;
     border-right: none;
+    transition: 200ms;
 }
 
 .details-page .listing .image-div {
@@ -88,6 +96,7 @@
     box-shadow: 5px 5px 15px rgb(135, 135, 135);
     border-radius: 16px;
     padding: 24px 42px;
+    transition: 200ms;
 }
 
 
@@ -239,4 +248,65 @@
 
 .text-input button:hover {
     transform: scale(1.2);
+}
+
+@media screen and (width <= 1100px) {
+    .details-page {
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+        margin-bottom: 64px !important;
+    }
+
+    .info {
+        padding: 64px !important;
+    }
+
+    .listing {
+        width: 90% !important;
+        height: 150% !important;
+        flex-direction: row !important;
+    }
+
+    .listing h2:last-child {
+        align-self: center;
+        text-align: center;
+    }
+
+    .comments {
+        height: 70% !important;
+    }
+
+    .comments-div {
+        width: 90% !important;
+        height: 150% !important;
+        padding-bottom: 128px !important;
+    }
+}
+
+
+@media screen and (width <= 540px) {
+    .details-page-container {
+        margin-bottom: 256px;
+    }
+
+    .listing .image-div {
+        display: none;
+    }
+
+    .details-page {
+        height: 110%;
+    }
+
+    .comment-input {
+        margin-top: -20px !important;
+        height: 50%;
+        width: 108%;
+    }
+
+    .comments-div {
+        padding: 6px !important;
+        height: 350% !important;
+    }
+
 }
