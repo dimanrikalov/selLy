@@ -113,13 +113,14 @@ header > a:hover {
         top: 0px;
         left: 0px;
         width: 100%;
+        border-bottom: 1px solid white;
         background-color: var(--blue-main);
     }
 
     .navigation:hover, .nav-container {
         display: block;
         transition: 400ms;
-        border-radius: 16px;
+        border-radius: 0px 0px 16px 16px;
     }
     .navigation li {
         width: 100%;
