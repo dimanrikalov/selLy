@@ -23,6 +23,7 @@ header > a {
     transition: 200ms ease-in-out;
 }
 
+
 header > a:hover {
     transform: scale(1.25);
 }
@@ -85,7 +86,7 @@ header > a:hover {
 }
 
 
-@media screen and (width>= 960px) {
+@media screen and (width>= 1050px) {
     .nav-a {
         display: none;
     }
@@ -95,7 +96,7 @@ header > a:hover {
     }
 }
 
-@media screen and (width < 960px) {
+@media screen and (width < 1050px) {
     .nav-a {
         display: block;
     }
