@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CoreModule } from './core/core.module'
+import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CatalogPageComponent } from './catalog-page/catalog-page.component';
@@ -11,8 +11,7 @@ import { CreateListingComponent } from './create-listing/create-listing.componen
 import { EditListingComponent } from './edit-listing/edit-listing.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
-import { SavedListingsComponent } from './saved-listings/saved-listings.component';
-
+import { SavedListingsPageComponent } from './saved-listings/saved-listings.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +23,10 @@ import { SavedListingsComponent } from './saved-listings/saved-listings.componen
     EditListingComponent,
     ProfilePageComponent,
     ListingDetailsComponent,
-    SavedListingsComponent,
+    SavedListingsPageComponent,
   ],
-  imports: [
-    BrowserModule,
-    CoreModule,
-    HttpClientModule,
-  ],
+  imports: [BrowserModule, CoreModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
