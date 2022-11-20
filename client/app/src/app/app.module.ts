@@ -25,7 +25,7 @@ import { SavedListingsPageComponent } from './saved-listings/saved-listings.comp
     ListingDetailsComponent,
     SavedListingsPageComponent
   ],
-  imports: [BrowserModule, CoreModule, HttpClientModule],
+  imports: [BrowserModule, CoreModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

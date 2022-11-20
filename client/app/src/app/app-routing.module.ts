@@ -1,10 +1,58 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CatalogPageComponent } from './catalog-page/catalog-page.component';
+import { AboutComponent } from './core/about/about.component';
+import { ErrorPageComponent } from './core/error-page/error-page.component';
+import { WelcomePageComponent } from './core/welcome-page/welcome-page.component';
+import { CreateListingComponent } from './create-listing/create-listing.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { SavedListingsPageComponent } from './saved-listings/saved-listings.component';
 
 const routes: Routes = [
   {
-  
-  }
+    path: '',
+    pathMatch: 'full',
+    component: WelcomePageComponent
+  },
+
+  {
+    path: 'catalog',
+    pathMatch: 'full',
+    component: CatalogPageComponent
+  },
+  {
+    path: 'catalog/create',
+    pathMatch: 'full',
+    component: CreateListingComponent
+  },
+  {
+    path: 'about',
+    pathMatch: 'full',
+    component: AboutComponent
+  },
+  {
+    path: 'auth/register',
+    pathMatch: 'full',
+    component: RegisterPageComponent
+  },
+  {
+    path: 'auth/login',
+    pathMatch: 'full',
+    component: LoginPageComponent
+  },
+  {
+    path: 'profile',
+    pathMatch: 'full',
+    component: ProfilePageComponent
+  },
+  {
+    path: 'saved',
+    pathMatch: 'full',
+    component: SavedListingsPageComponent
+  },
+  // add 404 page
 ];
 
 @NgModule({
