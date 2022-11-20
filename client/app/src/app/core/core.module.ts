@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     WelcomePageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

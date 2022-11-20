@@ -5,6 +5,7 @@ import { AboutComponent } from './core/about/about.component';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { WelcomePageComponent } from './core/welcome-page/welcome-page.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
+import { EditListingComponent } from './edit-listing/edit-listing.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
@@ -20,12 +21,21 @@ const routes: Routes = [
   {
     path: 'catalog',
     pathMatch: 'full',
-    component: CatalogPageComponent
-  },
-  {
-    path: 'catalog/create',
-    pathMatch: 'full',
-    component: CreateListingComponent
+    component: CatalogPageComponent,
+    children: [
+      {
+        path: 'catalog/create',
+        component: CreateListingComponent
+      },
+      {
+        path: 'catalog/:id/edit',
+        component: EditListingComponent
+      },
+      {
+        path: 'catalog/:id/delete',
+        redirectTo: 'catalog'
+      },
+    ]
   },
   {
     path: 'about',
@@ -52,6 +62,11 @@ const routes: Routes = [
     pathMatch: 'full',
     component: SavedListingsPageComponent
   },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: ErrorPageComponent
+  }
   // add 404 page
 ];
 
