@@ -23,7 +23,7 @@ import { SavedListingsPageComponent } from './saved-listings/saved-listings.comp
     EditListingComponent,
     ProfilePageComponent,
     ListingDetailsComponent,
-    SavedListingsPageComponent,
+    SavedListingsPageComponent
   ],
   imports: [BrowserModule, CoreModule, HttpClientModule],
   providers: [],

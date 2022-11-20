@@ -15,7 +15,7 @@
     </div>
     <ul *ngIf="savedListings?.length" class="saved-listings">
       <li *ngFor="let listing of savedListings" class="card">
-        <a href="{{listing._id}}">
+        <a href="catalog/{{listing._id}}/details">
           <div class="image">
             <img src={{listing.imageUrl}} alt="listing-img" />
           </div>

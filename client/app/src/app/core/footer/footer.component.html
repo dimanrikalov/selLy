@@ -8,13 +8,13 @@
           <li><a href="#">Catalog</a></li>
           <li><a href="#">About</a></li>
 
-          <li *ngIf="!userId"><a href="#">Login</a></li>
-          <li *ngIf="!userId"><a href="#">Register</a></li>
+          <li *ngIf="!userId"><a href="/auth/login">Login</a></li>
+          <li *ngIf="!userId"><a href="/auth/register">Register</a></li>
           
 
-          <li *ngIf="userId"><a href="#">My Profile</a></li>
-          <li *ngIf="userId"><a href="#">Sell</a></li>
-          <li *ngIf="userId"><a href="#">Logout</a></li>
+          <li *ngIf="userId"><a href="/profile">My Profile</a></li>
+          <li *ngIf="userId"><a href="/catalog/create">Sell</a></li>
+          <li *ngIf="userId"><a href="/auth/logout">Logout</a></li>
         </ul>
       </nav>
     </div>

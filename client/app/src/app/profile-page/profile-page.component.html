@@ -34,7 +34,7 @@
         <li class="my-listings">
             <ul *ngIf="user.listings.length > 0" class="">
                 <li *ngFor="let listing of user.listings" class="listing">
-                    <a href="{{listing._id}}">
+                    <a href="catalog/{{listing._id}}/details">
                         <div class="listing-img">
                             <img
                                 src="{{listing.imageUrl}}"

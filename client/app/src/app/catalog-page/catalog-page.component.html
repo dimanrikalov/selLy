@@ -15,7 +15,7 @@
   </div>
   <ul *ngIf="allListings?.length" class="catalog">
     <li *ngFor="let listing of allListings" class="card">
-      <a href="{{listing._id}}">
+      <a href="catalog/{{listing._id}}/details">
         <div class="image">
           <img src={{listing.imageUrl}} alt="listing-img" />
         </div>

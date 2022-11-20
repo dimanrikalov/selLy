@@ -17,9 +17,9 @@
           <div class="price-and-operations">
             <h2>Price: {{ listing?.price }}&euro;</h2>
             <div class="listing-operations">
-              <a *ngIf="listing?.userId?._id?.toString() === loggedUserId" href="#">Edit</a>
-              <a *ngIf="listing?.userId?._id?.toString() === loggedUserId" href="#">Delete</a>
-              <a *ngIf="listing?.userId?._id?.toString() !== loggedUserId" href="#"><i class="fa-solid fa-bookmark ribbon"></i></a>
+              <a *ngIf="listing?.userId?._id?.toString() === loggedUserId" href="/catalog/{{listing?._id}}/edit">Edit</a>
+              <a *ngIf="listing?.userId?._id?.toString() === loggedUserId" href="/catalog/{{listing?._id}}/delete">Delete</a>
+              <a *ngIf="listing?.userId?._id?.toString() !== loggedUserId" href="/catalog/{{listing?._id}}/save"><i class="fa-solid fa-bookmark ribbon"></i></a>
             </div>
           </div>
         </div>
