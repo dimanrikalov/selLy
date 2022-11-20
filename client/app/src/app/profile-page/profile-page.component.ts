@@ -16,7 +16,6 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit(): void {
     this.profileService.loadProfile().subscribe({
       next: (user) => {
-        console.log(user);
         this.user = user;
       },
       error: (err) => {
