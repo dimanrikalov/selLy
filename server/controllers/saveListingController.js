@@ -1,6 +1,6 @@
+const router = require('express').Router();
 const userService = require('../services/userService');
 const listingService = require('../services/listingService');
-const router = require('express').Router();
 
 router.post('/', async (req, res) => {
     const listing = await listingService.getById(req.body.listingId);
