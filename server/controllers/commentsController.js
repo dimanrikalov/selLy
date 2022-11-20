@@ -49,6 +49,7 @@ router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
 
     try {
         comment.content = req.body.newContent;
+        comment.isEdited = true;
         await commentService.editComment(comment._id, comment);
 
         res.json({ message: 'Comment edited successfully!' });

@@ -10,6 +10,11 @@ const commentSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         required: [true, 'You must be logged in to be able to comment!'],
         ref: 'User'
+    },
+    isEdited: {
+        type: Boolean,
+        default: false,
+        required: [true, 'Comment must have isEdited property!']
     }
 });
 

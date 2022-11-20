@@ -17,18 +17,17 @@
 	guest
 
 --- todo
+
+		add routing
+		make forms functional
+		
+
 		when server is down fix:
 			-stats
 			-navigation
 			-??? listing details ???
 			
-		fix vanillatilt not working on profile information
-		fix navigation instantly hiding itself after refresh
-		fix navigation to hide after 15px of scrolling up
-		make a saved listings page (<3)
 		chat with seller page / leave comments under listing ??????
-		on edit click transfer the text inside the textarea,
-		empty the textarea and add a "edited" tag somwhere inside the comment div
 		
 	-----documentation 
 

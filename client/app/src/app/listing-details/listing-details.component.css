@@ -199,6 +199,11 @@
     border-radius: 50%;
 }
 
+.isEdited {
+    font-weight: 400;
+    font-size: 12px;
+}
+
 .comments .comment .head .author .operations {
     display: flex;
     justify-content: flex-end;

@@ -37,6 +37,9 @@
               <img src="{{ comment.userId.profileImage }}" alt="user-picture" />
               <span>{{ comment.userId.name }}</span>
             </div>
+            <div >
+                <span class="isEdited">Edited Comment</span>
+            </div>
             <div
               class="operations"
               *ngIf="comment.userId._id.toString() === loggedUserId"
