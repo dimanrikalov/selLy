@@ -26,7 +26,6 @@
 			-stats
 			-navigation
 			-??? listing details ???
-			
 		chat with seller page / leave comments under listing ??????
 		
 	-----documentation 

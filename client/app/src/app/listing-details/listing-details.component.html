@@ -14,9 +14,13 @@
         <div class="description">
           <h3>Description:</h3>
           <p>{{ listing?.description }}</p>
-          <div>
+          <div class="price-and-operations">
             <h2>Price: {{ listing?.price }}&euro;</h2>
-            <a href="#"><i class="fa-solid fa-bookmark ribbon"></i></a>
+            <div class="listing-operations">
+              <a *ngIf="listing?.userId?._id?.toString() === loggedUserId" href="#">Edit</a>
+              <a *ngIf="listing?.userId?._id?.toString() === loggedUserId" href="#">Delete</a>
+              <a *ngIf="listing?.userId?._id?.toString() !== loggedUserId" href="#"><i class="fa-solid fa-bookmark ribbon"></i></a>
+            </div>
           </div>
         </div>
       </div>
@@ -37,7 +41,7 @@
               <img src="{{ comment.userId.profileImage }}" alt="user-picture" />
               <span>{{ comment.userId.name }}</span>
             </div>
-            <div >
+            <div *ngIf="comment.isEdited">
                 <span class="isEdited">Edited Comment</span>
             </div>
             <div

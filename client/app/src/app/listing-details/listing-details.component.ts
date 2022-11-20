@@ -20,8 +20,7 @@ export class ListingDetailsComponent implements OnInit {
     VanillaTilt.init(document.querySelectorAll('.tilt') as any);
     this.listingDetailsService.loadListing().subscribe({
       next: (listing) => {
-        // localStorage.setItem('userId', '636fea4d871ff87fe625a7aa');
-        console.log(listing);
+        localStorage.setItem('userId', '636fea4d871ff87fe625a7aa');
         this.listing = listing;
       },
       error: (err) => {
