@@ -57,8 +57,16 @@
     gap: 12px;
     font-size: 16px;
 }
-.details-page .listing .description h2 {
-    margin-top: 24px;
+
+.details-page .listing .description div {
+    display: flex;
+    align-items: center;
+    margin-top: 36px;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.details-page .listing .description div h2 {
     background-color: white;
     color: var(--blue-main);
     border-radius: 15px;
@@ -66,6 +74,12 @@
     padding: 12px 24px;
     box-shadow: 5px 5px 15px rgb(49, 77, 126);
     transition: 250ms ease-in-out;
+    text-align: center;
+}
+
+.details-page .listing .description div a {
+    color: white;
+    font-size: 42px;
 }
 
 .details-page .listing .description p {
