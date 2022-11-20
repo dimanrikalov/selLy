@@ -19,8 +19,8 @@
 --- todo
 
 		add routing
+		fix cards breaking on min-width on profile page 
 		make forms functional
-		
 
 		when server is down fix:
 			-stats
