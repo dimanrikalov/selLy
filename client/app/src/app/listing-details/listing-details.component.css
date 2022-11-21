@@ -313,10 +313,18 @@
         height: 70% !important;
     }
 
+    .no-comments {
+        margin: 72px auto;
+    }
+
     .comments-div {
         width: 90% !important;
         height: 150% !important;
         padding-bottom: 128px !important;
+    }
+
+    .text-input {
+        margin-top: 16px;
     }
 }
 
@@ -373,4 +381,8 @@
         height: 350% !important;
     }
 
+    
+    .text-input {
+        margin-top: 32px;
+    }
 }

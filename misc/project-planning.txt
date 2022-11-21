@@ -17,8 +17,7 @@
 	guest
 
 --- todo
-
-		add routing
+		fix app having user context
 		fix cards breaking on min-width on profile page 
 		make forms functional
 
