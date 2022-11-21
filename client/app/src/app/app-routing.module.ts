@@ -18,31 +18,55 @@ const routes: Routes = [
     pathMatch: 'full',
     component: WelcomePageComponent
   },
-
   {
     path: 'catalog',
     pathMatch: 'full',
     component: CatalogPageComponent
   },
   {
-    path: 'catalog/:id/details',
-    pathMatch: 'full',
-    component: ListingDetailsComponent
+    path: 'catalog',
+    children: [
+      {
+        path: 'create',
+        pathMatch: 'full',
+        component: CreateListingComponent
+      },
+      {
+        path: ':id',
+        children: [
+          {
+            path: 'details',
+            pathMatch: 'full',
+            component: ListingDetailsComponent
+          },
+          {
+            path: 'edit',
+            pathMatch: 'full',
+            component: EditListingComponent
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: 'auth',
+    children: [
+     {
+      path: 'register',
+      pathMatch: 'full',
+      component: RegisterPageComponent
+     },
+     {
+      path: 'login',
+      pathMatch: 'full',
+      component: LoginPageComponent
+     }
+    ]
   },
   {
     path: 'about',
     pathMatch: 'full',
     component: AboutComponent
-  },
-  {
-    path: 'auth/register',
-    pathMatch: 'full',
-    component: RegisterPageComponent
-  },
-  {
-    path: 'auth/login',
-    pathMatch: 'full',
-    component: LoginPageComponent
   },
   {
     path: 'profile',
@@ -56,10 +80,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    pathMatch: 'full',
     component: ErrorPageComponent
   }
-  // add 404 page
 ];
 
 @NgModule({
