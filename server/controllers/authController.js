@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
 
     try {
         const user = await api.loginUser({ email, password });
-        res.json({ message: 'Successfully logged in!', user });
+        res.json({ message: 'Successfully logged in!', userId: user._id });
     } catch (err) {
         res.status(404).json({ message: 'Invalid email or password!' });
     }

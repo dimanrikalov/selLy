@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,9 +24,15 @@ import { SavedListingsPageComponent } from './saved-listings/saved-listings.comp
     EditListingComponent,
     ProfilePageComponent,
     ListingDetailsComponent,
-    SavedListingsPageComponent
+    SavedListingsPageComponent,
   ],
-  imports: [BrowserModule, CoreModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    CoreModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

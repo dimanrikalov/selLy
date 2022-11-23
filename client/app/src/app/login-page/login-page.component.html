@@ -9,9 +9,9 @@
         <h1>Hello Again!</h1>
         <p>Error Message</p>
       </div>
-      <form action="">
+      <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm.value)">
         <div class="email-div">
-          <input type="email" id="email" placeholder="Email" />
+          <input type="email" id="email" placeholder="Email" name="email" ngModel/>
         </div>
         <div class="pass-div">
           <input
@@ -19,11 +19,12 @@
             name="password"
             id="password"
             placeholder="Password"
+            ngModel
           />
         </div>
         <div class="features">
           <div>
-            <input type="checkbox" id="remember-me" class="remember-me" />
+            <input type="checkbox" id="remember-me" class="remember-me" name="remember-me" ngModel/>
             <label for="remember-me" class="remember-me-label"
               >Remember me</label
             >

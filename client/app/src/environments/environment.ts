@@ -7,7 +7,9 @@ export const environment = {
   catalogUrl: 'http://localhost:3000/catalog',
   profileUrl: 'http://localhost:3000/profile',
   aboutUrl: 'http://localhost:3000/about',
-  savedListingsUrl: 'http://localhost:3000/profile/saved-listings'
+  savedListingsUrl: 'http://localhost:3000/profile/saved-listings',
+  loginUrl: 'http://localhost:3000/auth/login',
+  registerUrl: 'http://localhost:3000/auth/register'
 };
 
 /*

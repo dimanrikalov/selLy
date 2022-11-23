@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    localStorage.setItem('userId', '636fea4d871ff87fe625a7aa');
-    this.userId = localStorage.getItem('userId');
+    // localStorage.setItem('userId', '636fea4d871ff87fe625a7aa');
+    // this.userId = localStorage.getItem('userId');
   }
 }

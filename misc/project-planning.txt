@@ -17,11 +17,14 @@
 	guest
 
 --- todo
-		fix app having user context
+		fix app having user context (localstorage)
+		add click events on buttons
 		fix cards breaking on min-width on profile page 
 		make forms functional
+		home page grid breaks when sized down
 
 		when server is down fix:
+		check what the server returns at each response
 			-stats
 			-navigation
 			-??? listing details ???
