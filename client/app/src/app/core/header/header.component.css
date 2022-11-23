@@ -50,6 +50,15 @@ header > a:hover {
     color: var(--blue-main);
 }
 
+button.link {
+    background-color: transparent;
+    border: none;
+}
+
+button.link:hover {
+    cursor: pointer;
+}
+
 .link a div {
     display: flex;
 }

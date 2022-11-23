@@ -5,15 +5,15 @@
             <a href="#" class="nav-a"><i class="fa-solid fa-bars"></i></a>
             <ul class="navigation">
                 <li>
-                    <a [routerLink]="'/saved'"><i class="fa-solid fa-bookmark ribbon"></i></a>
+                    <a *ngIf="userId" [routerLink]="'/saved'"><i class="fa-solid fa-bookmark ribbon"></i></a>
                 </li>
                 <li><a class="link" [routerLink]="'/catalog'">Catalog</a></li>
                 <li><a class="link" [routerLink]="'/about'">About</a></li>
-                <li><a class="link" [routerLink]="'/catalog/create'">Sell Item</a></li>
-                <li><a class="link" [routerLink]="'/auth/login'">Login</a></li>
-                <li><a class="link" [routerLink]="'/auth/register'">Register</a></li>
-                <li><a class="link" [routerLink]="'/profile'">My Profile</a></li>
-                <li><a class="link" [routerLink]="'/auth/logout'">Logout</a></li>
+                <li><a class="link" *ngIf="userId" [routerLink]="'/catalog/create'">Sell Item</a></li>
+                <li><a class="link" *ngIf="!userId" [routerLink]="'/auth/login'">Login</a></li>
+                <li><a class="link" *ngIf="!userId" [routerLink]="'/auth/register'">Register</a></li>
+                <li><a class="link" *ngIf="userId" [routerLink]="'/profile'">My Profile</a></li>
+                <li><button class="link" *ngIf="userId" (onclick)="logoutUser()">Logout</button></li>
             </ul>
         </div>  
     </nav>
