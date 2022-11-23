@@ -3,7 +3,6 @@ const userService = require('../services/userService');
 
 router.post('/', async (req, res) => {
     const user = await userService.getByIdDetailed(req.body.userId);
-    console.log(user);
     if (user) {
         return res.json(user);
     }

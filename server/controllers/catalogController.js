@@ -40,15 +40,27 @@ router.post('/create', isLogged, async (req, res) => {
             .json({ errorMessage: 'Listing with such title already exists' });
     }
 
+    const payload = { 
+        item: req.body.item,
+        brand: req.body.brand,
+        imageUrl: req.body.imageUrl,
+        description: req.body.description,
+        location: `${req.body.city}, ${req.body.country}`,
+        price: Number(req.body.price),
+        userId: req.body.userId
+    };
+    
     try {
-        const listing = await api.createOne(req.body);
+        const listing = await api.createOne(payload);
+        console.log(payload);
         const user = await userService.getById(req.body.userId);
         user.listings.push(listing._id);
         await userService.updateById(user._id, user);
-
         res.json({ message: 'Listing added successfully!' });
     } catch (err) {
-        res.status(400).json({ errorMessage: 'Server error! Try again later!' });
+        res.status(400).json({
+            errorMessage: 'Server error! Try again later!',
+        });
     }
 });
 
@@ -63,7 +75,6 @@ router.get('/:listingId/details', async (req, res) => {
 });
 
 router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
-
     const listing = await api.getById(req.params.listingId);
     if (!listing) {
         return res.status(404).json({
@@ -118,14 +129,24 @@ router.get('/:listingId/delete', isLogged, isSeller, async (req, res) => {
         return res.json({ message: 'Listing deleted successfully!' });
     } catch (err) {
         return res.status(404).json({
-            errorMessage: 'Server error: Could not complete deleting operation.',
+            errorMessage:
+                'Server error: Could not complete deleting operation.',
         });
     }
 });
 
+router.use(
+    '/:listingId/comments',
+    isLogged,
+    passListingIdMiddleware,
+    commentsController
+);
 
-router.use('/:listingId/comments', isLogged, passListingIdMiddleware, commentsController);
-
-router.use('/:listingId/save', isLogged, passListingIdMiddleware, saveListingController);
+router.use(
+    '/:listingId/save',
+    isLogged,
+    passListingIdMiddleware,
+    saveListingController
+);
 
 module.exports = router;
