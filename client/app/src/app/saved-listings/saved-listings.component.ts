@@ -16,7 +16,6 @@ export class SavedListingsPageComponent implements OnInit {
   ngOnInit(): void {
     this.savedListingsApi.loadSavedListings().subscribe({
       next: (value) => {
-        console.log(value);
         this.savedListings = value;
       },
       error: (err) => {

@@ -1,5 +1,7 @@
 const User = require('../models/User');
 
+exports.getAll = () => User.find();
+
 exports.getById = (userId) => User.findOne({ _id: userId });
 
 exports.getByIdDetailed = (userId) =>
