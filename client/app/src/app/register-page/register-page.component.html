@@ -4,14 +4,16 @@
             <i class="fa-brands fa-css3 logo"></i>
             <div class="welcome">
                 <h1>Welcome!</h1>
-                <p>Error Message</p>
+                <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
             </div>
-            <form action="">
+            <form #registerForm="ngForm" (ngSubmit)="handleFormSubmit(registerForm.value)">
                 <div class="email-div">
                     <input
                         type="email"
                         id="email"
                         placeholder="Email"
+                        name="email"
+                        ngModel
                     />
                 </div>            
                 <div class="name-div">
@@ -19,6 +21,8 @@
                         type="text"
                         id="name"
                         placeholder="First and last name"
+                        name="name"
+                        ngModel
                     />
                 </div>
                 <div class="profile-image-div">
@@ -26,6 +30,8 @@
                         type="url"
                         id="profile-image"
                         placeholder="A valid URL to image of yourself"
+                        name="profile-image"
+                        ngModel
                     />
                 </div>
                 <div class="pass-div">
@@ -34,6 +40,8 @@
                         name="password"
                         id="password"
                         placeholder="Password"
+                        name="password"
+                        ngModel
                     />
                 </div>
                 <div class="conf-pass-div">
@@ -42,6 +50,8 @@
                         name="password"
                         id="conf-password"
                         placeholder="Confirm password"
+                        name="repeat-password"
+                        ngModel
                     />
                 </div>
                 <div class="tac">
@@ -51,6 +61,8 @@
                             id="terms-and-conditions"
                             name="terms-and-conditions"
                             class="terms-and-conditions"
+                            name="tac"
+                            ngModel
                         />
                         <label
                             class="tac-label"
