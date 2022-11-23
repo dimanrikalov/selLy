@@ -15,8 +15,6 @@ export class AboutComponent implements OnInit {
     VanillaTilt.init(document.querySelectorAll('.tilt') as any);
     this.aboutDetailsService.loadStats().subscribe({
       next: (stats) => {
-        console.log(stats);
-  
         this.stats = stats;
       },
       error: (err) => {
