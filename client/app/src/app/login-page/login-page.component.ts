@@ -7,9 +7,8 @@ import { UserLoginService } from '../services/user-login.service';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent implements OnInit {
-  email: string = '';
-  password: string = '';
-  rememberMe: boolean = false;
+
+  errorMessage : string | null = null;
 
   constructor(private userLoginService: UserLoginService) {}
 
@@ -20,16 +19,23 @@ export class LoginPageComponent implements OnInit {
     password: string;
     ['remember-me']: boolean;
   }): void {
+
+    if(!value.email || !value.email.includes('@') || !value.password) {
+      this.errorMessage = 'Invalid email or password!'
+      return;
+    }
+
     this.userLoginService.login({
       email: value.email,
       password: value.password,
     }).subscribe({
       next: (response) => {
         console.log(response.message);
-        
         localStorage.setItem('userId', response.userId);
+        //redirect to home
       },
       error: (err) => {
+        this.errorMessage = 'Invalid email or password!'
         console.error(err)
       }
     });
