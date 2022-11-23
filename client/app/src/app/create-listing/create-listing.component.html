@@ -1,5 +1,5 @@
 <div class="sell-form">
-  <form action="">
+  <form #sellForm="ngForm" (ngSubmit)="handleSubmitForm(sellForm.value)">
     <h1>Create a Listing</h1>
     <img
       src="./assets/imgs/ribbon-black-shape.png"
@@ -11,18 +11,20 @@
         <label for="create-item">What are you selling?</label>
         <input
           type="text"
-          name="create-item"
+          name="item"
           id="create-item"
           placeholder="Example: iPhone 14 Pro"
+          ngModel
         />
       </div>
       <div class="brand">
         <label for="create-brand">What is the brand of the item?</label>
         <input
           type="text"
-          name="create-brand"
+          name="brand"
           id="create-brand"
           placeholder="Example: Apple, Oura..."
+          ngModel
         />
       </div>
     </div>
@@ -32,9 +34,10 @@
       >
       <input
         type="url"
-        name="create-image-url"
+        name="imageUrl"
         id="create-image-url"
         placeholder="https://product-image-url.com"
+        ngModel
       />
     </div>
     <div>
@@ -43,30 +46,33 @@
         etc...)</label
       >
       <textarea
-        name="create-description"
+        name="description"
         id="create-description"
         cols="30"
         rows="3"
         placeholder="A very well preserved phone, bought from the official store..."
-      ></textarea>
+        ngModel
+        ></textarea>
     </div>
     <div class="location">
       <div class="city">
         <label for="create-city">Location of the item (City)</label>
         <input
           type="text"
-          name="create-city"
+          name="city"
           id="create-city"
           placeholder="Plovdiv"
+          ngModel
         />
       </div>
       <div class="country">
         <label for="create-country">Location of the item (Country)</label>
         <input
           type="text"
-          name="create-country"
+          name="country"
           id="create-country"
           placeholder="Bulgaria"
+          ngModel
         />
       </div>
     </div>
@@ -74,9 +80,10 @@
       <label for="create-price">What is your asking price for the item?</label>
       <input
         type="number"
-        name="create-price"
+        name="price"
         id="create-price"
         placeholder="350&euro;"
+        ngModel
       />
     </div>
     <button class="submit-btn">Create a Listing</button>
