@@ -17,6 +17,11 @@
     border-left: none;
 }
 
+.error-message {
+    font-weight: 600;
+    color: var(--blue-main) !important;
+}
+
 .login .left-side {
     width: 550px;
 }
