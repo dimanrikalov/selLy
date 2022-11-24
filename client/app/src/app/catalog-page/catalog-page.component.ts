@@ -9,6 +9,7 @@ import { ListingsApiService } from '../services/listings-api.service';
 })
 export class CatalogPageComponent implements OnInit {
   allListings: IListing[] | null = null;
+  searchedListings: IListing[] | null = null;
 
   constructor(private listingsApiService: ListingsApiService) {}
 
@@ -16,6 +17,7 @@ export class CatalogPageComponent implements OnInit {
     this.listingsApiService.loadListings().subscribe({
       next: (value) => {
         this.allListings = value;
+        this.searchedListings = this.allListings;
       },
       error: (err) => {
         console.error(err);
@@ -23,10 +25,8 @@ export class CatalogPageComponent implements OnInit {
     });
   }
 
-  
   handleFormSubmit(value: { searchInput: string; sortType: string }) {
-    console.log(value.sortType);
-    this.allListings =
+    this.searchedListings =
       this.allListings
         ?.filter(
           (x) =>

@@ -13,8 +13,8 @@
       </button>
     </form>
   </div>
-  <ul *ngIf="allListings?.length" class="catalog">
-    <li *ngFor="let listing of allListings" class="card">
+  <ul *ngIf="searchedListings?.length" class="catalog">
+    <li *ngFor="let listing of searchedListings" class="card">
       <a routerLink="{{listing._id}}/details">
         <div class="image">
           <img src={{listing.imageUrl}} alt="listing-img" />
@@ -27,5 +27,5 @@
       </a>
     </li>
   </ul>
-  <h1 *ngIf="!allListings?.length" class="no-listings">No listings available yet! Be the first to create one!</h1>
+  <h1 *ngIf="!searchedListings?.length" class="no-listings">No listings available yet! Be the first to create one!</h1>
 </div>
