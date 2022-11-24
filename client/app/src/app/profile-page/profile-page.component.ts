@@ -15,6 +15,12 @@ export class ProfilePageComponent implements OnInit {
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+
+    this.innerWidth = window.innerWidth;
+    if(this.innerWidth < 1195) {
+      this.displayWelcome= true;
+    }
+    
     this.profileService.loadProfile().subscribe({
       next: (user) => {
         this.user = user;
@@ -27,7 +33,6 @@ export class ProfilePageComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event : any) {
-    console.log(event);
     if(event.target.innerWidth < 1195) {
       this.displayWelcome = true;
     } else {

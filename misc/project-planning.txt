@@ -20,6 +20,10 @@
 		add edit comment functionality
 		add search functionality to the catalog saved pages and profile pages
 		fix app not having user context (localstorage)
+		fix app not updating its state
+		deploy
+
+
 		when server is down fix:
 		check what the server returns at each response
 			-stats
