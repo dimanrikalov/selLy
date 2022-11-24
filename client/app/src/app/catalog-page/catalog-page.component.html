@@ -1,12 +1,12 @@
 <div class="catalog-page">
   <div class="search-params">
-    <form action="">
-      <input type="text" name="searchInput" id="" class="textbox" />
-      <select name="sort-type" id="sort-type">
-        <option value="price-ascending">Price Ascending</option>
-        <option value="price-descending">Price Descending</option>
-        <option value="date-descending">Newest First</option>
-        <option value="date-ascending">Oldest First</option>
+    <form #searchForm="ngForm" (ngSubmit)="handleFormSubmit(searchForm.value)">
+      <input type="text" name="searchInput" id="" class="textbox" ngModel/>
+      <select name="sortType" id="sort-type" ngModel>
+        <option value="priceAscending">Price Ascending</option>
+        <option value="priceDescending">Price Descending</option>
+        <option value="a-z">A-Z</option>
+        <option value="z-a">Z-A</option>
       </select>
       <button>
         <i class="fa-solid fa-magnifying-glass"></i>
