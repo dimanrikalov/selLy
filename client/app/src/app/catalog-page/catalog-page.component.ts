@@ -35,16 +35,12 @@ export class CatalogPageComponent implements OnInit {
         )
         .sort((a, b): any => {
           if (value.sortType === 'priceAscending') {
-            console.log('sort by priceAscending')
             return a.price - b.price;
           } else if (value.sortType === 'priceDescending') {
-            console.log('sort by priceDescending')
             return b.price - a.price;
           } else if (value.sortType === 'a-z') {
-            console.log('sort by a-z')
             return a.item.localeCompare(b.item);
           } else if (value.sortType === 'z-a') {
-            console.log('sort by z-a')
             return b.item.localeCompare(a.item);
           }
         }) || null;

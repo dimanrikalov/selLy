@@ -40,8 +40,8 @@
             <p>Comment count: {{user.comments.length}}</p>
         </li>
         <li class="my-listings">
-            <ul *ngIf="user.listings.length > 0" class="">
-                <li *ngFor="let listing of user.listings" class="listing">
+            <ul *ngIf="filteredListings!.length > 0" class="">
+                <li *ngFor="let listing of filteredListings" class="listing">
                     <a routerLink="../catalog/{{listing._id}}/details">
                         <div class="listing-img">
                             <img
@@ -57,7 +57,7 @@
                     </a>
                 </li>
             </ul>
-            <h1 *ngIf="!user.listings.length" class="no-listings">No listings yet!</h1>
+            <h1 *ngIf="!filteredListings!.length" class="no-listings">No listings yet!</h1>
         </li>
     </ul>
 </div>

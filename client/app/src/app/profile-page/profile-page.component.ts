@@ -12,7 +12,7 @@ export class ProfilePageComponent implements OnInit {
 
   user: IUser | null = null;
   displayWelcome: boolean = false;
-  userListings: IListing[] | null = null;
+  filteredListings: IListing[] | null = null;
   innerWidth: any;
   constructor(private profileService: ProfileService) { }
 
@@ -26,6 +26,7 @@ export class ProfilePageComponent implements OnInit {
     this.profileService.loadProfile().subscribe({
       next: (user) => {
         this.user = user;
+        this.filteredListings = user.listings;
       },
       error: (err) => {
         console.log(err);
@@ -44,7 +45,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
   handleFormSubmit(value: { searchInput: string; sortType: string }) {
-    this.userListings =
+    this.filteredListings =
       this.user!.listings
         ?.filter(
           (x) =>
@@ -53,18 +54,15 @@ export class ProfilePageComponent implements OnInit {
         )
         .sort((a, b): any => {
           if (value.sortType === 'priceAscending') {
-            console.log('sort by priceAscending')
             return a.price - b.price;
           } else if (value.sortType === 'priceDescending') {
-            console.log('sort by priceDescending')
             return b.price - a.price;
           } else if (value.sortType === 'a-z') {
-            console.log('sort by a-z')
             return a.item.localeCompare(b.item);
           } else if (value.sortType === 'z-a') {
-            console.log('sort by z-a')
             return b.item.localeCompare(a.item);
           }
+          return;
         }) || null;
   }
 
