@@ -67,6 +67,32 @@ export class ListingDetailsComponent implements OnInit {
     this.commentOperationsService.create(value.content, this.loggedUserId!, this.listingId!).subscribe({
       next(response) {
         console.log(response);
+        //update the current page without refreshing
+      },
+      error(err) {
+        console.log(err);
+      }
+    })
+  }
+
+  editComment(value:{newContent: string}, commentId: string) {
+    this.commentOperationsService.edit(value.newContent, this.loggedUserId!, this.listingId!, commentId!).subscribe({
+      next(response) {
+        console.log(response);
+        //update the current page without refreshing
+      },
+      error(err) {
+        console.log(err);
+      }
+    })
+  }
+
+
+  deleteComment(commentId: string) {
+    this.commentOperationsService.delete(this.listingId!, commentId, this.loggedUserId!).subscribe({
+      next(response) {
+        console.log(response);
+        //update the current page without refreshing
       },
       error(err) {
         console.log(err);
