@@ -42,7 +42,7 @@ export class EditListingComponent implements OnInit {
     this.editListingService.editListing(value, this.listingId, this.loggedUserId!).subscribe({
       next: (response) => {
         console.log(response);
-        //redirect to catalog or profile page
+        //redirect to catalog
       },
       error: (err) => {
         console.log(err);

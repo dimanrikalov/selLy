@@ -17,10 +17,9 @@
 	guest
 
 --- todo
-		add click events on buttons
-		add delete listing functionality
+		add create edit delete comment functionality
 		fix app having user context (localstorage)
-
+		errorhandle create and edit listing
 		when server is down fix:
 		check what the server returns at each response
 			-stats

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ListingDetailsService } from '../services/listing-details.service';
 import { ListingOperationsService } from '../services/listing-operations.service';
+import { CommentApiService } from '../services/comment-api.service';
 
 @Component({
   selector: 'app-listing-details',
@@ -18,6 +19,7 @@ export class ListingDetailsComponent implements OnInit {
   constructor(
     private listingDetailsService: ListingDetailsService,
     private listingOperationsService: ListingOperationsService,
+    private commentOperationsService: CommentApiService,
     private activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.params.subscribe((params) => {
@@ -53,6 +55,18 @@ export class ListingDetailsComponent implements OnInit {
     this.listingOperationsService.deleteListing(listingId, loggedUserId).subscribe({
       next(value) {
         console.log(value);
+        //redirect to catalog
+      },
+      error(err) {
+        console.log(err);
+      }
+    })
+  }
+
+  comment(value: {content: string}) {
+    this.commentOperationsService.create(value.content, this.loggedUserId!, this.listingId!).subscribe({
+      next(response) {
+        console.log(response);
       },
       error(err) {
         console.log(err);

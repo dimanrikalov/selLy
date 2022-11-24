@@ -88,15 +88,18 @@
         </li>
       </ol>
       <div class="text-input">
-        <textarea
-          name="comment-input"
-          id="comment-input"
-          class="comment-input"
-          cols="30"
-          rows="10"
-          placeholder="Type here..."
-        ></textarea>
-        <button>Send</button>
+        <form #commentForm="ngForm" (ngSubmit)="comment(commentForm.value)">
+            <textarea
+            name="content"
+            id="comment-input"
+            class="comment-input"
+            cols="30"
+            rows="10"
+            placeholder="Type here..."
+            ngModel>
+          </textarea>
+          <button>Send</button>
+        </form>
       </div>
     </div>
   </div>
