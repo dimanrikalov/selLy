@@ -39,8 +39,8 @@
         </div>
       </div>
     </div>
-    <div class="comments-div">
-      <ol class="comments">
+    <div class="comments-div" [ngClass]=" loggedUserId ? '' : 'large-container'" >
+      <ol class="comments" [ngClass]=" loggedUserId ? '' : 'large'">
         <h1 class="no-comments" *ngIf="!listing?.comments?.length">
           No comments yet! Be the first to leave a comment!
         </h1>
@@ -86,7 +86,7 @@
           <p>{{ comment.content }}</p>
         </li>
       </ol>
-      <div class="text-input">
+      <div class="text-input" *ngIf="loggedUserId">
         <form #commentForm="ngForm" (ngSubmit)="comment(commentForm.value)">
             <textarea
             name="content"

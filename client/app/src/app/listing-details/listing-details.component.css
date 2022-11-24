@@ -155,6 +155,11 @@
     border: 1px solid rgb(216, 216, 216);
 }
 
+
+.comments.large {
+    height: 100% !important;
+}
+
 .no-comments {
     color: grey;
     font-size: 24px;
@@ -323,7 +328,7 @@
     }
 
     .comments {
-        height: 70% !important;
+        height: 65% !important;
     }
 
     .no-comments {
@@ -334,6 +339,11 @@
         width: 90% !important;
         height: 150% !important;
         padding-bottom: 128px !important;
+    }
+
+    .comments-div.large-container {
+        height: 100% !important;
+        padding-bottom: 24px !important;
     }
 
     .text-input {

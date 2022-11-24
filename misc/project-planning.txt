@@ -18,7 +18,8 @@
 
 --- todo
 		add edit comment functionality
-		fix navigation links count breaking the spacing
+		fix navigatizon links breaking the spacing
+		remove create comment form if no user is logged
 		fix app not having user context (localstorage)
 		errorhandle create and edit listing
 		add search functionality to the catalog saved pages and profile pages
