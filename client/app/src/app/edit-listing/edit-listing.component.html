@@ -1,5 +1,5 @@
 <div class="sell-form">
-  <form action="">
+  <form #editForm="ngForm" (ngSubmit)="handleSubmitForm(editForm.value)">
     <h1>Edit a Listing</h1>
     <img
       src="./assets/imgs/ribbon-black-shape.png"
@@ -8,75 +8,82 @@
     />
     <div class="item-and-brand">
       <div class="item">
-        <label for="edit-item">What are you selling?</label>
+        <label for="item">What are you selling?</label>
         <input
           type="text"
-          name="edit-item"
+          name="item"
           id="edit-item"
           placeholder="Example: iPhone 14 Pro"
+          ngModel
         />
       </div>
       <div class="brand">
-        <label for="edit-brand">What is the brand of the item?</label>
+        <label for="brand">What is the brand of the item?</label>
         <input
           type="text"
-          name="edit-brand"
+          name="brand"
           id="edit-brand"
           placeholder="Example: Apple, Oura..."
+          ngModel
         />
       </div>
     </div>
     <div>
-      <label for="edit-image-url"
+      <label for="imageUrl"
         >A valid URL link to an image of whatever you are selling.</label
       >
       <input
         type="url"
-        name="edit-image-url"
+        name="imageUrl"
         id="edit-image-url"
         placeholder="https://product-image-url.com"
+        ngModel
       />
     </div>
     <div>
-      <label for="edit-description"
+      <label for="description"
         >Describe what you are selling exactly? (condition, origin,
         etc...)</label
       >
       <textarea
-        name="edit-description"
+        name="description"
         id="edit-description"
         cols="30"
         rows="3"
         placeholder="A very well preserved phone, bought from the official store..."
+        ngModel
       ></textarea>
     </div>
     <div class="location">
       <div class="city">
-        <label for="edit-city">Location of the item (City)</label>
+        <label for="city">Location of the item (City)</label>
         <input
           type="text"
-          name="edit-city"
+          name="city"
           id="edit-city"
           placeholder="Plovdiv"
+          ngModel
         />
       </div>
       <div class="country">
-        <label for="edit-country">Location of the item (Country)</label>
+        <label for="country">Location of the item (Country)</label>
         <input
           type="text"
-          name="edit-country"
+          name="country"
           id="edit-country"
           placeholder="Bulgaria"
+          ngModel
         />
       </div>
     </div>
     <div>
-      <label for="edit-price">What is your asking price for the item?</label>
+      <label for="price">What is your asking price for the item?</label>
       <input
         type="number"
-        name="edit-price"
+        name="price"
         id="edit-price"
         placeholder="350&euro;"
+        ngModel
       />
     </div>
     <button class="submit-btn">Edit a Listing</button>
