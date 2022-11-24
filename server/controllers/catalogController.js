@@ -82,6 +82,16 @@ router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
         });
     }
 
+    const payload = { 
+        item: req.body.item,
+        brand: req.body.brand,
+        imageUrl: req.body.imageUrl,
+        description: req.body.description,
+        location: `${req.body.city}, ${req.body.country}`,
+        price: Number(req.body.price),
+        userId: req.body.userId
+    };
+
     try {
         const allListings = await api.getAll();
         const filteredListings = allListings.filter(
@@ -89,7 +99,7 @@ router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
         );
 
         const itemNameIsTaken = filteredListings.some(
-            (x) => x.name === req.body.item
+            (x) => x.name === payload.item
         );
 
         if (itemNameIsTaken) {
@@ -98,7 +108,7 @@ router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
             });
         }
 
-        await api.updateById(req.params.listingId, { ...req.body });
+        await api.updateById(req.params.listingId, payload);
         res.json({ message: 'Listing successfully updated!' });
     } catch (err) {
         return res.status(400).json({

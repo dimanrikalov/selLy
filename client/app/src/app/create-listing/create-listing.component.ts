@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateListingService } from '../services/create-listing.service';
+import { ListingOperationsService } from '../services/listing-operations.service';
 
 @Component({
   selector: 'app-create-listing',
@@ -7,7 +7,7 @@ import { CreateListingService } from '../services/create-listing.service';
   styleUrls: ['./create-listing.component.css'],
 })
 export class CreateListingComponent implements OnInit {
-  constructor(private createListingService: CreateListingService) {}
+  constructor(private createListingService: ListingOperationsService) {}
 
   ngOnInit(): void {}
 
