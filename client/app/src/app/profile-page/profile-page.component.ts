@@ -1,5 +1,5 @@
 import { IUser } from '../interfaces/User';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , HostListener} from '@angular/core';
 import { ProfileService } from '../services/profile.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { ProfileService } from '../services/profile.service';
 export class ProfilePageComponent implements OnInit {
 
   user: IUser | null = null;
-
+  displayWelcome: boolean = false;
+  innerWidth: any;
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
@@ -22,6 +23,17 @@ export class ProfilePageComponent implements OnInit {
         console.log(err);
       }
     })
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event : any) {
+    console.log(event);
+    if(event.target.innerWidth < 1195) {
+      this.displayWelcome = true;
+    } else {
+      this.displayWelcome = false;
+    }
+    this.innerWidth = window.innerWidth;
   }
 
 }

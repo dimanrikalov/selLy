@@ -1,7 +1,7 @@
 <div *ngIf="user" class="profile-page">
     <div class="welcome">
-        <div>
-            <h1>Welcome!</h1>
+        <div *ngIf="!displayWelcome">
+            <h1>Hello, {{user.name.slice(0, user.name.indexOf(' '))}}!</h1>
         </div>
         <div class="search-my-listings">
             <input
@@ -16,6 +16,11 @@
         </div>
     </div>
     <ul class="info-grid">
+        <li *ngIf="displayWelcome" class="stats hidden-welcome">
+            <div>
+                <h1>Hello, {{user.name.slice(0, user.name.indexOf(' '))}}!</h1>
+            </div>
+        </li>
         <li class="image">
             <img
                 src="{{user.profileImage}}"

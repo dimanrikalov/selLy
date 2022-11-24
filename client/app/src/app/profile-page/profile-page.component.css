@@ -18,6 +18,7 @@
     "stats           my-listings my-listings my-listings";
     gap: 16px;
     margin: 32px 64px;
+    list-style-type: none;
 }
 
 
@@ -25,6 +26,12 @@
     display: flex;
     padding: 0px 64px;
     justify-content: space-between;
+}
+
+.hidden-welcome {
+    text-align: center;
+    width: 250px;
+    height: 250px;
 }
 
 .welcome div, .info, .stats, .image {
@@ -64,6 +71,7 @@
 .my-listings-list {
     display: flex;
     flex-wrap: wrap;
+    overflow-y: scroll;
 }
 
 .search-my-listings .search-input {
@@ -241,59 +249,80 @@
 
 @media screen and (width <= 1195px) {
 
-    .stats, .image, .info, h1 {
+    .welcome {
         display: none !important;
     }
 
     .info-grid {
-        grid-template-areas: 
-        "my-listings my-listings my-listings my-listings"
-        "my-listings my-listings my-listings my-listings"
-        "my-listings my-listings my-listings my-listings" !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: space-between !important;
+        text-align: center !important;
     }
 
+    ul .info,
+    ul .stats {
+        width: 100% !important;
+        text-align: center;
+    }
 
-
-}
-
-@media screen and (width <= 940px) {
-    .search-my-listings {
+    ul .hidden-welcome,
+    ul .image {
+        width: 42% !important;
+        min-width: 235px !important;
+        height: 360px !important;
+    }
+    
+    .my-listings {
         width: 100% !important;
     }
-
-    .search-input {
-        width: 90% !important;
-    }
-
-    ul {
+    .my-listings ul {
         justify-content: center !important;
     }
 
-    .listing {
-        width: 90% !important;
+    .my-listings ul li {
+        width: 45% !important;
     }
 }
 
-@media screen and (width <= 820px) {
+
+@media screen and (width <= 900px) {
     .profile-page * {
         max-height: 1000px;
+    }
+
+    .image {
+        display: none !important;
+    }
+
+    .my-listings {
+        height: 530px;
     }
 
     .profile-page {
         margin-top: 108px;
         padding: 16px 0px;
+        height: 1000px;
+    }
+
+    ul .hidden-welcome  {
+        width: 100% !important;
+        height: 98px !important;
+    }
+
+    .my-listings ul li {
+        width: 43% !important;
     }
 }
 
-@media screen and (width <= 680px) {
-    .profile-page * {
-        max-height: 550px;
+@media screen and (width <= 740px) { 
+    .my-listings ul li {
+        width: 80% !important;
     }
-
-    
 }
 
-@media screen and (width <= 583px) {
+@media screen and (width <= 690px) {
     .profile-page {
         margin: 92px 12px 32px 12px !important;
     }
@@ -302,9 +331,14 @@
         margin: 0 !important;
     }
 
-   .listing {
+    .my-listings {
+        height: 600px;
+    }
+
+    .my-listings ul li {
         width: 80% !important;
-   }
+    }
+
    *:hover {
         transform: scale(1) !important;
         z-index: 0;
