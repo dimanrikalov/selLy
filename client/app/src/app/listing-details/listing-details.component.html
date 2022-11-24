@@ -24,6 +24,7 @@
               >
               <button
                 *ngIf="listing?.userId?._id?.toString() === loggedUserId"
+                (click)="deleteListing(listing!._id, loggedUserId)"
                 >Delete</button
               >
               <button

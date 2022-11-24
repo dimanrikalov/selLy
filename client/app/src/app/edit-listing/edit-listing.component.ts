@@ -10,6 +10,8 @@ import { ListingOperationsService } from '../services/listing-operations.service
 export class EditListingComponent implements OnInit {
 
   listingId : string | null = null;
+  loggedUserId: string | null = localStorage.getItem('userId');
+
 
   constructor(
     private editListingService: ListingOperationsService,
@@ -37,7 +39,7 @@ export class EditListingComponent implements OnInit {
       return;
     }
 
-    this.editListingService.editListing(value, this.listingId).subscribe({
+    this.editListingService.editListing(value, this.listingId, this.loggedUserId!).subscribe({
       next: (response) => {
         console.log(response);
         //redirect to catalog or profile page

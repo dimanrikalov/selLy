@@ -52,7 +52,6 @@ router.post('/create', isLogged, async (req, res) => {
     
     try {
         const listing = await api.createOne(payload);
-        console.log(payload);
         const user = await userService.getById(req.body.userId);
         user.listings.push(listing._id);
         await userService.updateById(user._id, user);
@@ -117,7 +116,7 @@ router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
     }
 });
 
-router.get('/:listingId/delete', isLogged, isSeller, async (req, res) => {
+router.post('/:listingId/delete', isLogged, isSeller, async (req, res) => {
     try {
         const listing = await api.getByIdDetailed(req.params.listingId);
         await Promise.all(

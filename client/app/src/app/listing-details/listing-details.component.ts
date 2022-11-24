@@ -48,4 +48,15 @@ export class ListingDetailsComponent implements OnInit {
       }
     });
   }
+
+  deleteListing(listingId: string, loggedUserId: string) {
+    this.listingOperationsService.deleteListing(listingId, loggedUserId).subscribe({
+      next(value) {
+        console.log(value);
+      },
+      error(err) {
+        console.log(err);
+      }
+    })
+  }
 }

@@ -102,6 +102,7 @@
 
 .details-page .listing .description div .listing-operations button {
     border: none;
+    font-size: 16px;
 }
 
 .details-page .listing .description div .listing-operations button:hover {
