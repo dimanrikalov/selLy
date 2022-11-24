@@ -17,8 +17,8 @@
 	guest
 
 --- todo
+		add route guards
 		add edit comment functionality
-		add search functionality to the catalog saved pages and profile pages
 		fix app not having user context (localstorage)
 		fix app not updating its state
 		deploy

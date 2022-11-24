@@ -13,8 +13,8 @@
         </button>
       </form>
     </div>
-    <ul *ngIf="savedListings?.length" class="saved-listings">
-      <li *ngFor="let listing of savedListings" class="card">
+    <ul *ngIf="filteredListings?.length" class="saved-listings">
+      <li *ngFor="let listing of filteredListings" class="card">
         <a routerLink="/../catalog/{{listing._id}}/details">
           <div class="image">
             <img src={{listing.imageUrl}} alt="listing-img" />
@@ -27,6 +27,6 @@
         </a>
       </li>
     </ul>
-    <h1 *ngIf="!savedListings?.length" class="no-saved-listings">No bookmarked listings yet!</h1>
+    <h1 *ngIf="!filteredListings?.length" class="no-saved-listings">No bookmarked listings yet!</h1>
   </div>
   

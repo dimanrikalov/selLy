@@ -10,13 +10,15 @@ import { SavedListingsService } from '../services/saved-listings.service';
 export class SavedListingsPageComponent implements OnInit {
   
   savedListings: IListing[] | null = null;
-  
+  filteredListings: IListing[] | null = null;
+
   constructor(private savedListingsApi: SavedListingsService) {}
 
   ngOnInit(): void {
     this.savedListingsApi.loadSavedListings().subscribe({
       next: (value) => {
         this.savedListings = value;
+        this.filteredListings = this.savedListings;
       },
       error: (err) => {
         console.error(err);
@@ -25,7 +27,7 @@ export class SavedListingsPageComponent implements OnInit {
   }
 
   handleFormSubmit(value: { searchInput: string; sortType: string }) {
-    this.savedListings =
+    this.filteredListings =
       this.savedListings
         ?.filter(
           (x) =>
@@ -34,16 +36,12 @@ export class SavedListingsPageComponent implements OnInit {
         )
         .sort((a, b): any => {
           if (value.sortType === 'priceAscending') {
-            console.log('sort by priceAscending')
             return a.price - b.price;
           } else if (value.sortType === 'priceDescending') {
-            console.log('sort by priceDescending')
             return b.price - a.price;
           } else if (value.sortType === 'a-z') {
-            console.log('sort by a-z')
             return a.item.localeCompare(b.item);
           } else if (value.sortType === 'z-a') {
-            console.log('sort by z-a')
             return b.item.localeCompare(a.item);
           }
         }) || null;
