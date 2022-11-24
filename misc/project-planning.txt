@@ -17,7 +17,7 @@
 	guest
 
 --- todo
-		add edit delete comment functionality
+		add edit comment functionality
 		fix app not having user context (localstorage)
 		errorhandle create and edit listing
 		when server is down fix:

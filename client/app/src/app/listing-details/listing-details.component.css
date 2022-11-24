@@ -238,21 +238,24 @@
 }
 
 
-.comments .comment .head .operations a {
+.comments .comment .head .operations button {
     font-size: 18px;
     color: var(--blue-main);
     transition: 250ms ease-in-out;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
-.comments .comment .head .operations a.operations-color-reversed {
+.comments .comment .head .operations button.operations-color-reversed {
     color: var(--white-main);
 }
 
-.comments .comment .head .operations a:hover {
+.comments .comment .head .operations button:hover {
     color: rgb(45, 64, 141);
 }
 
-.text-input {
+.text-input > form {
     height: 196px;
     position: absolute;
     display: flex;
@@ -279,7 +282,7 @@
     border: 1px solid rgb(216, 216, 216);
 }
 
-.text-input button {
+.text-input form button {
     width: 150px;
     padding: 12px 48px;
     font-size: 18px;
