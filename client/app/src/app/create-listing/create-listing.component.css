@@ -19,6 +19,12 @@
     color: rgb(92, 92, 92);
 }
 
+.error-message {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blue-main);
+}
+
 input {
     margin-top: 6px;
 }

@@ -1,6 +1,7 @@
 <div class="sell-form">
   <form #sellForm="ngForm" (ngSubmit)="handleSubmitForm(sellForm.value)">
     <h1>Create a Listing</h1>
+    <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
     <img
       src="./assets/imgs/ribbon-black-shape.png"
       alt="ribbon"
