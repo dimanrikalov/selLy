@@ -346,6 +346,11 @@
         padding-bottom: 24px !important;
     }
 
+    .head .isEdited {
+        max-width: 64px;
+        text-align: center;
+    }
+
     .text-input {
         margin-top: 16px;
     }
@@ -385,8 +390,18 @@
         width: 6px !important;
     }
 
+    .head {
+        text-align: center;
+    }
+
+    .head .isEdited {
+        max-width: 64px;
+        text-align: center;
+    }
+
     .operations {
-        gap: 6px !important;
+        gap: 0px !important;
+        flex-direction: column !important;
     }
 
     .info {

@@ -58,7 +58,7 @@
               <span>{{ comment.userId.name }}</span>
             </div>
             <div *ngIf="comment.isEdited">
-              <span class="isEdited">Edited Comment</span>
+              <span class="isEdited">Edited</span>
             </div>
             <div
               class="operations"
@@ -70,6 +70,7 @@
                     comment.userId._id.toString() !==
                     listing?.userId?._id?.toString()
                 }"
+                
                 ><i class="fa-solid fa-pen-to-square"></i
               ></button>
               <button
@@ -95,6 +96,7 @@
             cols="30"
             rows="10"
             placeholder="Type here..."
+            [value]="textAreaContent || ''"
             ngModel>
           </textarea>
           <button>Send</button>

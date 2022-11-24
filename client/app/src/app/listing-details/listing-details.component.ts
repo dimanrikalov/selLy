@@ -1,7 +1,7 @@
 import VanillaTilt from 'vanilla-tilt';
 import { IListing } from '../interfaces/Listing';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChange } from '@angular/core';
 import { ListingDetailsService } from '../services/listing-details.service';
 import { ListingOperationsService } from '../services/listing-operations.service';
 import { CommentApiService } from '../services/comment-api.service';
@@ -15,6 +15,7 @@ export class ListingDetailsComponent implements OnInit {
   listing: IListing | null = null;
   listingId: string | null = null;
   loggedUserId: string | null = localStorage.getItem('userId');
+  textAreaContent: string | null = null;
 
   constructor(
     private listingDetailsService: ListingDetailsService,
@@ -27,11 +28,16 @@ export class ListingDetailsComponent implements OnInit {
     });
   }
 
+  @Input() textArea:any;
+
+  ngOnChanges(changes: SimpleChange) {
+    console.log(changes);
+  }
+
   ngOnInit(): void {
     VanillaTilt.init(document.querySelectorAll('.tilt') as any);
       this.listingDetailsService.loadListing(this.listingId).subscribe({
         next: (listing) => {
-          // localStorage.setItem('userId', '636fea4d871ff87fe625a7aa');
           this.listing = listing;
         },
         error: (err) => {
@@ -75,7 +81,7 @@ export class ListingDetailsComponent implements OnInit {
     })
   }
 
-  editComment(value:{newContent: string}, commentId: string) {
+  editComment(commentId: string, value:{newContent: string}) {
     this.commentOperationsService.edit(value.newContent, this.loggedUserId!, this.listingId!, commentId!).subscribe({
       next(response) {
         console.log(response);
