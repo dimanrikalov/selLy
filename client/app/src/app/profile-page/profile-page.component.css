@@ -74,8 +74,21 @@
     overflow-y: scroll;
 }
 
+form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
 .search-my-listings .search-input {
-    width: 90%;
+    width: 50%;
+}
+.search-my-listings .sort-input {
+    width: 30%;
+}
+
+.search-my-listings .search-input,
+.search-my-listings .sort-input {
     height: 54px;
     font-weight: 600;
     font-family: var(--font-main);
