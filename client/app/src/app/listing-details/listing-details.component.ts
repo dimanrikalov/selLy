@@ -3,6 +3,7 @@ import { IListing } from '../interfaces/Listing';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ListingDetailsService } from '../services/listing-details.service';
+import { ListingOperationsService } from '../services/listing-operations.service';
 
 @Component({
   selector: 'app-listing-details',
@@ -16,6 +17,7 @@ export class ListingDetailsComponent implements OnInit {
 
   constructor(
     private listingDetailsService: ListingDetailsService,
+    private listingOperationsService: ListingOperationsService,
     private activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.params.subscribe((params) => {
@@ -34,5 +36,16 @@ export class ListingDetailsComponent implements OnInit {
           console.log(err);
         },
       });
+  }
+
+  saveListing(listingId: string, loggedUserId: string) {
+    this.listingOperationsService.saveListing(listingId, loggedUserId).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
   }
 }

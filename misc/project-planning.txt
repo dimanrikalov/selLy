@@ -17,14 +17,9 @@
 	guest
 
 --- todo
-		fix edit listing form
-		add delete listing functionality
-		add
-		fix app having user context (localstorage)
 		add click events on buttons
-		fix cards breaking on min-width on profile page 
-		make forms functional
-		home page grid breaks when sized down
+		add delete listing functionality
+		fix app having user context (localstorage)
 
 		when server is down fix:
 		check what the server returns at each response

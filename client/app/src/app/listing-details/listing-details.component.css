@@ -86,7 +86,8 @@
     gap: 6px;
 }
 
-.details-page .listing .description div .listing-operations a {
+.details-page .listing .description div .listing-operations a,
+.details-page .listing .description div .listing-operations button {
     background-color: white;
     color: var(--blue-main);
     border-radius: 15px;
@@ -97,6 +98,14 @@
     text-align: center;
     text-decoration: none;
     font-weight: 600;
+}
+
+.details-page .listing .description div .listing-operations button {
+    border: none;
+}
+
+.details-page .listing .description div .listing-operations button:hover {
+    cursor: pointer;
 }
 
 .details-page .listing .description p {

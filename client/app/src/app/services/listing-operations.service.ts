@@ -23,23 +23,33 @@ export class ListingOperationsService {
     return this.httpClient.post(createListingUrl, {
       ...listing,
       price: Number(listing.price),
-      userId: localStorage.getItem('userId')
+      userId: localStorage.getItem('userId'),
     });
   }
 
-  editListing(listing: {
-    item: string;
-    brand: string;
-    imageUrl: string;
-    description: string;
-    city: string;
-    country: string;
-    price: string;
-  }, listingId: string) {
+  editListing(
+    listing: {
+      item: string;
+      brand: string;
+      imageUrl: string;
+      description: string;
+      city: string;
+      country: string;
+      price: string;
+    },
+    listingId: string
+  ) {
     return this.httpClient.post(`${catalogUrl}/${listingId}/edit`, {
       ...listing,
       price: Number(listing.price),
-      userId: localStorage.getItem('userId')
+      userId: localStorage.getItem('userId'),
+    });
+  }
+
+  saveListing(listingId: string, loggedUserId: string) {
+    return this.httpClient.post(`${catalogUrl}/${listingId}/save`, {
+      listingId,
+      userId: loggedUserId,
     });
   }
 }

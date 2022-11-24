@@ -2,7 +2,7 @@
   <div class="details-page">
     <div class="listing tilt">
       <div class="image-div">
-        <img src="{{listing?.imageUrl}}" alt="iphone-14" />
+        <img src="{{ listing?.imageUrl }}" alt="iphone-14" />
       </div>
       <div class="info">
         <h1>Item: {{ listing?.item }}</h1>
@@ -17,9 +17,22 @@
           <div class="price-and-operations">
             <h2>Price: {{ listing?.price }}&euro;</h2>
             <div class="listing-operations">
-              <a *ngIf="listing?.userId?._id?.toString() === loggedUserId" routerLink="/catalog/{{listing?._id}}/edit">Edit</a>
-              <a *ngIf="listing?.userId?._id?.toString() === loggedUserId" routerLink="/catalog/{{listing?._id}}/delete">Delete</a>
-              <a *ngIf="listing?.userId?._id?.toString() !== loggedUserId" routerLink="/catalog/{{listing?._id}}/save"><i class="fa-solid fa-bookmark ribbon"></i></a>
+              <a
+                *ngIf="listing?.userId?._id?.toString() === loggedUserId"
+                routerLink="/catalog/{{ listing?._id }}/edit"
+                >Edit</a
+              >
+              <button
+                *ngIf="listing?.userId?._id?.toString() === loggedUserId"
+                >Delete</button
+              >
+              <button
+                *ngIf="
+                  loggedUserId &&
+                  listing?.userId?._id?.toString() !== loggedUserId
+                  "(click)="saveListing(listing!._id, loggedUserId)"
+                ><i class="fa-solid fa-bookmark ribbon"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -27,7 +40,9 @@
     </div>
     <div class="comments-div">
       <ol class="comments">
-        <h1 class="no-comments" *ngIf="!listing?.comments?.length">No comments yet! Be the first to leave a comment!</h1>
+        <h1 class="no-comments" *ngIf="!listing?.comments?.length">
+          No comments yet! Be the first to leave a comment!
+        </h1>
         <li
           *ngFor="let comment of listing?.comments"
           class="comment"
@@ -42,7 +57,7 @@
               <span>{{ comment.userId.name }}</span>
             </div>
             <div *ngIf="comment.isEdited">
-                <span class="isEdited">Edited Comment</span>
+              <span class="isEdited">Edited Comment</span>
             </div>
             <div
               class="operations"
@@ -84,5 +99,4 @@
       </div>
     </div>
   </div>
-  
 </div>
