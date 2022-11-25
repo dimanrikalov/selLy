@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserRegisterService } from '../services/user-register.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class RegisterPageComponent implements OnInit {
 
   errorMessage: string | null = null;
 
-  constructor(private userRegisterService: UserRegisterService) {}
+  constructor(
+      private userRegisterService: UserRegisterService,
+      private router: Router
+    ) {}
 
   ngOnInit(): void {}
 
@@ -67,9 +71,9 @@ export class RegisterPageComponent implements OnInit {
       profileImage: value['profile-image'],
     }).subscribe({
       next: (response) => {
-        console.log(response.message);
+        console.log(response);
         localStorage.setItem('userId', response.userId);
-        //redirect to home
+        this.router.navigate(['/']);
       },
       error: (err) => {
         this.errorMessage = 'Server error! Please try again later!'

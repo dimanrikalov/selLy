@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserLoginService } from '../services/user-login.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class LoginPageComponent implements OnInit {
 
   errorMessage : string | null = null;
 
-  constructor(private userLoginService: UserLoginService) {}
+  constructor(
+      private userLoginService: UserLoginService,
+      private router: Router
+    ) {}
 
   ngOnInit(): void {}
 
@@ -32,7 +36,7 @@ export class LoginPageComponent implements OnInit {
       next: (response) => {
         console.log(response.message);
         localStorage.setItem('userId', response.userId);
-        //redirect to home
+        this.router.navigate(['/']);
       },
       error: (err) => {
         this.errorMessage = 'Invalid email or password!'

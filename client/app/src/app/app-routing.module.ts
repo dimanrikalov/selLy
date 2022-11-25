@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CatalogPageComponent } from './catalog-page/catalog-page.component';
 import { AboutComponent } from './core/about/about.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { AuthGuard, InversedAuthGuard } from './guards/is-logged-in.guard';
 import { ErrorPageComponent } from './core/error-page/error-page.component';
+import { CatalogPageComponent } from './catalog-page/catalog-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { EditListingComponent } from './edit-listing/edit-listing.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 import { WelcomePageComponent } from './core/welcome-page/welcome-page.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
-import { EditListingComponent } from './edit-listing/edit-listing.component';
-import { AuthGuard, InversedAuthGuard } from './guards/is-logged-in.guard';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
 import { SavedListingsPageComponent } from './saved-listings/saved-listings.component';
 
 const routes: Routes = [
