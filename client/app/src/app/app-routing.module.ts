@@ -6,6 +6,7 @@ import { ErrorPageComponent } from './core/error-page/error-page.component';
 import { WelcomePageComponent } from './core/welcome-page/welcome-page.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { EditListingComponent } from './edit-listing/edit-listing.component';
+import { AuthGuard, InversedAuthGuard } from './guards/is-logged-in.guard';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
       {
         path: 'create',
         pathMatch: 'full',
+        canActivate: [AuthGuard],
         component: CreateListingComponent
       },
       {
@@ -42,6 +44,7 @@ const routes: Routes = [
           {
             path: 'edit',
             pathMatch: 'full',
+            canActivate: [AuthGuard],
             component: EditListingComponent
           }
         ]
@@ -54,11 +57,13 @@ const routes: Routes = [
      {
       path: 'register',
       pathMatch: 'full',
+      canActivate: [InversedAuthGuard],
       component: RegisterPageComponent
      },
      {
       path: 'login',
       pathMatch: 'full',
+      canActivate: [InversedAuthGuard],
       component: LoginPageComponent
      }
     ]
@@ -71,11 +76,13 @@ const routes: Routes = [
   {
     path: 'profile',
     pathMatch: 'full',
+    canActivate: [AuthGuard],
     component: ProfilePageComponent
   },
   {
     path: 'saved',
     pathMatch: 'full',
+    canActivate: [AuthGuard],
     component: SavedListingsPageComponent
   },
   {
