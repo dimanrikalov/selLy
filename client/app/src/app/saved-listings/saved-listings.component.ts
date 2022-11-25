@@ -11,19 +11,22 @@ export class SavedListingsPageComponent implements OnInit {
   
   savedListings: IListing[] | null = null;
   filteredListings: IListing[] | null = null;
-
+  userId: string | null = null;
   constructor(private savedListingsApi: SavedListingsService) {}
 
   ngOnInit(): void {
-    this.savedListingsApi.loadSavedListings().subscribe({
-      next: (value) => {
-        this.savedListings = value;
-        this.filteredListings = this.savedListings;
-      },
-      error: (err) => {
-        console.error(err);
-      },
-    });
+    this.userId = localStorage.getItem('userId');
+    if(this.userId !== null) {
+      this.savedListingsApi.loadSavedListings(this.userId).subscribe({
+        next: (value) => {
+          this.savedListings = value;
+          this.filteredListings = this.savedListings;
+        },
+        error: (err) => {
+          console.error(err);
+        },
+      });
+    }
   }
 
   handleFormSubmit(value: { searchInput: string; sortType: string }) {

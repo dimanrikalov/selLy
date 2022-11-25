@@ -5,8 +5,6 @@ import { environment } from 'src/environments/environment';
 
 const profileUrl = environment.profileUrl;
 
-const userId : null | string = localStorage.getItem('userId');
-
 @Injectable({
   providedIn: 'root',
 })
@@ -14,8 +12,7 @@ const userId : null | string = localStorage.getItem('userId');
 export class ProfileService {
   constructor(private httpClient: HttpClient) {}
 
-  loadProfile() {
-    console.log(userId);
+  loadProfile(userId: string | null) {
     return this.httpClient.post<IUser>(profileUrl, {userId});
   }
 }

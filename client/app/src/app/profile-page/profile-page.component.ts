@@ -2,6 +2,7 @@ import { IUser } from '../interfaces/User';
 import { Component, OnInit , HostListener} from '@angular/core';
 import { ProfileService } from '../services/profile.service';
 import { IListing } from '../interfaces/Listing';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-page',
@@ -11,28 +12,54 @@ import { IListing } from '../interfaces/Listing';
 export class ProfilePageComponent implements OnInit {
 
   user: IUser | null = null;
+  userId: string | null = null;
   displayWelcome: boolean = false;
   filteredListings: IListing[] | null = null;
   innerWidth: any;
-  
-  constructor(private profileService: ProfileService) { }
+
+  constructor(
+    private profileService: ProfileService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
+
+    this.userId = localStorage.getItem('userId');
 
     this.innerWidth = window.innerWidth;
     if(this.innerWidth <= 1195) {
       this.displayWelcome= true;
     }
-    
-    this.profileService.loadProfile().subscribe({
-      next: (user) => {
-        this.user = user;
-        this.filteredListings = user.listings;
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    })
+    if(this.userId !== null) {
+      this.profileService.loadProfile(this.userId).subscribe({
+        next: (user) => {
+          this.user = user;
+          this.filteredListings = user.listings;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+    } else {
+      this.router.navigate(['/']);
+    }
+  }
+
+  @HostListener('window:storage', ['$event'])
+  onStorageChange(e: Event):void {
+    if(this.userId !== null) {
+      this.profileService.loadProfile(this.userId).subscribe({
+        next: (user) => {
+          this.user = user;
+          this.filteredListings = user.listings;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -44,6 +71,7 @@ export class ProfilePageComponent implements OnInit {
     }
     this.innerWidth = window.innerWidth;
   }
+
 
   handleFormSubmit(value: { searchInput: string; sortType: string }) {
     this.filteredListings =

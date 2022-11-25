@@ -7,12 +7,16 @@ import { ProfileService } from 'src/app/services/profile.service';
   styleUrls: ['./welcome-page.component.css'],
 })
 export class WelcomePageComponent implements OnInit {
+  
   userName: string | null = null;
+  userId: string | null = null;
 
   constructor(private profileService: ProfileService) {}
 
   ngOnInit(): void {
-    this.profileService.loadProfile().subscribe({
+    this.userId = localStorage.getItem('userId');
+
+    this.profileService.loadProfile(this.userId).subscribe({
       next: (user) => {
         this.userName = `, ${user.name
           .slice(0, user.name.indexOf(' '))}`;
@@ -24,5 +28,22 @@ export class WelcomePageComponent implements OnInit {
     });
   }
   
+  @HostListener('window:storage', ['$event'])
+  onStorageChange(e: Event):void {
+    if(localStorage.getItem('userId')) {
+      this.profileService.loadProfile(this.userId).subscribe({
+        next: (user) => {
+          this.userName = `, ${user.name
+            .slice(0, user.name.indexOf(' '))}`;
+        },
+        error: (err) => {
+          this.userName = ' to Selly';
+          console.log(err);
+        },
+      });
+    } else {
+      this.userName = ' to Selly';
+    }
+  }
 }
 
