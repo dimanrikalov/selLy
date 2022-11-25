@@ -14,6 +14,7 @@ export class ProfilePageComponent implements OnInit {
   displayWelcome: boolean = false;
   filteredListings: IListing[] | null = null;
   innerWidth: any;
+  
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {

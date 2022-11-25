@@ -15,10 +15,15 @@ export class HeaderComponent implements OnInit {
     this.userId = localStorage.getItem('userId');
   }
 
+
+  @HostListener('window:storage', ['$event'])
+  onStorageChange(e: Event):void {
+    this.userId = localStorage.getItem('userId');
+  }
+
   logoutUser(): void {
-    console.log('logged out');
     localStorage.removeItem('userId');
-    this.userId = null;
+    window.dispatchEvent(new Event('storage'));
     this.router.navigate(['/']);
   }
 }

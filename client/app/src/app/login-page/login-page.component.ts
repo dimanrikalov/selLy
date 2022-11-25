@@ -37,6 +37,7 @@ export class LoginPageComponent implements OnInit {
         console.log(response.message);
         localStorage.setItem('userId', response.userId);
         this.router.navigate(['/']);
+        window.dispatchEvent(new Event('storage'));
       },
       error: (err) => {
         this.errorMessage = 'Invalid email or password!'

@@ -23,19 +23,6 @@ export class WelcomePageComponent implements OnInit {
       },
     });
   }
-
-  @HostListener('window:storage', ['$event'])
-  onStorageChange(event : any) {
-    this.profileService.loadProfile().subscribe({
-      next: (user) => {
-        this.userName = `, ${user.name
-          .slice(0, user.name.indexOf(' '))}`;
-      },
-      error: (err) => {
-        this.userName = ' to Selly';
-        console.log(err);
-      },
-    });
-  }
+  
 }
 
