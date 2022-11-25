@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,21 +9,16 @@ export class HeaderComponent implements OnInit {
   
   userId : string | null = null;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
   }
 
-
-  @HostListener('window:storage')
-  onStorageChange() {
-    this.userId = localStorage.getItem('userId') || null;
-  }
-
   logoutUser(): void {
     console.log('logged out');
-    localStorage.clear();
+    localStorage.removeItem('userId');
     this.userId = null;
+    this.router.navigate(['/']);
   }
 }

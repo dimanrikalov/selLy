@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
@@ -12,6 +12,20 @@ export class WelcomePageComponent implements OnInit {
   constructor(private profileService: ProfileService) {}
 
   ngOnInit(): void {
+    this.profileService.loadProfile().subscribe({
+      next: (user) => {
+        this.userName = `, ${user.name
+          .slice(0, user.name.indexOf(' '))}`;
+      },
+      error: (err) => {
+        this.userName = ' to Selly';
+        console.log(err);
+      },
+    });
+  }
+
+  @HostListener('window:storage', ['$event'])
+  onStorageChange(event : any) {
     this.profileService.loadProfile().subscribe({
       next: (user) => {
         this.userName = `, ${user.name
