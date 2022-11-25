@@ -7,7 +7,7 @@
       <i class="fa-brands fa-css3 logo"></i>
       <div class="welcome">
         <h1>Hello Again!</h1>
-        <p class="error-message" *ngIf="errorMessage">Error Message</p>
+        <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
       </div>
       <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm.value)">
         <div class="email-div">

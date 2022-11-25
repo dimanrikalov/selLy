@@ -17,13 +17,12 @@
 	guest
 
 --- todo
-		1. fix search bars on profile, catalog, saved pages
-		2. update listing details on comment add or delete
+		1. update listing details on comment add or delete operations
 
-		3. fill edit form on initial render
-		4. add edit comment functionality
+		2. fill edit form on initial render
+		3. add edit comment functionality
 		
-		5. deploy
+		4. deploy
 
 
 		when server is down fix:
