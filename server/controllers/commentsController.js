@@ -9,7 +9,7 @@ router.post('/create', async (req, res) => {
     if (!listing) {
         return res
             .status(404)
-            .json({ errorMessage: 'Listing does not exist!' });
+            .json({ errorMessage: 'Listing not found!' });
     }
 
     try {
@@ -26,7 +26,7 @@ router.post('/create', async (req, res) => {
         await api.updateById(listing._id, listing);
         return res.json({ message: 'Comment added!' });
     } catch (err) {
-        return res.json({
+        return res.status(400).json({
             errorMessage: 'Server error: Could not add comment!',
         });
     }
@@ -37,14 +37,14 @@ router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
     if (!listing) {
         return res
             .status(404)
-            .json({ errorMessage: 'Listing does not exist!' });
+            .json({ errorMessage: 'Listing not found!' });
     }
 
     const comment = await commentService.getById(req.params.commentId);
     if (!comment) {
         return res
             .status(404)
-            .json({ errorMessage: 'Comment does not exist!' });
+            .json({ errorMessage: 'Comment not found!' });
     }
 
     try {
@@ -63,14 +63,14 @@ router.post('/:commentId/delete', isCommentAuthor, async (req, res) => {
     if (!listing) {
         return res
             .status(404)
-            .json({ errorMessage: 'Listing does not exist!' });
+            .json({ errorMessage: 'Listing not found!' });
     }
 
     const comment = await commentService.getById(req.params.commentId);
     if (!comment) {
         return res
             .status(404)
-            .json({ errorMessage: 'Comment does not exist!' });
+            .json({ errorMessage: 'Comment not found!' });
     }
 
     try {

@@ -16,7 +16,7 @@ router.post('/saved-listings', async (req, res) => {
         return res.json(user.savedListings);
     }
 
-    return res.status(400).json({ errorMessage: 'User not found! ' });
+    return res.status(400).json({ errorMessage: 'User not found!' });
 });
 
 module.exports = router;

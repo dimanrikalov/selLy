@@ -18,18 +18,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/search', async (req, res) => {
-    try {
-        const searchString = req.body.searchInput;
-        const foundListings = await api.getAllThatHave(searchString);
-        return res.json(foundListings);
-    } catch (err) {
-        return res
-            .status(400)
-            .json({ errorMessage: 'Server error! Try again later!' });
-    }
-});
-
 router.post('/create', isLogged, async (req, res) => {
     const { item } = req.body;
     const isTaken = await api.getByTitle(item);
@@ -77,7 +65,7 @@ router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
     const listing = await api.getById(req.params.listingId);
     if (!listing) {
         return res.status(404).json({
-            errorMessage: 'Listing does not exist!',
+            errorMessage: 'Listing not found!',
         });
     }
 
@@ -137,7 +125,7 @@ router.post('/:listingId/delete', isLogged, isSeller, async (req, res) => {
 
         return res.json({ message: 'Listing deleted successfully!' });
     } catch (err) {
-        return res.status(404).json({
+        return res.status(400).json({
             errorMessage:
                 'Server error: Could not complete deleting operation.',
         });

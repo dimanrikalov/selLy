@@ -4,7 +4,7 @@ module.exports = async (req, res, next) => {
     const listing = await api.getById(req.params.listingId);
     if (listing.userId.toString() !== req.body.userId) {
         return res
-            .status(404)
+            .status(401)
             .json({ errorMessage: 'You must be the seller!' });
     }
     

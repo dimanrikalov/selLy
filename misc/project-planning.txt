@@ -17,10 +17,11 @@
 	guest
 
 --- todo
-		add route guards
+		add state update to navbar, 
+		welcome page, details page 
+		on localstorage change
+		
 		add edit comment functionality
-		fix app not having user context (localstorage)
-		fix app not updating its state
 		deploy
 
 

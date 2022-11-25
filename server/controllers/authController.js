@@ -32,9 +32,9 @@ router.post('/register', async (req, res) => {
         });
 
         const user = await api.loginUser({ email, password });
-        res.json({ message: 'Successfully registered!', user });
+        res.json({ message: 'Successfully registered!', userId: user._id });
     } catch (err) {
-        res.status(404).json({ errorMessage: 'Bad request' });
+        res.status(400).json({ errorMessage: 'Bad request' });
     }
 });
 
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
         const user = await api.loginUser({ email, password });
         res.json({ message: 'Successfully logged in!', userId: user._id });
     } catch (err) {
-        res.status(404).json({ message: 'Invalid email or password!' });
+        res.status(400).json({ message: 'Invalid email or password!' });
     }
 });
 
