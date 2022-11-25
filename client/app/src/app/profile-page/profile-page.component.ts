@@ -1,8 +1,8 @@
-import { IUser } from '../interfaces/User';
-import { Component, OnInit , HostListener} from '@angular/core';
-import { ProfileService } from '../services/profile.service';
-import { IListing } from '../interfaces/Listing';
 import { Router } from '@angular/router';
+import { IUser } from '../interfaces/User';
+import { IListing } from '../interfaces/Listing';
+import { ProfileService } from '../services/profile.service';
+import { Component, OnInit , HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-profile-page',
@@ -20,7 +20,7 @@ export class ProfilePageComponent implements OnInit {
   constructor(
     private profileService: ProfileService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
 

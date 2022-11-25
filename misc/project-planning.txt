@@ -17,13 +17,13 @@
 	guest
 
 --- todo
-		1. add state update to navbar, 
-		welcome page, details page 
-		on localstorage change
+		1. fix search bars on profile, catalog, saved pages
+		2. update listing details on comment add or delete
+
+		3. fill edit form on initial render
+		4. add edit comment functionality
 		
-		2. fill edit form on initial render
-		3. add edit comment functionality
-		4. deploy
+		5. deploy
 
 
 		when server is down fix:

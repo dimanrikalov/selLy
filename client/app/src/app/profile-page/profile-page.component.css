@@ -80,11 +80,14 @@ form {
     align-items: center;
 }
 
+
 .search-my-listings .search-input {
-    width: 50%;
+    width: 440px;
+    transition: 200ms;
 }
 .search-my-listings .sort-input {
-    width: 30%;
+    width: 240px;
+    transition: 200ms;
 }
 
 .search-my-listings .search-input,
@@ -227,6 +230,11 @@ form {
     padding: 12px;
 }
 
+.search-my-listings {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .search-my-listings button {
     padding: 16px;
     font-size: 16px;
@@ -258,6 +266,16 @@ form {
     margin-top: 150px;
     font-size: 54px;
     color:rgb(103, 103, 103);
+}
+
+@media screen and (width <= 1460px) {
+    .search-input {
+        width: 100% !important;
+    }
+
+    .sort-input {
+        width: 50% !important;
+    }
 }
 
 @media screen and (width <= 1195px) {
