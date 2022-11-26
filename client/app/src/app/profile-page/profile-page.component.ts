@@ -15,6 +15,7 @@ export class ProfilePageComponent implements OnInit {
   userId: string | null = null;
   displayWelcome: boolean = false;
   filteredListings: IListing[] | null = null;
+  connectionError: string | null = 'Server error! Please try again later!';
   innerWidth: any;
 
   constructor(
@@ -33,6 +34,7 @@ export class ProfilePageComponent implements OnInit {
     if(this.userId !== null) {
       this.profileService.loadProfile(this.userId).subscribe({
         next: (user) => {
+          this.connectionError = null;
           this.user = user;
           this.filteredListings = user.listings;
         },

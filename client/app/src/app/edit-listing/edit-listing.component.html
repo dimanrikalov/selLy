@@ -15,6 +15,7 @@
           name="item"
           id="edit-item"
           placeholder="Example: iPhone 14 Pro"
+          value="{{listing?.item}}"
           ngModel
         />
       </div>
@@ -25,6 +26,7 @@
           name="brand"
           id="edit-brand"
           placeholder="Example: Apple, Oura..."
+          value="{{listing?.brand}}"
           ngModel
         />
       </div>
@@ -38,6 +40,7 @@
         name="imageUrl"
         id="edit-image-url"
         placeholder="https://product-image-url.com"
+        value="{{listing?.imageUrl}}"
         ngModel
       />
     </div>
@@ -52,6 +55,7 @@
         cols="30"
         rows="3"
         placeholder="A very well preserved phone, bought from the official store..."
+        value="{{listing?.description}}"
         ngModel
       ></textarea>
     </div>
@@ -63,6 +67,7 @@
           name="city"
           id="edit-city"
           placeholder="Plovdiv"
+          value="{{city}}"
           ngModel
         />
       </div>
@@ -73,6 +78,7 @@
           name="country"
           id="edit-country"
           placeholder="Bulgaria"
+          value="{{country}}"
           ngModel
         />
       </div>
@@ -84,6 +90,7 @@
         name="price"
         id="edit-price"
         placeholder="350&euro;"
+        value="{{price}}"
         ngModel
       />
     </div>

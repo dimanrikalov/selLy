@@ -17,20 +17,11 @@
 	guest
 
 --- todo
-
+		0. make "edit listing" form dynamic
 		1. update listing details on comment add or delete operations
-
-		2. fill edit form on initial render
 		3. add edit comment functionality
-		
 		4. deploy
 
-
-		when server is down fix:
-		check what the server returns at each response
-			-stats
-			-navigation
-			-??? listing details ???
 		chat with seller page / leave comments under listing ??????
 		
 	-----documentation 

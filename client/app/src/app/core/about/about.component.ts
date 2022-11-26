@@ -22,9 +22,6 @@ export class AboutComponent implements OnInit {
           console.log(
             'About page could not connect to server! Trying again in 10 seconds...'
           );
-          setTimeout(() => {
-            this.ngOnInit();
-          }, 10000);
         }
       },
     });

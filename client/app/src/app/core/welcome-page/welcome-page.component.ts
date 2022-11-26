@@ -25,9 +25,6 @@ export class WelcomePageComponent implements OnInit {
             console.log(
               'Welcome page could not connect to server! Trying again in 10 seconds...'
             );
-            setTimeout(() => {
-              this.ngOnInit();
-            }, 5000);
           }
         },
       });

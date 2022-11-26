@@ -1,63 +1,66 @@
-<div *ngIf="user" class="profile-page">
-    <div class="welcome">
-        <div *ngIf="!displayWelcome">
-            <h1>Hello, {{user.name.slice(0, user.name.indexOf(' '))}}!</h1>
-        </div>
-        <div class="search-my-listings">
-            <form #searchForm="ngForm" (ngSubmit)="handleFormSubmit(searchForm.value)">
-                <input type="text" name="searchInput" id="" class="search-input" ngModel/>
-                <select name="sortType" id="sort-type" class="sort-input" ngModel>
-                  <option value="priceAscending">Price Ascending</option>
-                  <option value="priceDescending">Price Descending</option>
-                  <option value="a-z">A-Z</option>
-                  <option value="z-a">Z-A</option>
-                </select>
-                <button>
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-              </form>
-        </div>
-    </div>
-    <ul class="info-grid">
-        <li *ngIf="displayWelcome" class="stats hidden-welcome">
-            <div>
+<div>
+    <h1 *ngIf="connectionError" class="error-message">{{connectionError}}</h1>
+    <div *ngIf="user" class="profile-page">
+        <div class="welcome">
+            <div *ngIf="!displayWelcome">
                 <h1>Hello, {{user.name.slice(0, user.name.indexOf(' '))}}!</h1>
             </div>
-        </li>
-        <li class="image">
-            <img
-                src="{{user.profileImage}}"
-                alt="profile-image"
-            />
-        </li>
-        <li class="info">
-            <p>Email: {{user.email}}</p>
-            <p>Name: {{user.name}}</p>
-        </li>
-        <li class="stats">
-            <p>Number of listings: {{user.listings.length}}</p>
-            <p>Saved Listings: {{user.savedListings.length}}</p>
-            <p>Comment count: {{user.comments.length}}</p>
-        </li>
-        <li class="my-listings">
-            <ul *ngIf="filteredListings!.length > 0" class="">
-                <li *ngFor="let listing of filteredListings" class="listing">
-                    <a routerLink="../catalog/{{listing._id}}/details">
-                        <div class="listing-img">
-                            <img
-                                src="{{listing.imageUrl}}"
-                                alt="listing-img"
-                            />
-                        </div>
-                        <div class="listing-info">
-                            <h2>{{listing.item}}</h2>
-                            <h4>{{listing.brand}}</h4>
-                            <h3>{{listing.price}}&euro;</h3>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <h1 *ngIf="!filteredListings!.length" class="no-listings">No listings yet!</h1>
-        </li>
-    </ul>
+            <div class="search-my-listings">
+                <form #searchForm="ngForm" (ngSubmit)="handleFormSubmit(searchForm.value)">
+                    <input type="text" name="searchInput" id="" class="search-input" ngModel/>
+                    <select name="sortType" id="sort-type" class="sort-input" ngModel>
+                      <option value="priceAscending">Price Ascending</option>
+                      <option value="priceDescending">Price Descending</option>
+                      <option value="a-z">A-Z</option>
+                      <option value="z-a">Z-A</option>
+                    </select>
+                    <button>
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </form>
+            </div>
+        </div>
+        <ul class="info-grid">
+            <li *ngIf="displayWelcome" class="stats hidden-welcome">
+                <div>
+                    <h1>Hello, {{user.name.slice(0, user.name.indexOf(' '))}}!</h1>
+                </div>
+            </li>
+            <li class="image">
+                <img
+                    src="{{user.profileImage}}"
+                    alt="profile-image"
+                />
+            </li>
+            <li class="info">
+                <p>Email: {{user.email}}</p>
+                <p>Name: {{user.name}}</p>
+            </li>
+            <li class="stats">
+                <p>Number of listings: {{user.listings.length}}</p>
+                <p>Saved Listings: {{user.savedListings.length}}</p>
+                <p>Comment count: {{user.comments.length}}</p>
+            </li>
+            <li class="my-listings">
+                <ul *ngIf="filteredListings!.length > 0" class="">
+                    <li *ngFor="let listing of filteredListings" class="listing">
+                        <a routerLink="../catalog/{{listing._id}}/details">
+                            <div class="listing-img">
+                                <img
+                                    src="{{listing.imageUrl}}"
+                                    alt="listing-img"
+                                />
+                            </div>
+                            <div class="listing-info">
+                                <h2>{{listing.item}}</h2>
+                                <h4>{{listing.brand}}</h4>
+                                <h3>{{listing.price}}&euro;</h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <h1 *ngIf="!filteredListings!.length" class="no-listings">No listings yet!</h1>
+            </li>
+        </ul>
+    </div>
 </div>

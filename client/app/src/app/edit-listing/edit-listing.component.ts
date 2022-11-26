@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IListing } from '../interfaces/Listing';
+import { ListingDetailsService } from '../services/listing-details.service';
 import { ListingOperationsService } from '../services/listing-operations.service';
 
 @Component({
@@ -11,10 +13,15 @@ export class EditListingComponent implements OnInit {
 
   errorMessage : string | null = null;
   listingId : string | null = null;
+  listing: IListing | null = null;
+  city: string | null = null;
+  country: string | null = null;
+  price: string | null = null;
   loggedUserId: string | null = localStorage.getItem('userId');
 
 
   constructor(
+    private listingDetailsService: ListingDetailsService,
     private editListingService: ListingOperationsService,
     private activatedRoute: ActivatedRoute
     ) { 
@@ -24,6 +31,20 @@ export class EditListingComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.listingDetailsService.loadListing(this.listingId).subscribe({
+      next: (listing) => {
+        this.price = listing.price.toString();
+        [this.city, this.country] = listing.location.split(', ');
+        this.listing = listing;
+      },
+      error: (err) => {
+        if(err.message.startsWith('Http failure response')) {
+          console.log(
+            'Details page could not connect to server! Trying again in 10 seconds...'
+          );
+        }
+      },
+    });
   }
 
   handleSubmitForm(value: {
@@ -35,6 +56,8 @@ export class EditListingComponent implements OnInit {
     country: string;
     price: string;
   }) {
+    console.log(value);
+
     if(this.listingId === null) {
       return;
     }

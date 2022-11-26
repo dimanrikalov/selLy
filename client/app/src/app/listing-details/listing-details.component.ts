@@ -1,6 +1,6 @@
 import VanillaTilt from 'vanilla-tilt';
 import { IListing } from '../interfaces/Listing';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, Input, OnInit, SimpleChange } from '@angular/core';
 import { ListingDetailsService } from '../services/listing-details.service';
 import { ListingOperationsService } from '../services/listing-operations.service';
@@ -73,7 +73,7 @@ export class ListingDetailsComponent implements OnInit {
     })
   }
 
-  comment(value: {content: string}) {
+  comment = (value: {content: string}) => {
     this.commentOperationsService.create(value.content, this.loggedUserId!, this.listingId!).subscribe({
       next(response) {
         console.log(response);
