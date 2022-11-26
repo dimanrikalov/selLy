@@ -23,13 +23,13 @@ export class ProfilePageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    this.userId = localStorage.getItem('userId');
-
     this.innerWidth = window.innerWidth;
     if(this.innerWidth <= 1195) {
       this.displayWelcome= true;
     }
+
+    this.userId = localStorage.getItem('userId');
+
     if(this.userId !== null) {
       this.profileService.loadProfile(this.userId).subscribe({
         next: (user) => {
@@ -37,7 +37,11 @@ export class ProfilePageComponent implements OnInit {
           this.filteredListings = user.listings;
         },
         error: (err) => {
-          console.log(err);
+          if(err.message.startsWith('Http failure response')) {
+            console.log(
+              'Profile page could not connect to server! Trying again in 10 seconds...'
+            );
+          }
         }
       })
     } else {

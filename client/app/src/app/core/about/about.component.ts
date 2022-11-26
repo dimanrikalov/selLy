@@ -18,7 +18,14 @@ export class AboutComponent implements OnInit {
         this.stats = stats;
       },
       error: (err) => {
-        console.log(err);
+        if(err.message.startsWith('Http failure response')) {
+          console.log(
+            'About page could not connect to server! Trying again in 10 seconds...'
+          );
+          setTimeout(() => {
+            this.ngOnInit();
+          }, 10000);
+        }
       },
     });
   }

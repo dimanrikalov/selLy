@@ -34,10 +34,20 @@ footer {
   gap: 16px;
 }
 
-.footer-flex nav ul a {
+.footer-flex nav ul li a {
   text-decoration: none;
   font-size: 18px;
   color: white;
+}
+
+.footer-flex nav ul li button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }
 
 .footer-flex .contacts {

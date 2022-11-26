@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SavedListingsComponent } from './saved-listings.component';
+import { SavedListingsPageComponent } from './saved-listings.component';
 
 describe('SavedListingsComponent', () => {
-  let component: SavedListingsComponent;
-  let fixture: ComponentFixture<SavedListingsComponent>;
+  let component: SavedListingsPageComponent;
+  let fixture: ComponentFixture<SavedListingsPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SavedListingsComponent ]
+      declarations: [ SavedListingsPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SavedListingsComponent);
+    fixture = TestBed.createComponent(SavedListingsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

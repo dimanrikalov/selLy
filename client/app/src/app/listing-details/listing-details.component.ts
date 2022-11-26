@@ -41,7 +41,11 @@ export class ListingDetailsComponent implements OnInit {
           this.listing = listing;
         },
         error: (err) => {
-          console.log(err);
+          if(err.message.startsWith('Http failure response')) {
+            console.log(
+              'Details page could not connect to server! Trying again in 10 seconds...'
+            );
+          }
         },
       });
   }

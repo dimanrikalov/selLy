@@ -14,7 +14,7 @@
 
           <li *ngIf="userId"><a [routerLink]="'/profile'">My Profile</a></li>
           <li *ngIf="userId"><a [routerLink]="'/catalog/create'">Sell</a></li>
-          <li *ngIf="userId"><a [routerLink]="'/auth/logout'">Logout</a></li>
+          <li *ngIf="userId"><button (click)="logoutUser()">Logout</button></li>
         </ul>
       </nav>
     </div>

@@ -40,8 +40,12 @@ export class LoginPageComponent implements OnInit {
         window.dispatchEvent(new Event('storage'));
       },
       error: (err) => {
-        this.errorMessage = 'Invalid email or password!'
-        console.error(err)
+        console.log(err);
+        if(err.message.startsWith('Http failure response')) {
+          this.errorMessage = 'Server error! Please try again later!'
+          return;
+        }
+        this.errorMessage = err.message;
       }
     });
   }

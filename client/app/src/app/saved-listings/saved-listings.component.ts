@@ -1,5 +1,5 @@
 import { IListing } from '../interfaces/Listing';
-import { Component, OnInit } from '@angular/core';;
+import { Component, OnInit } from '@angular/core';
 import { SavedListingsService } from '../services/saved-listings.service';
 
 @Component({
@@ -8,22 +8,26 @@ import { SavedListingsService } from '../services/saved-listings.service';
   styleUrls: ['./saved-listings.component.css'],
 })
 export class SavedListingsPageComponent implements OnInit {
-  
   savedListings: IListing[] | null = null;
   filteredListings: IListing[] | null = null;
+  errorMessage: string = ''
   userId: string | null = null;
   constructor(private savedListingsApi: SavedListingsService) {}
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
-    if(this.userId !== null) {
+    if (this.userId !== null) {
       this.savedListingsApi.loadSavedListings(this.userId).subscribe({
         next: (value) => {
           this.savedListings = value;
           this.filteredListings = this.savedListings;
         },
         error: (err) => {
-          console.error(err);
+          if(err.message.startsWith('Http failure response')) {
+            console.log(
+              'Saved listings page could not connect to server! Trying again in 10 seconds...'
+            );
+          }
         },
       });
     }

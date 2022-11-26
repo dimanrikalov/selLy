@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit {
     this.userId = localStorage.getItem('userId');
   }
 
-
   @HostListener('window:storage', ['$event'])
   onStorageChange(e: Event):void {
     this.userId = localStorage.getItem('userId');

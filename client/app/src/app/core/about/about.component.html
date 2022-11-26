@@ -4,13 +4,16 @@
             <i class="fa-brands fa-css3"></i>
         </li>
         <li class="about-card stats tilt">
-            <h1>Our Stats:</h1>
+            <h1 *ngIf="!stats" class="connecting">Connecting to server...</h1>
+            <div *ngIf="stats">
+                <h1>Our Stats:</h1>
             <ul>
                 <li>Total Listings: <span>{{stats?.listingCount}}</span></li>
                 <li>Total Users: <span>{{stats?.userCount}}</span></li>
                 <li>Total Comments: <span>{{stats?.commentCount}}</span></li>
                 <li>Total Saved Listings: <span>{{stats?.savedCount}}</span></li>
             </ul>
+            </div>
         </li>
         <li class="about-card mission tilt">
             <h1>About Us:</h1>
