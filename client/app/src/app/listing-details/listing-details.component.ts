@@ -20,10 +20,11 @@ export class ListingDetailsComponent implements OnInit {
   commentIdEdit : string | null = null;
   
   constructor(
-    private listingDetailsService: ListingDetailsService,
     private listingOperationsService: ListingOperationsService,
+    private listingDetailsService: ListingDetailsService,
     private commentOperationsService: CommentApiService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
     this.activatedRoute.params.subscribe((params) => {
       this.listingId = params['id'];
@@ -65,9 +66,9 @@ export class ListingDetailsComponent implements OnInit {
 
   deleteListing(listingId: string, loggedUserId: string | null) {
     this.listingOperationsService.deleteListing(listingId, loggedUserId).subscribe({
-      next(value) {
+      next: (value) => {
         console.log(value);
-        //redirect to catalog
+        this.router.navigate(['/catalog']);
       },
       error(err) {
         console.log(err);
