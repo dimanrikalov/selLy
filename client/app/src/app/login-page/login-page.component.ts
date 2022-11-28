@@ -41,11 +41,11 @@ export class LoginPageComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
-        if(err.message.startsWith('Http failure response')) {
+        if(err.message.startsWith('Http failure response') && !err.error.message) {
           this.errorMessage = 'Server error! Please try again later!'
           return;
         }
-        this.errorMessage = err.message;
+        this.errorMessage = err.error.message;
       }
     });
   }
