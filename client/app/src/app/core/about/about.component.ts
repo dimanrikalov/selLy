@@ -8,17 +8,22 @@ import { AboutDetailsService } from 'src/app/services/about-details.service';
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  stats: any = null;
+  stats: {
+    userCount: number;
+    listingCount: number;
+    commentCount: number;
+    savedCount: number;
+  } | null = null;
 
   constructor(private aboutDetailsService: AboutDetailsService) {}
   ngOnInit(): void {
     VanillaTilt.init(document.querySelectorAll('.tilt') as any);
     this.aboutDetailsService.loadStats().subscribe({
-      next: (stats) => {
+      next: (stats: any) => {
         this.stats = stats;
       },
       error: (err) => {
-        if(err.message.startsWith('Http failure response')) {
+        if (err.message.startsWith('Http failure response')) {
           console.log(
             'About page could not connect to server! Trying again in 10 seconds...'
           );
