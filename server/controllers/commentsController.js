@@ -4,6 +4,7 @@ const userService = require('../services/userService');
 const commentService = require('../services/commentService');
 const isCommentAuthor = require('../middlewares/isCommentAuthor');
 
+
 router.post('/create', async (req, res) => {
     const listing = await api.getByIdDetailed(req.body.listingId);
     if (!listing) {
@@ -32,6 +33,17 @@ router.post('/create', async (req, res) => {
     }
 });
 
+
+router.post('/:commentId', async (req, res) => {
+    try {
+        const comment = await commentService.getById(req.body.commentId);
+        return res.json(comment);
+    } catch(err) {
+        return res.status(400).json({message: 'Comment not found!'});
+    }
+
+})
+
 router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
     const listing = await api.getById(req.body.listingId);
     if (!listing) {
@@ -40,7 +52,7 @@ router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
             .json({ errorMessage: 'Listing not found!' });
     }
 
-    const comment = await commentService.getById(req.params.commentId);
+    const comment = await commentService.getById(req.body.commentId);
     if (!comment) {
         return res
             .status(404)

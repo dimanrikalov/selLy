@@ -16,7 +16,9 @@ export class ListingDetailsComponent implements OnInit {
   listingId: string | null = null;
   loggedUserId: string | null = localStorage.getItem('userId');
   textAreaContent: string | null = null;
-
+  editingMode: boolean = false;
+  commentIdEdit : string | null = null;
+  
   constructor(
     private listingDetailsService: ListingDetailsService,
     private listingOperationsService: ListingOperationsService,
@@ -73,28 +75,36 @@ export class ListingDetailsComponent implements OnInit {
     })
   }
 
-  comment = (value: {content: string}) => {
-    this.commentOperationsService.create(value.content, this.loggedUserId!, this.listingId!).subscribe({
-      next(response) {
-        console.log(response);
-        //update the current page without refreshing
-      },
-      error(err) {
-        console.log(err);
-      }
-    })
+  changeMode(commentId: string) {
+    this.editingMode = true;
+    this.commentIdEdit = commentId;
+    //fill textarea
   }
 
-  editComment(commentId: string, value:{newContent: string}) {
-    this.commentOperationsService.edit(value.newContent, this.loggedUserId!, this.listingId!, commentId!).subscribe({
+  comment = (value: {content: string}, editingMode: boolean, commentIdEdit: any) => {
+    if(!editingMode) {
+      this.commentOperationsService.create(value.content, this.loggedUserId!, this.listingId!).subscribe({
+        next(response) {
+          console.log(response);
+          //update the current page without refreshing
+        },
+        error(err) {
+          console.log(err);
+        }
+      })
+      return;
+    }
+
+    this.commentOperationsService.edit(value.content, this.loggedUserId!, this.listingId!, commentIdEdit).subscribe({
       next(response) {
         console.log(response);
-        //update the current page without refreshing
+        
       },
       error(err) {
         console.log(err);
       }
     })
+    this.editingMode = false;
   }
 
 

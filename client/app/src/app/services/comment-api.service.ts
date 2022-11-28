@@ -10,12 +10,16 @@ const commentUrl = `${environment.catalogUrl}`;
 export class CommentApiService {
   constructor(private httpClient: HttpClient) {}
 
+  get(listingId: string | null, userId: string | null, commentId: string) {
+    return this.httpClient.post(`${commentUrl}/${listingId}/comments/${commentId}`, {listingId, userId, commentId});
+  }
+
   create(content: string, userId: string, listingId: string ) {
     return this.httpClient.post(`${commentUrl}/${listingId}/comments/create`, {content, userId, listingId});
   }
   
   edit(newContent: string, userId: string, listingId: string, commentId: string) {
-    return this.httpClient.post(`${commentUrl}/${listingId}/comments/${commentId}/edit`, {newContent, userId, listingId})
+    return this.httpClient.post(`${commentUrl}/${listingId}/comments/${commentId}/edit`, {newContent, userId, listingId, commentId})
   }
 
   delete(listingId:string, commentId: string, userId: string) {

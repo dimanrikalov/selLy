@@ -17,18 +17,9 @@
 	guest
 
 --- todo
-		0. make "edit listing" form dynamic
-		1. update listing details on comment add or delete operations
-		3. add edit comment functionality
-		4. deploy
-
-		chat with seller page / leave comments under listing ??????
-		
-	-----documentation 
-
-
-	-----server
-
+		1. make "edit listing" form dynamic
+		2. update listing details on comment add or delete operations
+		3. deploy
 
 ----- layouts
 	use apple store design cards

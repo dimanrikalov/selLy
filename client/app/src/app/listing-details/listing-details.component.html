@@ -64,15 +64,14 @@
               class="operations"
               *ngIf="comment.userId._id.toString() === loggedUserId"
             >
-              <button
+              <button (click)="changeMode(comment._id)"
                 [ngClass]="{
                   'operations-color-reversed':
                     comment.userId._id.toString() !==
                     listing?.userId?._id?.toString()
-                }"
-                
-                ><i class="fa-solid fa-pen-to-square"></i
-              ></button>
+                }">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
               <button
                 [ngClass]="{
                   'operations-color-reversed':
@@ -88,7 +87,7 @@
         </li>
       </ol>
       <div class="text-input" *ngIf="loggedUserId">
-        <form #commentForm="ngForm" (ngSubmit)="comment(commentForm.value)">
+        <form #commentForm="ngForm" (ngSubmit)="comment(commentForm.value, editingMode, commentIdEdit)">
             <textarea
             name="content"
             id="comment-input"
