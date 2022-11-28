@@ -76,8 +76,19 @@ export class ListingDetailsComponent implements OnInit {
   }
 
   changeMode(commentId: string) {
-    this.editingMode = true;
-    this.commentIdEdit = commentId;
+    this.commentOperationsService.get(this.listingId, this.loggedUserId, commentId).subscribe(
+      {
+        next: (comment: any) => {
+          this.editingMode = true;
+          this.commentIdEdit = commentId;
+          document.querySelector('textarea')!.value = comment.content;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    
   }
 
   comment = (value: {content: string}, editingMode: boolean, commentIdEdit: any) => {
@@ -85,7 +96,8 @@ export class ListingDetailsComponent implements OnInit {
       this.commentOperationsService.create(value.content, this.loggedUserId!, this.listingId!).subscribe({
         next: (response:any) => {
           console.log(response);
-          this.listing = response.listing
+          this.listing = response.listing;
+          document.querySelector('textarea')!.value = '';
         },
         error(err) {
           console.log(err);
@@ -99,6 +111,7 @@ export class ListingDetailsComponent implements OnInit {
       next: (response: any) => {
         console.log(response);
         this.listing = response.listing
+        document.querySelector('textarea')!.value = '';
       },
       error(err) {
         console.log(err);
