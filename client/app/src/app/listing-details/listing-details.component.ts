@@ -12,7 +12,7 @@ import { CommentApiService } from '../services/comment-api.service';
   styleUrls: ['./listing-details.component.css'],
 })
 export class ListingDetailsComponent implements OnInit {
-  listing: IListing | null = null;
+  listing: IListing | any = null;
   listingId: string | null = null;
   loggedUserId: string | null = localStorage.getItem('userId');
   textAreaContent: string | null = null;
@@ -63,7 +63,7 @@ export class ListingDetailsComponent implements OnInit {
     });
   }
 
-  deleteListing(listingId: string, loggedUserId: string) {
+  deleteListing(listingId: string, loggedUserId: string | null) {
     this.listingOperationsService.deleteListing(listingId, loggedUserId).subscribe({
       next(value) {
         console.log(value);
@@ -83,20 +83,22 @@ export class ListingDetailsComponent implements OnInit {
   comment = (value: {content: string}, editingMode: boolean, commentIdEdit: any) => {
     if(!editingMode) {
       this.commentOperationsService.create(value.content, this.loggedUserId!, this.listingId!).subscribe({
-        next(response) {
+        next: (response:any) => {
           console.log(response);
-          //update the current page without refreshing
+          this.listing = response.listing
         },
         error(err) {
           console.log(err);
         }
       })
+
       return;
     }
 
     this.commentOperationsService.edit(value.content, this.loggedUserId!, this.listingId!, commentIdEdit).subscribe({
-      next(response) {
+      next: (response: any) => {
         console.log(response);
+        this.listing = response.listing
       },
       error(err) {
         console.log(err);
@@ -108,9 +110,8 @@ export class ListingDetailsComponent implements OnInit {
 
   deleteComment(commentId: string) {
     this.commentOperationsService.delete(this.listingId!, commentId, this.loggedUserId!).subscribe({
-      next(response) {
-        console.log(response);
-        //update the current page without refreshing
+      next: (response : any) => {
+        this.listing = response.listing;
       },
       error(err) {
         console.log(err);

@@ -25,7 +25,10 @@ router.post('/create', async (req, res) => {
 
         await userService.updateById(user._id, user);
         await api.updateById(listing._id, listing);
-        return res.json({ message: 'Comment added!' });
+
+        const updatedListing = await api.getByIdDetailed(req.body.listingId);
+
+        return res.json({ message: 'Comment added!', listing: updatedListing });
     } catch (err) {
         return res.status(400).json({
             errorMessage: 'Server error: Could not add comment!',
@@ -45,7 +48,7 @@ router.post('/:commentId', async (req, res) => {
 })
 
 router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
-    const listing = await api.getById(req.body.listingId);
+    const listing = await api.getByIdDetailed(req.body.listingId);
     if (!listing) {
         return res
             .status(404)
@@ -63,15 +66,16 @@ router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
         comment.content = req.body.newContent;
         comment.isEdited = true;
         await commentService.editComment(comment._id, comment);
-
-        res.json({ message: 'Comment edited successfully!' });
+        const updatedListing = await api.getByIdDetailed(listing._id);
+        
+        res.json({ message: 'Comment edited successfully!', listing: updatedListing });
     } catch (err) {
         return res.json(400, { errorMessage: 'Could not edit comment!' });
     }
 });
 
 router.post('/:commentId/delete', isCommentAuthor, async (req, res) => {
-    const listing = await api.getById(req.body.listingId);
+    const listing = await api.getByIdDetailed(req.body.listingId);
     if (!listing) {
         return res
             .status(404)
@@ -100,8 +104,8 @@ router.post('/:commentId/delete', isCommentAuthor, async (req, res) => {
         await api.updateById(listing._id, listing);
 
         await commentService.deleteComment(comment._id);
-
-        return res.json({ message: 'Comment deleted successfully!' });
+        const updatedListing = await api.getByIdDetailed(listing._id);
+        return res.json({ message: 'Comment deleted successfully!', listing: updatedListing });
     } catch (err) {
         return res.json(400, { errorMessage: 'Could not delete comment!' });
     }

@@ -54,7 +54,7 @@ export class ListingOperationsService {
     });
   }
 
-  deleteListing(listingId: string, loggedUserId: string) {
+  deleteListing(listingId: string, loggedUserId: string | null) {
     return this.httpClient.post(`${catalogUrl}/${listingId}/delete`, {
       listingId,
       userId: loggedUserId
