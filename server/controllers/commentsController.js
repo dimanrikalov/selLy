@@ -66,8 +66,9 @@ router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
         comment.content = req.body.newContent;
         comment.isEdited = true;
         await commentService.editComment(comment._id, comment);
-        const updatedListing = await api.getByIdDetailed(listing._id);
         
+        const updatedListing = await api.getByIdDetailed(listing._id);
+
         res.json({ message: 'Comment edited successfully!', listing: updatedListing });
     } catch (err) {
         return res.json(400, { errorMessage: 'Could not edit comment!' });
@@ -102,9 +103,10 @@ router.post('/:commentId/delete', isCommentAuthor, async (req, res) => {
 
         await userService.updateById(user._id, user);
         await api.updateById(listing._id, listing);
-
         await commentService.deleteComment(comment._id);
+
         const updatedListing = await api.getByIdDetailed(listing._id);
+
         return res.json({ message: 'Comment deleted successfully!', listing: updatedListing });
     } catch (err) {
         return res.json(400, { errorMessage: 'Could not delete comment!' });

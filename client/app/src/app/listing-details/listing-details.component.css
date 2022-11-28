@@ -318,11 +318,12 @@
 
     .info {
         padding: 64px !important;
+        height: 100% !important;
     }
 
     .listing {
         width: 90% !important;
-        height: 150% !important;
+        height: 500px !important;
         flex-direction: row !important;
     }
 
@@ -341,7 +342,7 @@
 
     .comments-div {
         width: 90% !important;
-        height: 150% !important;
+        height: 520px !important;
         padding-bottom: 128px !important;
     }
 
@@ -390,8 +391,13 @@
         transform: scale(1) !important;
     }
 
+    .comments {
+        overflow-y: scroll;
+        height: 450px !important;
+    }
+
     .comments::-webkit-scrollbar {
-        width: 6px !important;
+        width: 12px !important;
     }
 
     .head {
