@@ -1,7 +1,7 @@
 <div class="catalog-page">
   <div class="search-params">
     <form #searchForm="ngForm" (ngSubmit)="handleFormSubmit(searchForm.value)">
-      <input type="text" name="searchInput" id="" class="textbox" ngModel/>
+      <input type="text" name="searchInput" id="" class="textbox" ngModel />
       <select name="sortType" id="sort-type" ngModel>
         <option value="priceAscending">Price Ascending</option>
         <option value="priceDescending">Price Descending</option>
@@ -15,17 +15,19 @@
   </div>
   <ul *ngIf="searchedListings?.length" class="catalog">
     <li *ngFor="let listing of searchedListings" class="card">
-      <a routerLink="{{listing._id}}/details">
+      <a routerLink="{{ listing._id }}/details">
         <div class="image">
-          <img src={{listing.imageUrl}} alt="listing-img" />
+          <img src="{{ listing.imageUrl }}" alt="listing-img" />
         </div>
         <div class="info">
-          <h2>{{listing.item}}</h2>
-          <h4>{{listing.brand}}</h4>
-          <h3>{{listing.price}}&euro;</h3>
+          <h2>{{ listing.item }}</h2>
+          <h4>{{ listing.brand }}</h4>
+          <h3>{{ listing.price }}&euro;</h3>
         </div>
       </a>
     </li>
   </ul>
-  <h1 *ngIf="!searchedListings?.length" class="no-listings">No listings available yet! Be the first to create one!</h1>
+  <h1 *ngIf="!searchedListings?.length" class="no-listings">
+    No listings available yet! Be the first to create one!
+  </h1>
 </div>

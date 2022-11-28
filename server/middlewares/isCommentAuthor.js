@@ -7,6 +7,6 @@ module.exports = async (req, res, next) => {
             errorMessage: `You must be the comment's author in order to edit it!`,
         });
     }
-    
+
     next();
-}
+};

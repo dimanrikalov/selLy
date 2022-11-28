@@ -14,14 +14,14 @@ export class WelcomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
-    if(this.userId !== null) {
+    if (this.userId !== null) {
       this.profileService.loadProfile(this.userId).subscribe({
         next: (user) => {
           this.userName = `, ${user.name.slice(0, user.name.indexOf(' '))}`;
         },
         error: (err) => {
           this.userName = ' to Selly';
-          if(err.message.startsWith('Http failure response')) {
+          if (err.message.startsWith('Http failure response')) {
             console.log(
               'Welcome page could not connect to server! Trying again in 10 seconds...'
             );

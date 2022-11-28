@@ -1,7 +1,7 @@
 <div class="sell-form">
   <form #sellForm="ngForm" (ngSubmit)="handleSubmitForm(sellForm.value)">
     <h1>Create a Listing</h1>
-    <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
     <img
       src="./assets/imgs/ribbon-black-shape.png"
       alt="ribbon"
@@ -53,7 +53,7 @@
         rows="3"
         placeholder="A very well preserved phone, bought from the official store..."
         ngModel
-        ></textarea>
+      ></textarea>
     </div>
     <div class="location">
       <div class="city">

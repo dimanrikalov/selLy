@@ -30,10 +30,7 @@ export class InversedAuthGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return (
-      this.checkIfNotLogged(state.url) ||
-      this.router.createUrlTree(['/'])
-    );
+    return this.checkIfNotLogged(state.url) || this.router.createUrlTree(['/']);
   }
 
   checkIfNotLogged(url: string): boolean {

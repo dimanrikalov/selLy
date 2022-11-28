@@ -1,32 +1,33 @@
 <div class="saved-listings-page">
-    <div class="search-params">
-      <form #searchForm="ngForm" (ngSubmit)="handleFormSubmit(searchForm.value)">
-        <input type="text" name="searchInput" id="" class="textbox" ngModel/>
-        <select name="sortType" id="sort-type" ngModel>
-          <option value="priceAscending">Price Ascending</option>
-          <option value="priceDescending">Price Descending</option>
-          <option value="a-z">A-Z</option>
-          <option value="z-a">Z-A</option>
-        </select>
-        <button>
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>
-    </div>
-    <ul *ngIf="filteredListings?.length" class="saved-listings">
-      <li *ngFor="let listing of filteredListings" class="card">
-        <a routerLink="/../catalog/{{listing._id}}/details">
-          <div class="image">
-            <img src={{listing.imageUrl}} alt="listing-img" />
-          </div>
-          <div class="info">
-            <h2>{{listing.item}}</h2>
-            <h4>{{listing.brand}}</h4>
-            <h3>{{listing.price}}&euro;</h3>
-          </div>
-        </a>
-      </li>
-    </ul>
-    <h1 *ngIf="!filteredListings?.length" class="no-saved-listings">No bookmarked listings yet!</h1>
+  <div class="search-params">
+    <form #searchForm="ngForm" (ngSubmit)="handleFormSubmit(searchForm.value)">
+      <input type="text" name="searchInput" id="" class="textbox" ngModel />
+      <select name="sortType" id="sort-type" ngModel>
+        <option value="priceAscending">Price Ascending</option>
+        <option value="priceDescending">Price Descending</option>
+        <option value="a-z">A-Z</option>
+        <option value="z-a">Z-A</option>
+      </select>
+      <button>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
   </div>
-  
+  <ul *ngIf="filteredListings?.length" class="saved-listings">
+    <li *ngFor="let listing of filteredListings" class="card">
+      <a routerLink="/../catalog/{{ listing._id }}/details">
+        <div class="image">
+          <img src="{{ listing.imageUrl }}" alt="listing-img" />
+        </div>
+        <div class="info">
+          <h2>{{ listing.item }}</h2>
+          <h4>{{ listing.brand }}</h4>
+          <h3>{{ listing.price }}&euro;</h3>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <h1 *ngIf="!filteredListings?.length" class="no-saved-listings">
+    No bookmarked listings yet!
+  </h1>
+</div>

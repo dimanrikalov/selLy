@@ -2,7 +2,7 @@
   <form #editForm="ngForm" (ngSubmit)="handleSubmitForm(editForm.value)">
     <h1>Edit a Listing</h1>
     <p class="error-message">No value means old value will be used!</p>
-    <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
     <img
       src="./assets/imgs/ribbon-black-shape.png"
       alt="ribbon"
@@ -16,7 +16,7 @@
           name="item"
           id="edit-item"
           placeholder="Example: iPhone 14 Pro"
-          value="{{item}}"
+          value="{{ item }}"
           ngModel
         />
       </div>
@@ -27,7 +27,7 @@
           name="brand"
           id="edit-brand"
           placeholder="Example: Apple, Oura..."
-          value="{{brand}}"
+          value="{{ brand }}"
           ngModel
         />
       </div>
@@ -41,7 +41,7 @@
         name="imageUrl"
         id="edit-image-url"
         placeholder="https://product-image-url.com"
-        value="{{imageUrl}}"
+        value="{{ imageUrl }}"
         ngModel
       />
     </div>
@@ -56,7 +56,7 @@
         cols="30"
         rows="3"
         placeholder="A very well preserved phone, bought from the official store..."
-        value="{{description}}"
+        value="{{ description }}"
         ngModel
       ></textarea>
     </div>
@@ -68,7 +68,7 @@
           name="city"
           id="edit-city"
           placeholder="Plovdiv"
-          value="{{city}}"
+          value="{{ city }}"
           ngModel
         />
       </div>
@@ -79,7 +79,7 @@
           name="country"
           id="edit-country"
           placeholder="Bulgaria"
-          value="{{country}}"
+          value="{{ country }}"
           ngModel
         />
       </div>
@@ -91,7 +91,7 @@
         name="price"
         id="edit-price"
         placeholder="350&euro;"
-        value="{{price}}"
+        value="{{ price }}"
         ngModel
       />
     </div>

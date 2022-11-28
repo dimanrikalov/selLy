@@ -7,25 +7,21 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     AboutComponent,
     ErrorPageComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
+  imports: [CommonModule, RouterModule],
   exports: [
     HeaderComponent,
     FooterComponent,
     AboutComponent,
     ErrorPageComponent,
-    WelcomePageComponent
-  ]
+    WelcomePageComponent,
+  ],
 })
-export class CoreModule { }
+export class CoreModule {}

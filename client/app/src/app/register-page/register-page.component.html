@@ -1,91 +1,88 @@
 <div class="register-page">
-    <div class="register">
-        <div class="left-side">
-            <i class="fa-brands fa-css3 logo"></i>
-            <div class="welcome">
-                <h1>Welcome!</h1>
-                <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
-            </div>
-            <form #registerForm="ngForm" (ngSubmit)="handleFormSubmit(registerForm.value)">
-                <div class="email-div">
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Email"
-                        name="email"
-                        ngModel
-                    />
-                </div>            
-                <div class="name-div">
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="First and last name"
-                        name="name"
-                        ngModel
-                    />
-                </div>
-                <div class="profile-image-div">
-                    <input
-                        type="url"
-                        id="profile-image"
-                        placeholder="Profile image URL"
-                        name="profile-image"
-                        ngModel
-                    />
-                </div>
-                <div class="pass-div">
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Password"
-                        name="password"
-                        ngModel
-                    />
-                </div>
-                <div class="conf-pass-div">
-                    <input
-                        type="password"
-                        name="password"
-                        id="conf-password"
-                        placeholder="Confirm password"
-                        name="repeat-password"
-                        ngModel
-                    />
-                </div>
-                <div class="tac">
-                    <div>
-                        <input
-                            type="checkbox"
-                            id="terms-and-conditions"
-                            name="terms-and-conditions"
-                            class="terms-and-conditions"
-                            name="tac"
-                            ngModel
-                        />
-                        <label
-                            class="tac-label"
-                            for="terms-and-conditions"
-                            >I agree with the terms and
-                            conditions.</label
-                        >
-                    </div>
-                </div>
-                <div class="register-btns">
-                    <button>Sign Up</button>
-                </div>
-            </form>
-            <div class="sign-in">
-                <span>Already have an account yet?</span>
-                <a [routerLink]="'/auth/login'">Sign In</a>
-            </div>
+  <div class="register">
+    <div class="left-side">
+      <i class="fa-brands fa-css3 logo"></i>
+      <div class="welcome">
+        <h1>Welcome!</h1>
+        <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+      </div>
+      <form
+        #registerForm="ngForm"
+        (ngSubmit)="handleFormSubmit(registerForm.value)"
+      >
+        <div class="email-div">
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            name="email"
+            ngModel
+          />
         </div>
-        <div class="right-side">
-            <img
-                src="./assets/imgs/pexels-ivan-samkov-7620569.jpg"
-                alt=""
+        <div class="name-div">
+          <input
+            type="text"
+            id="name"
+            placeholder="First and last name"
+            name="name"
+            ngModel
+          />
+        </div>
+        <div class="profile-image-div">
+          <input
+            type="url"
+            id="profile-image"
+            placeholder="Profile image URL"
+            name="profile-image"
+            ngModel
+          />
+        </div>
+        <div class="pass-div">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            name="password"
+            ngModel
+          />
+        </div>
+        <div class="conf-pass-div">
+          <input
+            type="password"
+            name="password"
+            id="conf-password"
+            placeholder="Confirm password"
+            name="repeat-password"
+            ngModel
+          />
+        </div>
+        <div class="tac">
+          <div>
+            <input
+              type="checkbox"
+              id="terms-and-conditions"
+              name="terms-and-conditions"
+              class="terms-and-conditions"
+              name="tac"
+              ngModel
             />
+            <label class="tac-label" for="terms-and-conditions"
+              >I agree with the terms and conditions.</label
+            >
+          </div>
         </div>
+        <div class="register-btns">
+          <button>Sign Up</button>
+        </div>
+      </form>
+      <div class="sign-in">
+        <span>Already have an account yet?</span>
+        <a [routerLink]="'/auth/login'">Sign In</a>
+      </div>
     </div>
+    <div class="right-side">
+      <img src="./assets/imgs/pexels-ivan-samkov-7620569.jpg" alt="" />
+    </div>
+  </div>
 </div>

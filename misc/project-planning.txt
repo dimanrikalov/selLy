@@ -17,7 +17,9 @@
 	guest
 
 --- todo
-		1. deploy
+		1. check what happens to each page if server is down (err)
+		2. change ribbon logo when saving and unsaving a listing
+		2. deploy
 
 ----- layouts
 	use apple store design cards

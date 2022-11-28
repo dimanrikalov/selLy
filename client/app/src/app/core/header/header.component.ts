@@ -6,8 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  
-  userId : string | null = null;
+  userId: string | null = null;
 
   constructor(private router: Router) {}
 
@@ -16,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   @HostListener('window:storage', ['$event'])
-  onStorageChange(e: Event):void {
+  onStorageChange(e: Event): void {
     this.userId = localStorage.getItem('userId');
   }
 

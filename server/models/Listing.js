@@ -12,7 +12,7 @@ const listingSchema = new mongoose.Schema({
                 return regex.test(this.item);
             },
             message: 'Listing name must start with a capital letter!',
-        }
+        },
     },
     brand: {
         type: String,
@@ -57,7 +57,7 @@ const listingSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Types.ObjectId,
         required: [true, 'Seller id is required!'],
-        ref: 'User'
+        ref: 'User',
     },
     comments: [
         {

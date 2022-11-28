@@ -8,11 +8,10 @@ const profileUrl = environment.profileUrl;
 @Injectable({
   providedIn: 'root',
 })
-
 export class ProfileService {
   constructor(private httpClient: HttpClient) {}
 
   loadProfile(userId: string | null) {
-    return this.httpClient.post<IUser>(profileUrl, {userId});
+    return this.httpClient.post<IUser>(profileUrl, { userId });
   }
 }

@@ -9,8 +9,9 @@
           <li><a [routerLink]="'/about'">About</a></li>
 
           <li *ngIf="!userId"><a [routerLink]="'/auth/login'">Login</a></li>
-          <li *ngIf="!userId"><a [routerLink]="'/auth/register'">Register</a></li>
-          
+          <li *ngIf="!userId">
+            <a [routerLink]="'/auth/register'">Register</a>
+          </li>
 
           <li *ngIf="userId"><a [routerLink]="'/profile'">My Profile</a></li>
           <li *ngIf="userId"><a [routerLink]="'/catalog/create'">Sell</a></li>

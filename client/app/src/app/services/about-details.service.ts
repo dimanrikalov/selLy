@@ -1,17 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
-const aboutUrl =  environment.aboutUrl;
+const aboutUrl = environment.aboutUrl;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AboutDetailsService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  loadStats () {
+  loadStats() {
     return this.httpClient.get<object>(aboutUrl);
   }
 }

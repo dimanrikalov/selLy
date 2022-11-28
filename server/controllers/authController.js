@@ -2,13 +2,7 @@ const router = require('express').Router();
 const api = require('../services/authService');
 
 router.post('/register', async (req, res) => {
-    const {
-        email,
-        password,
-        repeatPassword,
-        name,
-        profileImage
-    } = req.body;
+    const { email, password, repeatPassword, name, profileImage } = req.body;
 
     const user = await api.findByEmail(email);
     if (user) {

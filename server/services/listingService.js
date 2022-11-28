@@ -7,16 +7,18 @@ exports.getById = (listingId) => Listing.findOne({ _id: listingId });
 exports.getByTitle = (item) => Listing.findOne({ item });
 
 exports.getByIdDetailed = (listingId) =>
-    Listing.findById(listingId).populate('userId').populate({
-        path: 'comments',
-        populate: {
-            path: 'userId'
-        }
-    });
+    Listing.findById(listingId)
+        .populate('userId')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'userId',
+            },
+        });
 
 exports.createOne = (listing) => Listing.create(listing);
 
-exports.deleteById = (listingId) =>
-    Listing.findByIdAndDelete(listingId);
+exports.deleteById = (listingId) => Listing.findByIdAndDelete(listingId);
 
-exports.updateById = (listingId, listing) => Listing.findByIdAndUpdate(listingId, listing);
+exports.updateById = (listingId, listing) =>
+    Listing.findByIdAndUpdate(listingId, listing);

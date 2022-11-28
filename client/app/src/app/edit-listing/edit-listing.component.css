@@ -1,161 +1,162 @@
 .sell-form form {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 32px;
-    max-width: 800px;
-    width: 90%;
-    margin: 128px auto 64px auto;
-    background-color: var(--white-main);
-    padding: 64px 128px;
-    border-radius: 15px;
-    border: 1px solid rgb(216, 216, 216);
-    box-shadow: 15px 5px 15px rgb(135, 135, 135);
-    text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  max-width: 800px;
+  width: 90%;
+  margin: 128px auto 64px auto;
+  background-color: var(--white-main);
+  padding: 64px 128px;
+  border-radius: 15px;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 15px 5px 15px rgb(135, 135, 135);
+  text-align: center;
 }
 
 .sell-form form h1 {
-    color: rgb(92, 92, 92);
+  color: rgb(92, 92, 92);
 }
 
 .error-message {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--blue-main);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--blue-main);
 }
 
 input {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 .sell-form form div input {
-    width: 100%;
-    font-weight: 600;
-    font-family: var(--font-main);
-    color: rgb(103, 103, 103);
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 9px;
-    border: 2px solid rgb(212, 212, 212);
-    background-color: var(--white-background);
+  width: 100%;
+  font-weight: 600;
+  font-family: var(--font-main);
+  color: rgb(103, 103, 103);
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 9px;
+  border: 2px solid rgb(212, 212, 212);
+  background-color: var(--white-background);
 }
 
 .item-and-brand {
-    display: flex;
-    gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
-.item, .brand {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.item,
+.brand {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .location {
-    display: flex;
-    gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
-.city, .country {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.city,
+.country {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sell-form form div input::placeholder {
-    color: rgb(160, 160, 160);
+  color: rgb(160, 160, 160);
 }
 
 .sell-form form div input:focus {
-    border: 2px solid transparent;
-    outline: 2px solid var(--blue-main);
+  border: 2px solid transparent;
+  outline: 2px solid var(--blue-main);
 }
 
 .sell-form form div textarea {
-    width: 100%;
-    font-weight: 600;
-    font-family: var(--font-main);
-    color: rgb(103, 103, 103);
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 9px;
-    border: 2px solid rgb(212, 212, 212);
-    background-color: var(--white-background);
+  width: 100%;
+  font-weight: 600;
+  font-family: var(--font-main);
+  color: rgb(103, 103, 103);
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 9px;
+  border: 2px solid rgb(212, 212, 212);
+  background-color: var(--white-background);
 }
 
 .sell-form form div textarea::placeholder {
-    color: rgb(160, 160, 160);
+  color: rgb(160, 160, 160);
 }
 
 .sell-form form div textarea:focus {
-    border: 2px solid transparent;
-    outline: 2px solid var(--blue-main);
+  border: 2px solid transparent;
+  outline: 2px solid var(--blue-main);
 }
 
 .sell-form form ~ div {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .sell-form form div label {
-    font-size: 17px;
-    font-family: var(--font-main);
-    color: rgb(103, 103, 103);
+  font-size: 17px;
+  font-family: var(--font-main);
+  color: rgb(103, 103, 103);
 }
 
 .sell-form form .submit-btn {
-    align-self: center;
-    width: 40%;
-    color: var(--blue-main);
-    background-color: var(--white-main);
-    border: 2px solid var(--blue-main);
-    border-radius: 9px;
-    padding: 12px 0px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 350ms ease-in-out;
-    font-weight: 600;
+  align-self: center;
+  width: 40%;
+  color: var(--blue-main);
+  background-color: var(--white-main);
+  border: 2px solid var(--blue-main);
+  border-radius: 9px;
+  padding: 12px 0px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 350ms ease-in-out;
+  font-weight: 600;
 }
 
 .sell-form form .submit-btn:hover {
-    color: var(--white-main);
-    background-color: var(--blue-main);
+  color: var(--white-main);
+  background-color: var(--blue-main);
 }
 
 form .ribbon {
-    position: absolute;
-    width: 112px;
-    height: 150px;
-    top: 0;
-    right: 9px;
+  position: absolute;
+  width: 112px;
+  height: 150px;
+  top: 0;
+  right: 9px;
 }
 
-  
 @media screen and (width <= 870px) {
+  form {
+    padding: 12px 24px !important;
+    margin: 128px auto !important;
+    min-width: 338px;
+  }
 
-    form {
-        padding: 12px 24px !important;
-        margin: 128px auto !important;
-        min-width: 338px;
-    }
+  .ribbon {
+    display: none;
+  }
 
+  h1 {
+    margin-top: 24px;
+  }
 
-    .ribbon {
-        display: none;
-    }
-
-    h1 {
-        margin-top: 24px;
-    }
-
-    .item-and-brand, .location {
-        flex-direction: column;
-    }
-    .item-and-brand *, .location * {
-        width: 100%;
-    }
+  .item-and-brand,
+  .location {
+    flex-direction: column;
+  }
+  .item-and-brand *,
+  .location * {
+    width: 100%;
+  }
 }

@@ -3,16 +3,15 @@ import { IListing } from '../interfaces/Listing';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
-const listingUrl = `${environment.catalogUrl}`
+const listingUrl = `${environment.catalogUrl}`;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ListingDetailsService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  loadListing (id: string | null) {
+  loadListing(id: string | null) {
     return this.httpClient.get<IListing>(`${listingUrl}/${id}/details`);
   }
 }

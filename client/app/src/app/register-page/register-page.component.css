@@ -1,102 +1,99 @@
 .register-page {
-    margin: 0 auto;
-    padding: 0 64px;
+  margin: 0 auto;
+  padding: 0 64px;
 }
 
 .error-message {
-    font-weight: 600;
-    color: var(--blue-main) !important;
+  font-weight: 600;
+  color: var(--blue-main) !important;
 }
 
 .register {
-    max-width: 1100px;
-    max-height: 800px;
-    margin: 0 auto;
-    margin-top: 128px;
-    margin-bottom: 64px;
-    display: flex;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 15px 5px 15px rgb(135, 135, 135);
-    border: 1px solid rgb(216, 216, 216);
-
+  max-width: 1100px;
+  max-height: 800px;
+  margin: 0 auto;
+  margin-top: 128px;
+  margin-bottom: 64px;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 15px 5px 15px rgb(135, 135, 135);
+  border: 1px solid rgb(216, 216, 216);
 }
 
 .register .right-side {
-    width: 550px;
+  width: 550px;
 }
 
 .register .right-side img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .register .left-side {
-    width: 550px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .register .logo {
-    margin-top: 64px;
-    font-size: 64px;
-    color: var(--blue-main);
-
+  margin-top: 64px;
+  font-size: 64px;
+  color: var(--blue-main);
 }
 
 .register .welcome {
-    text-align: center;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  text-align: center;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .register .welcome h1 {
-    font-weight: 400;
-    font-size: 36px;
+  font-weight: 400;
+  font-size: 36px;
 }
 
 .register .welcome p {
-    color: grey;
+  color: grey;
 }
 
 .register form {
-    margin-top: 16px;
-    padding: 0px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  margin-top: 16px;
+  padding: 0px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .register form .tac div {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .register form .tac-label {
-    color: grey;
+  color: grey;
 }
-
 
 .register .email-div input,
 .register .name-div input,
 .register .profile-image-div input,
 .register .pass-div input,
 .register .conf-pass-div input {
-    font-family: var(--font-main);
-    font-weight: 600;
-    color: rgb(103, 103, 103);
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 9px;
-    border: 2px solid rgb(212, 212, 212);
-    background-color: var(--white-background);
+  font-family: var(--font-main);
+  font-weight: 600;
+  color: rgb(103, 103, 103);
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 9px;
+  border: 2px solid rgb(212, 212, 212);
+  background-color: var(--white-background);
 }
 
 .register .email-div input::placeholder,
@@ -104,112 +101,106 @@
 .register .profile-image-div input::placeholder,
 .register .pass-div input::placeholder,
 .register .conf-pass-div input::placeholder {
-    color: rgb(160, 160, 160);
+  color: rgb(160, 160, 160);
 }
-
 
 .register .email-div input:focus,
 .register .name-div input:focus,
 .register .profile-image-div input:focus,
 .register .pass-div input:focus,
 .register .conf-pass-div input:focus {
-    border: 2px solid transparent;
-    outline: 2px solid var(--blue-main);
+  border: 2px solid transparent;
+  outline: 2px solid var(--blue-main);
 }
 
-
 .register .register-btns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .register .register-btns button {
-    width: 100%;
-    color: var(--white-main);
-    background-color: var(--blue-main);
-    border: 2px solid var(--blue-main);
-    border-radius: 9px;
-    padding: 12px 0px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 350ms ease-in-out;
-    font-weight: 600;
+  width: 100%;
+  color: var(--white-main);
+  background-color: var(--blue-main);
+  border: 2px solid var(--blue-main);
+  border-radius: 9px;
+  padding: 12px 0px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 350ms ease-in-out;
+  font-weight: 600;
 }
 
 .register .register-btns span {
-    color: grey;
+  color: grey;
 }
-
 
 .register .register-btns button:hover {
-    background-color: var(--white-main);
-    color: var(--blue-main);
+  background-color: var(--white-main);
+  color: var(--blue-main);
 }
-
 
 .register .sign-in {
-    display: flex;
-    gap: 32px;
-    margin: 16px 0px;
-    color: grey;
+  display: flex;
+  gap: 32px;
+  margin: 16px 0px;
+  color: grey;
 }
-
 
 .register form .tac a,
 .register .sign-in a {
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--blue-main);
-    transition: 300ms ease-in-out;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--blue-main);
+  transition: 300ms ease-in-out;
 }
 
 .register .sign-in a:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .tac .terms-and-conditions,
 .tac .tac-label {
-    font-size: 18px;
-    transition: 350ms all;
+  font-size: 18px;
+  transition: 350ms all;
 }
 
 .tac .terms-and-conditions:checked + .tac-label {
-    color: var(--blue-main);
+  color: var(--blue-main);
 }
 
 @media screen and (width <= 840px) {
-    
-    .register-page {
-        padding: 0px;
-    }
+  .register-page {
+    padding: 0px;
+  }
 
-    .register {
-        margin: 0 auto;
-        margin-top: 64px;
-        margin-bottom: 32px;
-        min-width: 375px;
-        justify-content: center;
-        transform: scale(0.85);
-    }
+  .register {
+    margin: 0 auto;
+    margin-top: 64px;
+    margin-bottom: 32px;
+    min-width: 375px;
+    justify-content: center;
+    transform: scale(0.85);
+  }
 
-    .left-side {
-        margin: 0px auto;
-        min-width: 415px;
-        padding: 24px 0px;
-    }
+  .left-side {
+    margin: 0px auto;
+    min-width: 415px;
+    padding: 24px 0px;
+  }
 
-    .tac-label {
-        font-size: 16px !important;
-    }
+  .tac-label {
+    font-size: 16px !important;
+  }
 
-    .sign-in {
-        margin: 0 !important;
-    }
+  .sign-in {
+    margin: 0 !important;
+  }
 
-    .right-side {
-        margin: 0px auto;
-        display: none;
-    }
+  .right-side {
+    margin: 0px auto;
+    display: none;
+  }
 }

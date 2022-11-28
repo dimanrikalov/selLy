@@ -1,157 +1,152 @@
-
 header {
-    position: absolute;
-    top:0;
-    width: 100%;
-    z-index: 3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 64px;
-    background-color: var(--blue-main);
-    transition: 350ms ease-in-out;
-    font-family: var(--font-secondary);
-    height: 75px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 64px;
+  background-color: var(--blue-main);
+  transition: 350ms ease-in-out;
+  font-family: var(--font-secondary);
+  height: 75px;
 }
 
 header > a {
-    text-decoration: none;
-    color: var(--white-main);
-    letter-spacing: 1px;
-    font-weight: 800;
-    font-size: 32px;
-    transition: 200ms ease-in-out;
+  text-decoration: none;
+  color: var(--white-main);
+  letter-spacing: 1px;
+  font-weight: 800;
+  font-size: 32px;
+  transition: 200ms ease-in-out;
 }
 
-
 header > a:hover {
-    transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .navigation {
-    display: flex;
-    list-style-type: none;
-    gap: 12px;
-    align-items: center;
+  display: flex;
+  list-style-type: none;
+  gap: 12px;
+  align-items: center;
 }
 
 .navigation .link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px 24px;
+  border-radius: 9px;
+  color: var(--white-main);
+  transition: 250ms ease-in-out;
+}
+
+.navigation .link:hover {
+  background-color: var(--white-main);
+  color: var(--blue-main);
+}
+
+button.link {
+  background-color: transparent;
+  border: none;
+}
+
+button.link:hover {
+  cursor: pointer;
+}
+
+.link a div {
+  display: flex;
+}
+
+.ribbon {
+  padding: 0px 16px;
+  font-size: 28px;
+  color: white;
+  transition: 250ms ease-in-out;
+}
+
+.ribbon:hover {
+  color: lightblue;
+}
+
+.nav-a i {
+  color: white;
+  font-size: 28px;
+  transition: 200ms ease-in-out;
+}
+
+.nav-a:hover > i {
+  transform: rotate(90deg);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  transition: 350ms ease-in-out;
+}
+
+@media screen and (width>= 970px) {
+  .nav-a {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+  }
+}
+
+@media screen and (width < 970px) {
+  .nav-a {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .nav-container:hover > .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    background-color: var(--blue-main);
+  }
+
+  .navigation:hover,
+  .nav-container {
+    display: block;
+    transition: 400ms;
+    border-radius: 0px 0px 16px 16px;
+  }
+  .navigation li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 6px;
+    border-top: 1px solid lightblue;
+  }
+
+  .navigation .link {
     color: white;
     text-decoration: none;
     font-size: 18px;
     padding: 12px 24px;
-    border-radius: 9px;
     color: var(--white-main);
-    transition: 250ms ease-in-out;
-}
+    border-radius: 7px;
+  }
 
-.navigation .link:hover {
-    background-color: var(--white-main);
-    color: var(--blue-main);
-}
-
-button.link {
-    background-color: transparent;
-    border: none;
-}
-
-button.link:hover {
-    cursor: pointer;
-}
-
-.link a div {
-    display: flex;
-}
-
-.ribbon {
-    padding: 0px 16px;
-    font-size: 28px;
-    color: white;
-    transition: 250ms ease-in-out;
-}
-
-.ribbon:hover {
+  .navigation .link:hover {
+    background-color: unset;
     color: lightblue;
-}
-
-
-.nav-a i {
-    color: white;
-    font-size: 28px;
-    transition: 200ms ease-in-out;
-}
-
-.nav-a:hover > i {
-    transform: rotate(90deg);
-}
-
-
-.nav-container {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    height: fit-content;
-    transition: 350ms ease-in-out;
-}
-
-
-@media screen and (width>= 970px) {
-    .nav-a {
-        display: none;
-    }
-
-    .navigation {
-        display: flex;
-    }
-}
-
-@media screen and (width < 970px) {
-    .nav-a {
-        display: block;
-    }
-
-    .navigation {
-        display: none;
-    }
-
-    .nav-container:hover > .navigation {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        border-bottom: 1px solid white;
-        background-color: var(--blue-main);
-    }
-
-    .navigation:hover, .nav-container {
-        display: block;
-        transition: 400ms;
-        border-radius: 0px 0px 16px 16px;
-    }
-    .navigation li {
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        padding: 6px;
-        border-top: 1px solid lightblue;
-    }
-
-
-    .navigation .link {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 12px 24px;
-        color: var(--white-main);
-        border-radius: 7px;
-    }
-    
-    .navigation .link:hover {
-        background-color: unset;
-        color: lightblue;
-    }
+  }
 }

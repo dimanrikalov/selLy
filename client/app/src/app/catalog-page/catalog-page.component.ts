@@ -20,7 +20,7 @@ export class CatalogPageComponent implements OnInit {
         this.searchedListings = this.allListings;
       },
       error: (err) => {
-        if(err.message.startsWith('Http failure response')) {
+        if (err.message.startsWith('Http failure response')) {
           console.log(
             'Welcome page could not connect to server! Trying again in 10 seconds...'
           );

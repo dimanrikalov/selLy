@@ -10,7 +10,7 @@ import { SavedListingsService } from '../services/saved-listings.service';
 export class SavedListingsPageComponent implements OnInit {
   savedListings: IListing[] | null = null;
   filteredListings: IListing[] | null = null;
-  errorMessage: string = ''
+  errorMessage: string = '';
   userId: string | null = null;
   constructor(private savedListingsApi: SavedListingsService) {}
 
@@ -23,7 +23,7 @@ export class SavedListingsPageComponent implements OnInit {
           this.filteredListings = this.savedListings;
         },
         error: (err) => {
-          if(err.message.startsWith('Http failure response')) {
+          if (err.message.startsWith('Http failure response')) {
             console.log(
               'Saved listings page could not connect to server! Trying again in 10 seconds...'
             );

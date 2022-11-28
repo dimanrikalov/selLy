@@ -11,6 +11,9 @@ export class UserLoginService {
   constructor(private httpClient: HttpClient) {}
 
   login(loginInfo: { email: string; password: string }) {
-    return this.httpClient.post<{message: string, userId: string}>(loginUrl, loginInfo);
+    return this.httpClient.post<{ message: string; userId: string }>(
+      loginUrl,
+      loginInfo
+    );
   }
 }

@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 const createListingUrl = environment.createListingUrl;
@@ -43,21 +43,21 @@ export class ListingOperationsService {
     return this.httpClient.post(`${catalogUrl}/${listingId}/edit`, {
       ...listing,
       price: Number(listing.price),
-      userId: loggedUserId
+      userId: loggedUserId,
     });
   }
 
   saveListing(listingId: string, loggedUserId: string) {
     return this.httpClient.post(`${catalogUrl}/${listingId}/save`, {
       listingId,
-      userId: loggedUserId
+      userId: loggedUserId,
     });
   }
 
   deleteListing(listingId: string, loggedUserId: string | null) {
     return this.httpClient.post(`${catalogUrl}/${listingId}/delete`, {
       listingId,
-      userId: loggedUserId
+      userId: loggedUserId,
     });
   }
 }

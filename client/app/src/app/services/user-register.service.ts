@@ -5,12 +5,21 @@ import { environment } from 'src/environments/environment';
 const registerUrl = environment.registerUrl;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserRegisterService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  register(registerInfo: {email: string, name: string, password: string, repeatPassword: string, profileImage: string}) {
-    return this.httpClient.post<{message: string, userId: string}>(registerUrl, registerInfo);
+  register(registerInfo: {
+    email: string;
+    name: string;
+    password: string;
+    repeatPassword: string;
+    profileImage: string;
+  }) {
+    return this.httpClient.post<{ message: string; userId: string }>(
+      registerUrl,
+      registerInfo
+    );
   }
 }

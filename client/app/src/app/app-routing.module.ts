@@ -17,12 +17,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: WelcomePageComponent
+    component: WelcomePageComponent,
   },
   {
     path: 'catalog',
     pathMatch: 'full',
-    component: CatalogPageComponent
+    component: CatalogPageComponent,
   },
   {
     path: 'catalog',
@@ -31,7 +31,7 @@ const routes: Routes = [
         path: 'create',
         pathMatch: 'full',
         canActivate: [AuthGuard],
-        component: CreateListingComponent
+        component: CreateListingComponent,
       },
       {
         path: ':id',
@@ -39,60 +39,60 @@ const routes: Routes = [
           {
             path: 'details',
             pathMatch: 'full',
-            component: ListingDetailsComponent
+            component: ListingDetailsComponent,
           },
           {
             path: 'edit',
             pathMatch: 'full',
             canActivate: [AuthGuard],
-            component: EditListingComponent
-          }
-        ]
-      }
-    ]
+            component: EditListingComponent,
+          },
+        ],
+      },
+    ],
   },
   {
     path: 'auth',
     children: [
-     {
-      path: 'register',
-      pathMatch: 'full',
-      canActivate: [InversedAuthGuard],
-      component: RegisterPageComponent
-     },
-     {
-      path: 'login',
-      pathMatch: 'full',
-      canActivate: [InversedAuthGuard],
-      component: LoginPageComponent
-     }
-    ]
+      {
+        path: 'register',
+        pathMatch: 'full',
+        canActivate: [InversedAuthGuard],
+        component: RegisterPageComponent,
+      },
+      {
+        path: 'login',
+        pathMatch: 'full',
+        canActivate: [InversedAuthGuard],
+        component: LoginPageComponent,
+      },
+    ],
   },
   {
     path: 'about',
     pathMatch: 'full',
-    component: AboutComponent
+    component: AboutComponent,
   },
   {
     path: 'profile',
     pathMatch: 'full',
     canActivate: [AuthGuard],
-    component: ProfilePageComponent
+    component: ProfilePageComponent,
   },
   {
     path: 'saved',
     pathMatch: 'full',
     canActivate: [AuthGuard],
-    component: SavedListingsPageComponent
+    component: SavedListingsPageComponent,
   },
   {
     path: '**',
-    component: ErrorPageComponent
-  }
+    component: ErrorPageComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

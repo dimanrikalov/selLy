@@ -7,7 +7,7 @@ export interface IUser {
   name: string;
   profileImage: string;
   listings: IListing[];
-  savedListings:IListing[];
+  savedListings: IListing[];
   comments: IComment[];
-  _id: string
+  _id: string;
 }

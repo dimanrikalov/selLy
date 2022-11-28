@@ -7,6 +7,6 @@ module.exports = async (req, res, next) => {
             .status(401)
             .json({ errorMessage: 'You must be the seller!' });
     }
-    
+
     next();
 };

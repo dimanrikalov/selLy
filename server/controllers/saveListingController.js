@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     const isAlreadySaved = user.savedListings.some(
         (x) => x._id.toString() === listing._id.toString()
     );
-    
+
     if (isAlreadySaved) {
         user.savedListings = user.savedListings.filter(
             (x) => x._id.toString() !== listing._id.toString()

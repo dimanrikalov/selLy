@@ -1,410 +1,405 @@
 .error-message {
-    width: fit-content;
-    margin: 292px auto;
-    color: var(--blue-main);
+  width: fit-content;
+  margin: 292px auto;
+  color: var(--blue-main);
 }
 
 .profile-page {
-    border-radius: 24px;
-    margin: 136px 64px 74px 94px;
-    padding: 48px 32px;
-    box-shadow: 15px 5px 15px rgb(135, 135, 135);
-    border-left: 1px solid rgb(216, 216, 216);
-    transition: 200ms;
+  border-radius: 24px;
+  margin: 136px 64px 74px 94px;
+  padding: 48px 32px;
+  box-shadow: 15px 5px 15px rgb(135, 135, 135);
+  border-left: 1px solid rgb(216, 216, 216);
+  transition: 200ms;
 }
 
-
 .profile-page .info-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
     "search-my-listings search-my-listings search-my-listings search-my-listings"
     "profile-picture my-listings my-listings my-listings"
     "info            my-listings my-listings my-listings"
     "stats           my-listings my-listings my-listings";
-    gap: 16px;
-    margin: 32px 64px;
-    list-style-type: none;
+  gap: 16px;
+  margin: 32px 64px;
+  list-style-type: none;
 }
 
-
 .welcome {
-    display: flex;
-    padding: 0px 64px;
-    justify-content: space-between;
+  display: flex;
+  padding: 0px 64px;
+  justify-content: space-between;
 }
 
 .hidden-welcome {
-    text-align: center;
-    width: 250px;
-    height: 250px;
+  text-align: center;
+  width: 250px;
+  height: 250px;
 }
 
-.welcome div, .info, .stats, .image {
-    transition: 250ms ease-in-out;
+.welcome div,
+.info,
+.stats,
+.image {
+  transition: 250ms ease-in-out;
 }
 .welcome div:hover,
 .image:hover,
 .info:hover,
 .stats:hover {
-    transform: scale(1.1);
-    z-index: 1;
+  transform: scale(1.1);
+  z-index: 1;
 }
 
 .welcome div h1 {
-    display: flex;
-    background-color: var(--blue-main);
-    color: var(--white-main);
-    padding: 12px 24px;
-    border-radius: 12px;
-    width: 250px;
-    justify-content: center;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 400;
-    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+  display: flex;
+  background-color: var(--blue-main);
+  color: var(--white-main);
+  padding: 12px 24px;
+  border-radius: 12px;
+  width: 250px;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  box-shadow: 15px 5px 15px rgb(135, 135, 135);
 }
 
 .search-my-listings {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    grid-template-columns: search-my-listings;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  grid-template-columns: search-my-listings;
 }
 
 .my-listings-list {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
 form {
-    display: flex;
-    gap: 12px;
-    align-items: center;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
-
 
 .search-my-listings .search-input {
-    width: 440px;
-    transition: 200ms;
+  width: 440px;
+  transition: 200ms;
 }
 .search-my-listings .sort-input {
-    width: 240px;
-    transition: 200ms;
+  width: 240px;
+  transition: 200ms;
 }
 
 .search-my-listings .search-input,
 .search-my-listings .sort-input {
-    height: 54px;
-    font-weight: 600;
-    font-family: var(--font-main);
-    color: rgb(103, 103, 103);
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 9px;
-    border: 2px solid rgb(212, 212, 212);
-    box-shadow: 15px 5px 15px rgb(135, 135, 135);
-    background-color: var(--white-background);
-    transition: 200ms;
+  height: 54px;
+  font-weight: 600;
+  font-family: var(--font-main);
+  color: rgb(103, 103, 103);
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 9px;
+  border: 2px solid rgb(212, 212, 212);
+  box-shadow: 15px 5px 15px rgb(135, 135, 135);
+  background-color: var(--white-background);
+  transition: 200ms;
 }
 
 .search-my-listings .search-input::placeholder,
 .search-my-listings .sort-input::placeholder {
-    color: rgb(160, 160, 160);
+  color: rgb(160, 160, 160);
 }
 
 .search-my-listings .search-input:focus,
 .search-my-listings .sort-input:focus {
-    border: 2px solid transparent;
-    outline: 2px solid var(--blue-main);
+  border: 2px solid transparent;
+  outline: 2px solid var(--blue-main);
 }
 
 .info-grid .image {
-    grid-area: profile-picture;
-    border-radius: 24px;
-    height: 250px;
-    width: 250px;
-    overflow: hidden;
-    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+  grid-area: profile-picture;
+  border-radius: 24px;
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  box-shadow: 15px 5px 15px rgb(135, 135, 135);
 }
-
 
 .info-grid .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-
 
 .info-grid .info,
 .info-grid .stats {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 24px;
-    border-radius: 16px;
-    width: 250px;
-    color:white;
-    background-color: var(--blue-main);
-    box-shadow: 15px 15px 15px rgb(135, 135, 135);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 16px;
+  width: 250px;
+  color: white;
+  background-color: var(--blue-main);
+  box-shadow: 15px 15px 15px rgb(135, 135, 135);
 }
 .info-grid .info {
-    grid-area: info;
+  grid-area: info;
 }
 
 .info-grid .stats {
-    grid-area: stats;
+  grid-area: stats;
 }
 
 .info-grid .my-listings {
-    grid-area: my-listings;
-    border-radius: 24px;
-    background-color: var(--white-background);
-    box-shadow: 15px 15px 15px rgb(135, 135, 135);
-    border-left: 1px solid rgb(216, 216, 216);
-    border-top: 1px solid rgb(216, 216, 216);
-    overflow-y: scroll;
-    padding: 64px 36px;
+  grid-area: my-listings;
+  border-radius: 24px;
+  background-color: var(--white-background);
+  box-shadow: 15px 15px 15px rgb(135, 135, 135);
+  border-left: 1px solid rgb(216, 216, 216);
+  border-top: 1px solid rgb(216, 216, 216);
+  overflow-y: scroll;
+  padding: 64px 36px;
 }
 
 .my-listings::-webkit-scrollbar {
-    width: 15px;
+  width: 15px;
 }
 .my-listings::-webkit-scrollbar-track {
-    background: white;
-    border-radius: 16px;
+  background: white;
+  border-radius: 16px;
 }
 .my-listings::-webkit-scrollbar-thumb {
-    background: rgb(154, 154, 154);
-    border: 2px solid white;
-    border-radius: 16px;
+  background: rgb(154, 154, 154);
+  border: 2px solid white;
+  border-radius: 16px;
 }
 
-
 .info-grid ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 52px;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 52px;
 }
 
 .info-grid ul .listing {
-    width: 210px;
-    height: 350px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    box-shadow: 15px 15px 15px rgb(135, 135, 135);
-    border-left: 1px solid rgb(216, 216, 216);
-    border-top: 1px solid rgb(216, 216, 216);
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    background-color: white;
-    transition: 250ms ease-in-out;
+  width: 210px;
+  height: 350px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 15px 15px 15px rgb(135, 135, 135);
+  border-left: 1px solid rgb(216, 216, 216);
+  border-top: 1px solid rgb(216, 216, 216);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  transition: 250ms ease-in-out;
 }
 
 .info-grid ul .listing:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .info-grid ul .listing img {
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-    object-position: center;
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .info-grid ul .listing .listing-img {
-    border-radius: 16px 16px 0px 0px;
-    overflow: hidden;
+  border-radius: 16px 16px 0px 0px;
+  overflow: hidden;
 }
 
 .info-grid ul .listing .listing-info {
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--blue-main);
-    border-radius: 0px 0px 16px 16px;
-    color: white;
-    padding: 12px;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--blue-main);
+  border-radius: 0px 0px 16px 16px;
+  color: white;
+  padding: 12px;
 }
 
 .search-my-listings {
-    display: flex;
-    flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .search-my-listings button {
-    padding: 16px;
-    font-size: 16px;
-    color: var(--blue-main);
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: 300ms ease-in-out;
-    background-color: var(--white-main);
-    border: 2px solid transparent;
-    box-shadow: 15px 5px 15px rgb(135, 135, 135);
+  padding: 16px;
+  font-size: 16px;
+  color: var(--blue-main);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  background-color: var(--white-main);
+  border: 2px solid transparent;
+  box-shadow: 15px 5px 15px rgb(135, 135, 135);
 }
 
 .search-my-listings button:hover {
-    color: var(--white-main);
-    background-color: var(--blue-main);
-    border: 2px solid transparent;
+  color: var(--white-main);
+  background-color: var(--blue-main);
+  border: 2px solid transparent;
 }
 .search-my-listings button i {
-    font-size: 24px;
-    transition: 250ms ease-in-out;
+  font-size: 24px;
+  transition: 250ms ease-in-out;
 }
 
 .search-my-listings button:hover > i {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .no-listings {
-    text-align: center;
-    margin-top: 150px;
-    font-size: 54px;
-    color:rgb(103, 103, 103);
+  text-align: center;
+  margin-top: 150px;
+  font-size: 54px;
+  color: rgb(103, 103, 103);
 }
 
 @media screen and (width <= 1460px) {
-    .search-input {
-        width: 100% !important;
-    }
+  .search-input {
+    width: 100% !important;
+  }
 
-    .sort-input {
-        width: 50% !important;
-    }
+  .sort-input {
+    width: 50% !important;
+  }
 }
 
 @media screen and (width <= 1195px) {
+  .welcome {
+    display: none !important;
+  }
 
-    .welcome {
-        display: none !important;
-    }
+  .info-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+    text-align: center !important;
+  }
 
-    .info-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap;
-        justify-content: space-between !important;
-        text-align: center !important;
-    }
+  ul .info,
+  ul .stats {
+    width: 100% !important;
+    text-align: center;
+  }
 
-    ul .info,
-    ul .stats {
-        width: 100% !important;
-        text-align: center;
-    }
+  ul .hidden-welcome,
+  ul .image {
+    width: 42% !important;
+    min-width: 235px !important;
+    height: 360px !important;
+  }
 
-    ul .hidden-welcome,
-    ul .image {
-        width: 42% !important;
-        min-width: 235px !important;
-        height: 360px !important;
-    }
-    
-    .my-listings {
-        width: 100% !important;
-    }
-    .my-listings ul {
-        justify-content: center !important;
-    }
+  .my-listings {
+    width: 100% !important;
+  }
+  .my-listings ul {
+    justify-content: center !important;
+  }
 
-    .my-listings ul li {
-        width: 45% !important;
-    }
+  .my-listings ul li {
+    width: 45% !important;
+  }
 }
-
 
 @media screen and (width <= 900px) {
-    .profile-page * {
-        max-height: 1000px;
-    }
+  .profile-page * {
+    max-height: 1000px;
+  }
 
-    .image {
-        display: none !important;
-    }
+  .image {
+    display: none !important;
+  }
 
-    .my-listings {
-        height: 530px;
-    }
+  .my-listings {
+    height: 530px;
+  }
 
-    .profile-page {
-        margin-top: 108px;
-        padding: 16px 0px;
-        height: 1000px;
-    }
+  .profile-page {
+    margin-top: 108px;
+    padding: 16px 0px;
+    height: 1000px;
+  }
 
-    ul .hidden-welcome  {
-        width: 100% !important;
-        height: 98px !important;
-    }
+  ul .hidden-welcome {
+    width: 100% !important;
+    height: 98px !important;
+  }
 
-    .my-listings ul li {
-        width: 43% !important;
-    }
+  .my-listings ul li {
+    width: 43% !important;
+  }
 }
 
-@media screen and (width <= 740px) { 
-    .my-listings ul li {
-        width: 80% !important;
-    }
+@media screen and (width <= 740px) {
+  .my-listings ul li {
+    width: 80% !important;
+  }
 }
 
 @media screen and (width <= 690px) {
-    .profile-page {
-        margin: 92px 12px 32px 12px !important;
-    }
-    .profile-page * {
-        padding: 6px !important;
-        margin: 0 !important;
-    }
+  .profile-page {
+    margin: 92px 12px 32px 12px !important;
+  }
+  .profile-page * {
+    padding: 6px !important;
+    margin: 0 !important;
+  }
 
-    .my-listings {
-        height: 600px;
-    }
+  .my-listings {
+    height: 600px;
+  }
 
-    .my-listings ul li {
-        width: 80% !important;
-    }
+  .my-listings ul li {
+    width: 80% !important;
+  }
 
-   *:hover {
-        transform: scale(1) !important;
-        z-index: 0;
-    }
+  *:hover {
+    transform: scale(1) !important;
+    z-index: 0;
+  }
 }
 
 @media screen and (width <= 400px) {
-    .profile-page {
-        margin: 92px 12px 32px 12px !important;
-    }
-    .profile-page * {
-        padding: 6px !important;
-        margin: 0 !important;
-    }
+  .profile-page {
+    margin: 92px 12px 32px 12px !important;
+  }
+  .profile-page * {
+    padding: 6px !important;
+    margin: 0 !important;
+  }
 
-    .search-my-listings:hover {
-        transform: scale(1) !important;
-    }
+  .search-my-listings:hover {
+    transform: scale(1) !important;
+  }
 
-    .search-input {
-        box-shadow: 5px 5px 5px rgb(135 135 135) !important;
-    }
+  .search-input {
+    box-shadow: 5px 5px 5px rgb(135 135 135) !important;
+  }
 
-    button {
-        border: 1px solid rgb(217, 217, 217) !important;
-    }
+  button {
+    border: 1px solid rgb(217, 217, 217) !important;
+  }
 
-    .listing:hover {
-        transform: scale(1) !important;
-    }
+  .listing:hover {
+    transform: scale(1) !important;
+  }
 }

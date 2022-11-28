@@ -4,13 +4,10 @@ const userService = require('../services/userService');
 const commentService = require('../services/commentService');
 const isCommentAuthor = require('../middlewares/isCommentAuthor');
 
-
 router.post('/create', async (req, res) => {
     const listing = await api.getByIdDetailed(req.body.listingId);
     if (!listing) {
-        return res
-            .status(404)
-            .json({ errorMessage: 'Listing not found!' });
+        return res.status(404).json({ errorMessage: 'Listing not found!' });
     }
 
     try {
@@ -36,40 +33,37 @@ router.post('/create', async (req, res) => {
     }
 });
 
-
 router.post('/:commentId', async (req, res) => {
     try {
         const comment = await commentService.getById(req.body.commentId);
         return res.json(comment);
-    } catch(err) {
-        return res.status(400).json({message: 'Comment not found!'});
+    } catch (err) {
+        return res.status(400).json({ message: 'Comment not found!' });
     }
-
-})
+});
 
 router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
     const listing = await api.getByIdDetailed(req.body.listingId);
     if (!listing) {
-        return res
-            .status(404)
-            .json({ errorMessage: 'Listing not found!' });
+        return res.status(404).json({ errorMessage: 'Listing not found!' });
     }
 
     const comment = await commentService.getById(req.body.commentId);
     if (!comment) {
-        return res
-            .status(404)
-            .json({ errorMessage: 'Comment not found!' });
+        return res.status(404).json({ errorMessage: 'Comment not found!' });
     }
 
     try {
         comment.content = req.body.newContent;
         comment.isEdited = true;
         await commentService.editComment(comment._id, comment);
-        
+
         const updatedListing = await api.getByIdDetailed(listing._id);
 
-        res.json({ message: 'Comment edited successfully!', listing: updatedListing });
+        res.json({
+            message: 'Comment edited successfully!',
+            listing: updatedListing,
+        });
     } catch (err) {
         return res.json(400, { errorMessage: 'Could not edit comment!' });
     }
@@ -78,16 +72,12 @@ router.post('/:commentId/edit', isCommentAuthor, async (req, res) => {
 router.post('/:commentId/delete', isCommentAuthor, async (req, res) => {
     const listing = await api.getByIdDetailed(req.body.listingId);
     if (!listing) {
-        return res
-            .status(404)
-            .json({ errorMessage: 'Listing not found!' });
+        return res.status(404).json({ errorMessage: 'Listing not found!' });
     }
 
     const comment = await commentService.getById(req.params.commentId);
     if (!comment) {
-        return res
-            .status(404)
-            .json({ errorMessage: 'Comment not found!' });
+        return res.status(404).json({ errorMessage: 'Comment not found!' });
     }
 
     try {
@@ -107,7 +97,10 @@ router.post('/:commentId/delete', isCommentAuthor, async (req, res) => {
 
         const updatedListing = await api.getByIdDetailed(listing._id);
 
-        return res.json({ message: 'Comment deleted successfully!', listing: updatedListing });
+        return res.json({
+            message: 'Comment deleted successfully!',
+            listing: updatedListing,
+        });
     } catch (err) {
         return res.json(400, { errorMessage: 'Could not delete comment!' });
     }

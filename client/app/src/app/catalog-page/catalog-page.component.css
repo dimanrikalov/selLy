@@ -1,202 +1,195 @@
 /* search form */
 
 .search-params {
-    width: 800px;
-    margin: 0px auto;
-    margin-top: 128px;
-    margin-bottom: 64px;
-    display: flex;
-    justify-content: center;
+  width: 800px;
+  margin: 0px auto;
+  margin-top: 128px;
+  margin-bottom: 64px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-params form {
-    display: flex;
-    gap: 16px;
+  display: flex;
+  gap: 16px;
 }
 
 .search-params form .textbox {
-    font-weight: 600;
-    color: grey;
-    padding: 8px 16px;
-    font-size: 18px;
-    width: 500px;
-    border-radius: 12px;
-    border: 1px solid rgb(227, 227, 227);
-    box-shadow: 5px 15px 25px rgb(159, 159, 159);
-    background-color: var(--white-background);
-    transition: 200ms;
-    outline: none;
+  font-weight: 600;
+  color: grey;
+  padding: 8px 16px;
+  font-size: 18px;
+  width: 500px;
+  border-radius: 12px;
+  border: 1px solid rgb(227, 227, 227);
+  box-shadow: 5px 15px 25px rgb(159, 159, 159);
+  background-color: var(--white-background);
+  transition: 200ms;
+  outline: none;
 }
 
 .search-params form select {
-    font-weight: 600;
-    color: grey;
-    border-radius: 15px;
-    padding: 0 16px;
-    font-size: 18px;
-    border: 1px solid rgb(227, 227, 227);
-    box-shadow: 5px 15px 25px rgb(159, 159, 159);
-    background-color: var(--white-background);
-    text-align: center;
-    outline: none;
+  font-weight: 600;
+  color: grey;
+  border-radius: 15px;
+  padding: 0 16px;
+  font-size: 18px;
+  border: 1px solid rgb(227, 227, 227);
+  box-shadow: 5px 15px 25px rgb(159, 159, 159);
+  background-color: var(--white-background);
+  text-align: center;
+  outline: none;
 }
 
 .search-params form button {
-    padding: 16px;
-    font-size: 24px;
-    color: var(--blue-main);
-    border: 1px solid rgb(227, 227, 227);
-    box-shadow: 5px 15px 25px rgb(159, 159, 159);
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: 300ms ease-in-out;
-    background-color: var(--white-main);
+  padding: 16px;
+  font-size: 24px;
+  color: var(--blue-main);
+  border: 1px solid rgb(227, 227, 227);
+  box-shadow: 5px 15px 25px rgb(159, 159, 159);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  background-color: var(--white-main);
 }
 
 .search-params form button:hover {
-    color: var(--white-main);
-    background-color: var(--blue-main);
-    border: 1px solid transparent;
+  color: var(--white-main);
+  background-color: var(--blue-main);
+  border: 1px solid transparent;
 }
 
 .search-params form .textbox:focus,
-.search-params form select
- {
-    outline: none;
-    
+.search-params form select {
+  outline: none;
 }
 
 .search-params form button i {
-    transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
 }
 
 .search-params form button:hover > i {
-    transform: scale(1.25) rotate(90deg);
+  transform: scale(1.25) rotate(90deg);
 }
 
 /* catalog */
 
 .catalog {
-    min-height: 540px;
-    display: flex;
-    flex-wrap: wrap;
-    height: calc(80vh - 88px);
-    overflow-y: scroll;
-    padding: 64px 128px;
-    list-style-type: none;
-    gap: 64px;
-    background-color: var(--white-background);
-    margin: 32px;
-    border-radius: 15px;
-    transition: 200ms;
-    border: 1px solid rgb(227, 227, 227);
-    box-shadow: 5px 15px 25px rgb(159, 159, 159);
+  min-height: 540px;
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(80vh - 88px);
+  overflow-y: scroll;
+  padding: 64px 128px;
+  list-style-type: none;
+  gap: 64px;
+  background-color: var(--white-background);
+  margin: 32px;
+  border-radius: 15px;
+  transition: 200ms;
+  border: 1px solid rgb(227, 227, 227);
+  box-shadow: 5px 15px 25px rgb(159, 159, 159);
 }
-
 
 .catalog::-webkit-scrollbar {
-    width: 15px;
+  width: 15px;
 }
 .catalog::-webkit-scrollbar-track {
-    background: white;
-    border-radius: 16px;
+  background: white;
+  border-radius: 16px;
 }
 .catalog::-webkit-scrollbar-thumb {
-    background: rgb(154, 154, 154);
-    border: 2px solid white;
-    border-radius: 16px;
+  background: rgb(154, 154, 154);
+  border: 2px solid white;
+  border-radius: 16px;
 }
-
 
 /* listing */
 
 .card {
-    width: 260px;
-    height: 440px;
-    background-color: white;
-    box-shadow: 5px 5px 15px grey;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    transition: 200ms;
+  width: 260px;
+  height: 440px;
+  background-color: white;
+  box-shadow: 5px 5px 15px grey;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: 200ms;
 }
 
 .card .image {
-    display: flex;
-    align-items: center;
-    background-color: white;
+  display: flex;
+  align-items: center;
+  background-color: white;
 }
 
 .card .image img {
-    width: 100%;
-    height: 320px;
-    object-fit: contain;
-    object-position: center;
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .card .info {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    bottom: 18px;
-    right: 0;
-    z-index: 0;
-    background-color: transparent;
-    transition: 300ms ease-in-out;  
-    color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  bottom: 18px;
+  right: 0;
+  z-index: 0;
+  background-color: transparent;
+  transition: 300ms ease-in-out;
+  color: black;
 }
 
 .card .info::after {
-    padding: 6px;
-    content: "";
-    width: 260px;
-    height: 120px;
-    position: absolute;
-    bottom: -164px;
-    left: 0px;
-    background-color: var(--blue-main);
-    transition: 300ms ease-in-out;
-    z-index: -1; 
+  padding: 6px;
+  content: "";
+  width: 260px;
+  height: 120px;
+  position: absolute;
+  bottom: -164px;
+  left: 0px;
+  background-color: var(--blue-main);
+  transition: 300ms ease-in-out;
+  z-index: -1;
 }
 
 .card:hover :after {
-    bottom: -20px;
-
+  bottom: -20px;
 }
 .card:hover .info {
-    color: white;
-} 
-
-.no-listings {
-    margin: 256px 0px;
-    text-align: center;
-    color: grey;
+  color: white;
 }
 
+.no-listings {
+  margin: 256px 0px;
+  text-align: center;
+  color: grey;
+}
 
 @media screen and (width <= 920px) {
+  .search-params {
+    width: 80% !important;
+  }
 
-    .search-params {
-        width: 80% !important;
-    }
+  .catalog {
+    padding: 24px;
+    justify-content: center;
+  }
 
-    .catalog {
-        padding: 24px;
-        justify-content: center;
-    }
+  .textbox {
+    width: 40% !important;
+  }
 
-    .textbox {
-        width: 40% !important;
-    }
-
-    .card {
-        transform: scale(1.05);
-    }
+  .card {
+    transform: scale(1.05);
+  }
 }
 
 @media screen and (width <= 620px) {
@@ -215,11 +208,10 @@
 }
 
 @media screen and (width <= 470px) {
-
-    .catalog {
-        padding: 12px;
-    }
-    .card {
-        transform: scale(1);
-    }
+  .catalog {
+    padding: 12px;
   }
+  .card {
+    transform: scale(1);
+  }
+}

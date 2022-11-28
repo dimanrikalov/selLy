@@ -1,20 +1,32 @@
 <header>
-    <a [routerLink]="'/'">SelLy</a>
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-a"><i class="fa-solid fa-bars"></i></a>
-            <ul class="navigation">
-                <li *ngIf="userId">
-                    <a [routerLink]="'/saved'"><i class="fa-solid fa-bookmark ribbon"></i></a>
-                </li>
-                <li><a class="link" [routerLink]="'/catalog'">Catalog</a></li>
-                <li><a class="link" [routerLink]="'/about'">About</a></li>
-                <li *ngIf="userId"><a class="link" [routerLink]="'/catalog/create'">Sell Item</a></li>
-                <li *ngIf="!userId"><a class="link" [routerLink]="'/auth/login'">Login</a></li>
-                <li *ngIf="!userId"><a class="link" [routerLink]="'/auth/register'">Register</a></li>
-                <li *ngIf="userId"><a class="link" [routerLink]="'/profile'">My Profile</a></li>
-                <li *ngIf="userId"><button class="link" (click)="logoutUser()">Logout</button></li>
-            </ul>
-        </div>  
-    </nav>
+  <a [routerLink]="'/'">SelLy</a>
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="nav-a"><i class="fa-solid fa-bars"></i></a>
+      <ul class="navigation">
+        <li *ngIf="userId">
+          <a [routerLink]="'/saved'"
+            ><i class="fa-solid fa-bookmark ribbon"></i
+          ></a>
+        </li>
+        <li><a class="link" [routerLink]="'/catalog'">Catalog</a></li>
+        <li><a class="link" [routerLink]="'/about'">About</a></li>
+        <li *ngIf="userId">
+          <a class="link" [routerLink]="'/catalog/create'">Sell Item</a>
+        </li>
+        <li *ngIf="!userId">
+          <a class="link" [routerLink]="'/auth/login'">Login</a>
+        </li>
+        <li *ngIf="!userId">
+          <a class="link" [routerLink]="'/auth/register'">Register</a>
+        </li>
+        <li *ngIf="userId">
+          <a class="link" [routerLink]="'/profile'">My Profile</a>
+        </li>
+        <li *ngIf="userId">
+          <button class="link" (click)="logoutUser()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>

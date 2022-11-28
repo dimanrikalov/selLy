@@ -28,16 +28,16 @@ router.post('/create', isLogged, async (req, res) => {
             .json({ errorMessage: 'Listing with such title already exists' });
     }
 
-    const payload = { 
+    const payload = {
         item: req.body.item,
         brand: req.body.brand,
         imageUrl: req.body.imageUrl,
         description: req.body.description,
         location: `${req.body.city}, ${req.body.country}`,
         price: Number(req.body.price),
-        userId: req.body.userId
+        userId: req.body.userId,
     };
-    
+
     try {
         const listing = await api.createOne(payload);
         const user = await userService.getById(req.body.userId);
@@ -69,14 +69,14 @@ router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
         });
     }
 
-    const payload = { 
+    const payload = {
         item: req.body.item,
         brand: req.body.brand,
         imageUrl: req.body.imageUrl,
         description: req.body.description,
         location: `${req.body.city}, ${req.body.country}`,
         price: Number(req.body.price),
-        userId: req.body.userId
+        userId: req.body.userId,
     };
 
     try {

@@ -2,7 +2,6 @@ const User = require('../models/User');
 const Listing = require('../models/Listing');
 const Comment = require('../models/Comment');
 
-
 exports.getStats = async () => {
     const userCount = await User.countDocuments();
     const listingCount = await Listing.countDocuments();
@@ -11,6 +10,6 @@ exports.getStats = async () => {
     return {
         userCount,
         listingCount,
-        commentCount
-    }
-}
+        commentCount,
+    };
+};

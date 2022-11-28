@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { UserRegisterService } from '../services/user-register.service';
 
 @Component({
@@ -8,13 +8,12 @@ import { UserRegisterService } from '../services/user-register.service';
   styleUrls: ['./register-page.component.css'],
 })
 export class RegisterPageComponent implements OnInit {
-
   errorMessage: string | null = null;
 
   constructor(
-      private userRegisterService: UserRegisterService,
-      private router: Router
-    ) {}
+    private userRegisterService: UserRegisterService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -25,8 +24,7 @@ export class RegisterPageComponent implements OnInit {
     password: string;
     ['repeat-password']: string;
     tac: boolean;
-  }) : void {
-
+  }): void {
     if (!value.email.includes('@') || value.email.length < 5) {
       this.errorMessage = 'Please enter a valid email!';
       return;
@@ -63,26 +61,28 @@ export class RegisterPageComponent implements OnInit {
 
     this.errorMessage = null;
 
-    this.userRegisterService.register({
-      email: value.email,
-      name: value.name,
-      password: value.password,
-      repeatPassword: value['repeat-password'],
-      profileImage: value['profile-image'],
-    }).subscribe({
-      next: (response) => {
-        console.log(response);
-        localStorage.setItem('userId', response.userId);
-        this.router.navigate(['/']);
-      },
-      error: (err) => {
-        console.log(err);
-        if(err.message.startsWith('Http failure response')) {
-          this.errorMessage = 'Server error! Please try again later!'
-          return;
-        }
-        this.errorMessage = err.message;
-      }
-    });
+    this.userRegisterService
+      .register({
+        email: value.email,
+        name: value.name,
+        password: value.password,
+        repeatPassword: value['repeat-password'],
+        profileImage: value['profile-image'],
+      })
+      .subscribe({
+        next: (response) => {
+          console.log(response);
+          localStorage.setItem('userId', response.userId);
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          console.log(err);
+          if (err.message.startsWith('Http failure response')) {
+            this.errorMessage = 'Server error! Please try again later!';
+            return;
+          }
+          this.errorMessage = err.message;
+        },
+      });
   }
 }
