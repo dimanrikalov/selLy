@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IListing } from '../interfaces/Listing';
 import { ListingDetailsService } from '../services/listing-details.service';
 import { ListingOperationsService } from '../services/listing-operations.service';
@@ -12,18 +12,23 @@ import { ListingOperationsService } from '../services/listing-operations.service
 export class EditListingComponent implements OnInit {
 
   errorMessage : string | null = null;
-  listingId : string | null = null;
   listing: IListing | null = null;
-  city: string | null = null;
-  country: string | null = null;
-  price: string | null = null;
+  listingId : string | null = null;
   loggedUserId: string | null = localStorage.getItem('userId');
 
+  item: string | null = null;
+  brand: string | null = null;
+  imageUrl: string | null = null;
+  description: string | null = null;
+  city: string | null = null;
+  country: string | null = null;
+  price: number | null = null;
 
   constructor(
-    private listingDetailsService: ListingDetailsService,
-    private editListingService: ListingOperationsService,
-    private activatedRoute: ActivatedRoute
+      private listingDetailsService: ListingDetailsService,
+      private editListingService: ListingOperationsService,
+      private activatedRoute: ActivatedRoute,
+      private router: Router
     ) { 
       this.activatedRoute.params.subscribe((params) => {
         this.listingId = params['id'];
@@ -33,9 +38,12 @@ export class EditListingComponent implements OnInit {
   ngOnInit(): void {
     this.listingDetailsService.loadListing(this.listingId).subscribe({
       next: (listing) => {
-        this.price = listing.price.toString();
+        this.item = listing.item;
+        this.brand = listing.brand;
+        this.imageUrl = listing.imageUrl;
+        this.description = listing.description;
         [this.city, this.country] = listing.location.split(', ');
-        this.listing = listing;
+        this.price = listing.price;
       },
       error: (err) => {
         if(err.message.startsWith('Http failure response')) {
@@ -48,48 +56,45 @@ export class EditListingComponent implements OnInit {
   }
 
   handleSubmitForm(value: {
-    item: string;
-    brand: string;
-    imageUrl: string;
-    description: string;
-    city: string;
-    country: string;
-    price: string;
+    item: string,
+    brand: string,
+    imageUrl: string,
+    description: string,
+    city: string,
+    country: string,
+    price: string,
   }) {
-    console.log(value);
 
     if(this.listingId === null) {
       return;
     }
 
     if(value.item!.length < 2 || value.item.length > 20) {
-      this.errorMessage = 'Item length must be in range 2-20!'
-      return;
+      value.item = `${this.item}`
+    }
+
+    if(value.brand.length === 0) {
+      value.brand = `${this.brand}`;
     }
 
     if(!value.imageUrl.startsWith('http://') && !value.imageUrl.startsWith('https://')) {
-      this.errorMessage = 'Invalid image URL! (Must start with http:// or https://)';
-      return;
+      value.imageUrl = `${this.imageUrl}`
     }
 
     if(value.description.length < 15) {
-      this.errorMessage = 'Item\'s description must be at least 15 characters long!';
-      return; 
+      value.description = `${this.description}`
     }
 
     if(!value.city.match('[A-Z][a-z]+')) {
-      this.errorMessage = 'City name must start with capital letter!';
-      return;
+      value.city = `${this.city}`
     }
 
     if(!value.country.match('[A-Z][a-z]+')) {
-      this.errorMessage = 'Country name must start with capital letter!';
-      return;
+      value.country = `${this.country}`
     }
 
-    if(Number(value.price) < 0) {
-      this.errorMessage = 'Minimum price is 0.00 euros!';
-      return;
+    if(value.price.length === 0) {
+      value.price = `${this.price}`;
     }
 
     this.errorMessage = null;
@@ -97,7 +102,7 @@ export class EditListingComponent implements OnInit {
     this.editListingService.editListing(value, this.listingId, this.loggedUserId!).subscribe({
       next: (response) => {
         console.log(response);
-        //redirect to catalog
+        this.router.navigate([`catalog/${this.listingId}/details`]);
       },
       error: (err) => {
         console.log(err);

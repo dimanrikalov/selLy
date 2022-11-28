@@ -78,7 +78,6 @@ export class ListingDetailsComponent implements OnInit {
   changeMode(commentId: string) {
     this.editingMode = true;
     this.commentIdEdit = commentId;
-    //fill textarea
   }
 
   comment = (value: {content: string}, editingMode: boolean, commentIdEdit: any) => {
@@ -98,7 +97,6 @@ export class ListingDetailsComponent implements OnInit {
     this.commentOperationsService.edit(value.content, this.loggedUserId!, this.listingId!, commentIdEdit).subscribe({
       next(response) {
         console.log(response);
-        
       },
       error(err) {
         console.log(err);

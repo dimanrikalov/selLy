@@ -1,6 +1,7 @@
 <div class="sell-form">
   <form #editForm="ngForm" (ngSubmit)="handleSubmitForm(editForm.value)">
     <h1>Edit a Listing</h1>
+    <p class="error-message">No value means old value will be used!</p>
     <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
     <img
       src="./assets/imgs/ribbon-black-shape.png"
@@ -15,7 +16,7 @@
           name="item"
           id="edit-item"
           placeholder="Example: iPhone 14 Pro"
-          value="{{listing?.item}}"
+          value="{{item}}"
           ngModel
         />
       </div>
@@ -26,7 +27,7 @@
           name="brand"
           id="edit-brand"
           placeholder="Example: Apple, Oura..."
-          value="{{listing?.brand}}"
+          value="{{brand}}"
           ngModel
         />
       </div>
@@ -40,7 +41,7 @@
         name="imageUrl"
         id="edit-image-url"
         placeholder="https://product-image-url.com"
-        value="{{listing?.imageUrl}}"
+        value="{{imageUrl}}"
         ngModel
       />
     </div>
@@ -55,7 +56,7 @@
         cols="30"
         rows="3"
         placeholder="A very well preserved phone, bought from the official store..."
-        value="{{listing?.description}}"
+        value="{{description}}"
         ngModel
       ></textarea>
     </div>
