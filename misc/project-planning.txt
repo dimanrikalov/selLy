@@ -17,9 +17,8 @@
 	guest
 
 --- todo
-		1. make "edit listing" form dynamic
-		2. update listing details on comment add or delete operations
-		3. deploy
+		1. update listing details on comment add or delete operations
+		2. deploy
 
 ----- layouts
 	use apple store design cards
