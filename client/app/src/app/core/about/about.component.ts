@@ -15,6 +15,8 @@ export class AboutComponent implements OnInit {
     savedCount: number;
   } | null = null;
 
+  errorMessage: string | null = null;
+
   constructor(private aboutDetailsService: AboutDetailsService) {}
   ngOnInit(): void {
     VanillaTilt.init(document.querySelectorAll('.tilt') as any);
@@ -23,11 +25,11 @@ export class AboutComponent implements OnInit {
         this.stats = stats;
       },
       error: (err) => {
-        if (err.message.startsWith('Http failure response')) {
-          console.log(
-            'About page could not connect to server! Trying again in 10 seconds...'
-          );
+        if (!err.errorMessage) {
+          this.errorMessage = 'Could not connect to server! Try again later!';
+          return;
         }
+        this.errorMessage = err.errorMessage;
       },
     });
   }

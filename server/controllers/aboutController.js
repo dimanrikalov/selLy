@@ -10,7 +10,9 @@ router.get('/', async (req, res) => {
             .reduce((a, x) => a + x, 0);
         res.json({ ...data, savedCount });
     } catch (err) {
-        res.status(400).json({ errorMmessage: 'Server internal error! Try again later!' });
+        res.status(400).json({
+            errorMmessage: 'Server internal error! Try again later!',
+        });
     }
 });
 

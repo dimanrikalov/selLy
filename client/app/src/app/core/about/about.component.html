@@ -4,7 +4,10 @@
       <i class="fa-brands fa-css3"></i>
     </li>
     <li class="about-card stats tilt">
-      <h1 *ngIf="!stats" class="connecting">Connecting to server...</h1>
+      <h1 *ngIf="!stats && !errorMessage" class="connecting">
+        Fetching data...
+      </h1>
+      <h1 *ngIf="errorMessage" class="connecting">{{ errorMessage }}</h1>
       <div *ngIf="stats">
         <h1>Our Stats:</h1>
         <ul>
