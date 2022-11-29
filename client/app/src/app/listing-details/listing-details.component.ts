@@ -1,8 +1,8 @@
 import VanillaTilt from 'vanilla-tilt';
 import { IListing } from '../interfaces/Listing';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommentApiService } from '../services/comment-api.service';
-import { Component, Input, OnInit, SimpleChange } from '@angular/core';
 import { ListingDetailsService } from '../services/listing-details.service';
 import { ListingOperationsService } from '../services/listing-operations.service';
 
@@ -18,6 +18,7 @@ export class ListingDetailsComponent implements OnInit {
   textAreaContent: string | null = null;
   editingMode: boolean = false;
   commentIdEdit: string | null = null;
+  errorMessage: string | null = 'Fetching data...';
 
   constructor(
     private listingOperationsService: ListingOperationsService,
@@ -36,13 +37,14 @@ export class ListingDetailsComponent implements OnInit {
     this.listingDetailsService.loadListing(this.listingId).subscribe({
       next: (listing) => {
         this.listing = listing;
+        this.errorMessage = null;
       },
       error: (err) => {
-        if (err.message.startsWith('Http failure response')) {
-          console.log(
-            'Details page could not connect to server! Trying again in 10 seconds...'
-          );
+        if (!err.errorMessage) {
+          this.errorMessage = 'Could not connect to server! Try again later!';
+          return;
         }
+        this.errorMessage = err.errorMessage;
       },
     });
   }
@@ -82,6 +84,10 @@ export class ListingDetailsComponent implements OnInit {
           this.editingMode = true;
           this.commentIdEdit = commentId;
           document.querySelector('textarea')!.value = comment.content;
+          const button = document.querySelector(
+            '.submit-btn'
+          ) as HTMLElement | null;
+          button!.innerText = 'Edit';
         },
         error: (err) => {
           console.log(err);
