@@ -18,10 +18,9 @@
 
 --- todo
 		0. check if errors are responsive when resizing
-
+		2. fix editing comment and creating not updating the value inside the textarea
 		1. check create edit listing errorhandling
 		2. change ribbon logo when saving and unsaving a listing
-		3. hostlistener error handling???
 
 		2. deploy
 		

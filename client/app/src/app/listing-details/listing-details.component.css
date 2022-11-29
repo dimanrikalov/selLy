@@ -177,7 +177,7 @@
   color: var(--blue-main);
   font-size: 32px;
   text-align: center;
-  margin: 364px 0px;
+  margin: 48vh 0px;
 }
 
 .details-page .comments-div .comments::-webkit-scrollbar {
@@ -318,7 +318,7 @@
     flex-direction: column;
     align-items: center;
     gap: 36px;
-    margin-bottom: 64px !important;
+    margin-bottom: 256px !important;
   }
 
   .info {
@@ -328,7 +328,7 @@
 
   .listing {
     width: 90% !important;
-    height: 500px !important;
+    height: 600% !important;
     flex-direction: row !important;
   }
 
@@ -338,7 +338,7 @@
   }
 
   .comments {
-    height: 65% !important;
+    height: 470px !important;
   }
 
   .comment {
@@ -367,6 +367,7 @@
   }
 
   .text-input {
+    width: 100% !important;
     margin-top: 16px;
   }
 }
@@ -379,7 +380,11 @@
 
 @media screen and (width <= 540px) {
   .details-page-container {
-    margin-bottom: 172px;
+    margin-bottom: 142px;
+  }
+
+  .listing {
+    height: 430px !important;
   }
 
   .listing-operations,
@@ -393,7 +398,7 @@
 
   .comment {
     align-self: center !important;
-    max-width: 260px !important;
+    width: 100% !important;
   }
 
   .comment:hover {
@@ -435,7 +440,7 @@
 
   .comments-div {
     padding: 6px !important;
-    height: 470px !important;
+    height: 350% !important;
   }
 
   .text-input {

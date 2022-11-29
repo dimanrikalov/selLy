@@ -19,7 +19,8 @@ export class ListingDetailsComponent implements OnInit {
   editingMode: boolean = false;
   commentIdEdit: string | null = null;
   errorMessage: string | null = 'Fetching data...';
-
+  isSaved: string | null = null;
+  
   constructor(
     private listingOperationsService: ListingOperationsService,
     private listingDetailsService: ListingDetailsService,
@@ -105,7 +106,6 @@ export class ListingDetailsComponent implements OnInit {
         .create(value.content, this.loggedUserId!, this.listingId!)
         .subscribe({
           next: (response: any) => {
-            console.log(response);
             this.listing = response.listing;
             document.querySelector('textarea')!.value = '';
           },
@@ -121,9 +121,12 @@ export class ListingDetailsComponent implements OnInit {
       .edit(value.content, this.loggedUserId!, this.listingId!, commentIdEdit)
       .subscribe({
         next: (response: any) => {
-          console.log(response);
           this.listing = response.listing;
           document.querySelector('textarea')!.value = '';
+          const button = document.querySelector(
+            '.submit-btn'
+          ) as HTMLElement | null;
+          button!.innerText = 'Comment';
         },
         error(err) {
           console.log(err);
