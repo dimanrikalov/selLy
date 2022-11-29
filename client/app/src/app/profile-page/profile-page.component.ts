@@ -14,8 +14,8 @@ export class ProfilePageComponent implements OnInit {
   userId: string | null = null;
   displayWelcome: boolean = false;
   filteredListings: IListing[] | null = null;
-  connectionError: string | null = 'Server error! Please try again later!';
-  innerWidth: any;
+  errorMessage: string | null = null;
+  innerWidth: number | null = null;
 
   constructor(private profileService: ProfileService, private router: Router) {}
 
@@ -30,16 +30,16 @@ export class ProfilePageComponent implements OnInit {
     if (this.userId !== null) {
       this.profileService.loadProfile(this.userId).subscribe({
         next: (user) => {
-          this.connectionError = null;
           this.user = user;
           this.filteredListings = user.listings;
         },
         error: (err) => {
-          if (err.message.startsWith('Http failure response')) {
-            console.log(
-              'Profile page could not connect to server! Trying again in 10 seconds...'
-            );
+          if (!err.errorMessage) {
+            this.errorMessage =
+              'Could not connect to server! Trying again later!';
+            return;
           }
+          this.errorMessage = err.errorMessage;
         },
       });
     } else {

@@ -1,5 +1,6 @@
 .error-message {
   width: fit-content;
+  text-align: center;
   margin: 292px auto;
   color: var(--blue-main);
 }

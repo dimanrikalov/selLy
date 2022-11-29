@@ -1,5 +1,6 @@
 <div>
-  <h1 *ngIf="connectionError" class="error-message">{{ connectionError }}</h1>
+  <h1 *ngIf="!errorMessage && !user" class="error-message">Fetching data...</h1>
+  <h1 *ngIf="errorMessage" class="error-message">{{ errorMessage }}</h1>
   <div *ngIf="user" class="profile-page">
     <div class="welcome">
       <div *ngIf="!displayWelcome">
