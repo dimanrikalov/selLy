@@ -13,6 +13,7 @@
       </button>
     </form>
   </div>
+  <h1 *ngIf="errorMessage" class="no-listings">{{ errorMessage }}</h1>
   <ul *ngIf="filteredListings?.length" class="saved-listings">
     <li *ngFor="let listing of filteredListings" class="card">
       <a routerLink="/../catalog/{{ listing._id }}/details">
@@ -27,7 +28,7 @@
       </a>
     </li>
   </ul>
-  <h1 *ngIf="!filteredListings?.length" class="no-saved-listings">
+  <h1 *ngIf="!filteredListings?.length && filteredListings" class="no-saved-listings">
     No bookmarked listings yet!
   </h1>
 </div>

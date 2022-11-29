@@ -1,5 +1,11 @@
 /* search form */
 
+.no-listings {
+  margin: 256px 0px;
+  text-align: center;
+  color: var(--blue-main);
+}
+
 .search-params {
   width: 800px;
   margin: 0px auto;

@@ -10,7 +10,7 @@ import { SavedListingsService } from '../services/saved-listings.service';
 export class SavedListingsPageComponent implements OnInit {
   savedListings: IListing[] | null = null;
   filteredListings: IListing[] | null = null;
-  errorMessage: string = '';
+  errorMessage: string | null = 'Fetching...';
   userId: string | null = null;
   constructor(private savedListingsApi: SavedListingsService) {}
 
@@ -21,13 +21,14 @@ export class SavedListingsPageComponent implements OnInit {
         next: (value) => {
           this.savedListings = value;
           this.filteredListings = this.savedListings;
+          this.errorMessage = null;
         },
         error: (err) => {
-          if (err.message.startsWith('Http failure response')) {
-            console.log(
-              'Saved listings page could not connect to server! Trying again in 10 seconds...'
-            );
+          if (!err.errorMessage) {
+            this.errorMessage = 'Could not connect to server! Try again later!';
+            return;
           }
+          this.errorMessage = err.errorMessage;
         },
       });
     }
