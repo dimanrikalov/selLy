@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

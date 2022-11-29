@@ -1,3 +1,15 @@
+.no-listings {
+  margin: 256px 0px;
+  text-align: center;
+  color: grey;
+}
+
+.no-comments {
+  margin: 192px auto;
+  text-align: center;
+  color: var(--blue-main);
+}
+
 .details-page-container {
   display: flex;
   justify-content: center;
@@ -161,11 +173,11 @@
   height: 100% !important;
 }
 
-.no-comments {
-  color: grey;
-  font-size: 24px;
+.error-message {
+  color: var(--blue-main);
+  font-size: 32px;
   text-align: center;
-  margin: 230px 0px;
+  margin: 364px 0px;
 }
 
 .details-page .comments-div .comments::-webkit-scrollbar {
@@ -286,7 +298,6 @@
 }
 
 .text-input form button {
-  width: 150px;
   padding: 12px 48px;
   font-size: 18px;
   background-color: var(--blue-main);
@@ -330,8 +341,13 @@
     height: 65% !important;
   }
 
+  .comment {
+    max-width: 370px !important;
+  }
+
   .no-comments {
     margin: 72px auto;
+    color: var(--blue-main);
   }
 
   .comments-div {
@@ -363,7 +379,7 @@
 
 @media screen and (width <= 540px) {
   .details-page-container {
-    margin-bottom: 142px;
+    margin-bottom: 172px;
   }
 
   .listing-operations,
@@ -377,7 +393,7 @@
 
   .comment {
     align-self: center !important;
-    width: 100% !important;
+    max-width: 260px !important;
   }
 
   .comment:hover {
@@ -419,7 +435,7 @@
 
   .comments-div {
     padding: 6px !important;
-    height: 350% !important;
+    height: 470px !important;
   }
 
   .text-input {

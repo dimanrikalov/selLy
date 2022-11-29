@@ -11,13 +11,7 @@
           #searchForm="ngForm"
           (ngSubmit)="handleFormSubmit(searchForm.value)"
         >
-          <input
-            type="text"
-            name="searchInput"
-            id=""
-            class="search-input"
-            ngModel
-          />
+          <input type="text" name="searchInput" class="search-input" ngModel />
           <select name="sortType" id="sort-type" class="sort-input" ngModel>
             <option value="priceAscending">Price Ascending</option>
             <option value="priceDescending">Price Descending</option>
@@ -49,7 +43,7 @@
         <p>Comment count: {{ user.comments.length }}</p>
       </li>
       <li class="my-listings">
-        <ul *ngIf="filteredListings!.length > 0" class="">
+        <ul *ngIf="filteredListings!.length > 0">
           <li *ngFor="let listing of filteredListings" class="listing">
             <a routerLink="../catalog/{{ listing._id }}/details">
               <div class="listing-img">

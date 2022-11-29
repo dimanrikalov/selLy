@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-error-page',

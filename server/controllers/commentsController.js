@@ -28,7 +28,7 @@ router.post('/create', async (req, res) => {
         return res.json({ message: 'Comment added!', listing: updatedListing });
     } catch (err) {
         return res.status(400).json({
-            errorMessage: 'Server error: Could not add comment!',
+            errorMessage: 'Server internal error! Try again later!',
         });
     }
 });

@@ -17,9 +17,14 @@
 	guest
 
 --- todo
-		1. check what happens to each page if server is down (err)
+		0. check if errors are responsive when resizing
+
+		1. check create edit listing errorhandling
 		2. change ribbon logo when saving and unsaving a listing
+		3. hostlistener error handling???
+
 		2. deploy
+		
 
 ----- layouts
 	use apple store design cards
