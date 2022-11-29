@@ -10,13 +10,14 @@ import { ListingsApiService } from '../services/listings-api.service';
 export class CatalogPageComponent implements OnInit {
   allListings: IListing[] | null = null;
   searchedListings: IListing[] | null = null;
-  errorMessage: string | null = null;
+  errorMessage: string | null = 'Fetching...';
 
   constructor(private listingsApiService: ListingsApiService) {}
 
   ngOnInit(): void {
     this.listingsApiService.loadListings().subscribe({
       next: (value: IListing[] | null) => {
+        this.errorMessage = null;
         this.allListings = value;
         this.searchedListings = value;
       },

@@ -1,7 +1,7 @@
 <div class="catalog-page">
   <div class="search-params">
     <form #searchForm="ngForm" (ngSubmit)="handleFormSubmit(searchForm.value)">
-      <input type="text" name="searchInput" id="" class="textbox" ngModel />
+      <input type="text" name="searchInput" class="textbox" ngModel />
       <select name="sortType" id="sort-type" ngModel>
         <option value="priceAscending">Price Ascending</option>
         <option value="priceDescending">Price Descending</option>

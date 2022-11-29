@@ -170,7 +170,7 @@
 .no-listings {
   margin: 256px 0px;
   text-align: center;
-  color: grey;
+  color: var(--blue-main);
 }
 
 @media screen and (width <= 920px) {
