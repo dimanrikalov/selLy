@@ -10,21 +10,22 @@ import { ListingsApiService } from '../services/listings-api.service';
 export class CatalogPageComponent implements OnInit {
   allListings: IListing[] | null = null;
   searchedListings: IListing[] | null = null;
+  errorMessage: string | null = null;
 
   constructor(private listingsApiService: ListingsApiService) {}
 
   ngOnInit(): void {
     this.listingsApiService.loadListings().subscribe({
-      next: (value) => {
+      next: (value: IListing[] | null) => {
         this.allListings = value;
-        this.searchedListings = this.allListings;
+        this.searchedListings = value;
       },
       error: (err) => {
-        if (err.message.startsWith('Http failure response')) {
-          console.log(
-            'Welcome page could not connect to server! Trying again in 10 seconds...'
-          );
+        if (!err.errorMessage) {
+          this.errorMessage = 'Could not connect to server! Try again later!';
+          return;
         }
+        this.errorMessage = err.errorMessage;
       },
     });
   }

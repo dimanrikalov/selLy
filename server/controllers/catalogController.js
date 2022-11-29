@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         res.json(listings);
     } catch (err) {
         res.status(400).json({
-            errorMessage: 'Server error! Try again later!',
+            errorMessage: 'Server internal error! Try again later!',
         });
     }
 });
@@ -46,7 +46,7 @@ router.post('/create', isLogged, async (req, res) => {
         res.json({ message: 'Listing added successfully!' });
     } catch (err) {
         res.status(400).json({
-            errorMessage: 'Server error! Try again later!',
+            errorMessage: 'Server internal error! Try again later!',
         });
     }
 });
@@ -99,7 +99,7 @@ router.post('/:listingId/edit', isLogged, isSeller, async (req, res) => {
         res.json({ message: 'Listing successfully updated!' });
     } catch (err) {
         return res.status(400).json({
-            message: 'Server error! Try again later!',
+            message: 'Server internal error! Try again later!',
         });
     }
 });
@@ -127,7 +127,7 @@ router.post('/:listingId/delete', isLogged, isSeller, async (req, res) => {
     } catch (err) {
         return res.status(400).json({
             errorMessage:
-                'Server error: Could not complete deleting operation.',
+                'Server internal error! Try again later!',
         });
     }
 });
