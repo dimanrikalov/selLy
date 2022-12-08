@@ -1,8 +1,10 @@
 #SelLy
 
+!IMPORTANT: SELLY IS OFFICIALLY LIVE: https://selly-client.web.app
+
 #Introduction
 
-SeLly is a MEAN stack web application. It is essentially a simplified version of OLX (A well-known platform for selling second hand items). The functionality of the application covers the basic operations you would find in almost every web application (Create, Remove, Update, Delete). The app contains 3 collections on which you can execute these operations (User, Listing, Comment) (MongoDB models are named accordingly). The main app folder is divided in 2 parts: "client" and "server".
+SelLy is a MEAN stack web application. It is essentially a simplified version of OLX (A well-known platform for selling second hand items). The functionality of the application covers the basic operations you would find in almost every web application (Create, Remove, Update, Delete). The app contains 3 collections on which you can execute these operations (User, Listing, Comment) (MongoDB models are named accordingly). The main app folder is divided in 2 parts: "client" and "server".
 
 #Client
 The client folder contains the Angular App folder, assets folder and a folder with vanilla-tilt.js library used for some of the elements of the web application. To start the angular app, you will need to type "npm i" inside the console, within the "client" folder. Then type "ng serve" from within the "client/app/src/app" folder The angular app starts on port 4200.
