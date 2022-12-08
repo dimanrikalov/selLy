@@ -73,6 +73,7 @@ export class RegisterPageComponent implements OnInit {
         next: (response) => {
           console.log(response);
           localStorage.setItem('userId', response.userId);
+          window.dispatchEvent(new Event('storage'));
           this.router.navigate(['/']);
         },
         error: (err) => {
