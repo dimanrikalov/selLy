@@ -1,6 +1,6 @@
-#SelLy
+The website is officially live! Try it out here: https://selly-client.web.app
 
-!IMPORTANT: SELLY IS OFFICIALLY LIVE: https://selly-client.web.app
+#SelLy
 
 #Introduction
 
