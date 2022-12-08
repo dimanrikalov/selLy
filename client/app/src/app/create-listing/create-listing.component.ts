@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ListingOperationsService } from '../services/listing-operations.service';
 
@@ -9,7 +10,10 @@ import { ListingOperationsService } from '../services/listing-operations.service
 export class CreateListingComponent implements OnInit {
   errorMessage: string | null = null;
 
-  constructor(private createListingService: ListingOperationsService) {}
+  constructor(
+    private router: Router,
+    private createListingService: ListingOperationsService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -60,12 +64,21 @@ export class CreateListingComponent implements OnInit {
     this.errorMessage = null;
 
     this.createListingService.createListing(value).subscribe({
-      next: (response) => {
-        console.log(response);
-        //redirect to catalog or profile page
+      next: (response: any) => {
+        if (response.errorMessage) {
+          this.errorMessage = response.errorMessage;
+          return;
+        }
+        this.router.navigate(['/catalog']);
       },
       error: (err) => {
-        console.log(err);
+        if (!err.errorMessage) {
+          console.log('here');
+          this.errorMessage = 'Could not connect to server! Try again later!';
+          return;
+        }
+        this.errorMessage = err.errorMessage;
+        console.log(this.errorMessage);
       },
     });
   }
