@@ -15,7 +15,7 @@ export class ListingDetailsComponent implements OnInit {
   listing: IListing | any = null;
   listingId: string | null = null;
   loggedUserId: string | null = localStorage.getItem('userId');
-  textAreaContent: string | null = null;
+  textValue: string | null = null;
   editingMode: boolean = false;
   commentIdEdit: string | null = null;
   errorMessage: string | null = 'Fetching data...';
@@ -83,6 +83,7 @@ export class ListingDetailsComponent implements OnInit {
       .subscribe({
         next: (comment: any) => {
           this.editingMode = true;
+          this.textValue = comment.content;
           this.commentIdEdit = commentId;
           document.querySelector('textarea')!.value = comment.content;
           const button = document.querySelector(
@@ -101,6 +102,8 @@ export class ListingDetailsComponent implements OnInit {
     editingMode: boolean,
     commentIdEdit: any
   ) => {
+    this.textValue = value.content;
+
     if (!editingMode) {
       this.commentOperationsService
         .create(value.content, this.loggedUserId!, this.listingId!)
@@ -108,15 +111,20 @@ export class ListingDetailsComponent implements OnInit {
           next: (response: any) => {
             this.listing = response.listing;
             document.querySelector('textarea')!.value = '';
+            value.content = '';
           },
           error(err) {
             console.log(err);
           },
         });
-
+        
       return;
     }
-
+    
+    if(!this.textValue) {
+      this.editingMode = false;
+      return 
+    }
     this.commentOperationsService
       .edit(value.content, this.loggedUserId!, this.listingId!, commentIdEdit)
       .subscribe({
