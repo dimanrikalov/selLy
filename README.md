@@ -1,4 +1,4 @@
-The website is officially live! Try it out here: https://selly-client.web.app
+The website is officially live! Try it out here: https://sel-ly.web.app
 
 #SelLy
 
