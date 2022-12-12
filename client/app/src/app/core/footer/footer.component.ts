@@ -8,10 +8,12 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   userId: string | null = localStorage.getItem('userId');
-
+  year: number | null = null;
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.year = new Date().getFullYear();
+  }
 
   @HostListener('window:storage', ['$event'])
   onStorageChange(e: Event): void {

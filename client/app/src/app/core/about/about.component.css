@@ -58,7 +58,11 @@
 
 .about-container .logo {
   grid-area: logo;
-  font-size: 128px;
+  width: 380px;
+}
+
+.about-container .logo img {
+  width: 370px;
 }
 
 .about-container .partners {
@@ -114,6 +118,10 @@
   .about-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .about-container .logo {
+    width: 100% !important;
   }
 
   li {

@@ -45,7 +45,7 @@
     </div>
     <div class="comments-div" [ngClass]="loggedUserId ? '' : 'large-container'">
       <ol class="comments" [ngClass]="loggedUserId ? '' : 'large'">
-        <h1 class="no-comments" *ngIf="!listing?.comments?.length">
+        <h1 class="no-comments" *ngIf="!listing?.comments?.length" [ngClass]="loggedUserId ? 'isLogged' : 'isNotLogged'">
           No comments yet! Be the first to leave a comment!
         </h1>
         <li

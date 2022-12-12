@@ -14,7 +14,10 @@
     </form>
   </div>
   <h1 *ngIf="errorMessage" class="no-listings">{{ errorMessage }}</h1>
-  <ul *ngIf="searchedListings" class="catalog">
+  <h1 *ngIf="searchedListings?.length === 0" class="no-listings">
+    No listings yet! Be the first to create one!
+  </h1>
+  <ul *ngIf="searchedListings && searchedListings!.length > 0" class="catalog">
     <li *ngFor="let listing of searchedListings" class="card">
       <a routerLink="{{ listing._id }}/details">
         <div class="image">

@@ -14,16 +14,17 @@ header {
 }
 
 header > a {
-  text-decoration: none;
-  color: var(--white-main);
-  letter-spacing: 1px;
-  font-weight: 800;
-  font-size: 32px;
+  height: 64px;
+  border-radius: 6px;
   transition: 200ms ease-in-out;
 }
 
+header > a img {
+  height: 100%;
+}
+
 header > a:hover {
-  transform: scale(1.25);
+  background-color: rgb(75, 179, 249);
 }
 
 .navigation {

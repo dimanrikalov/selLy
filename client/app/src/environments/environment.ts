@@ -2,15 +2,17 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const mainUrl = 'http://localhost:3000'
+
 export const environment = {
   production: false,
-  aboutUrl: 'http://localhost:3000/about',
-  catalogUrl: 'http://localhost:3000/catalog',
-  profileUrl: 'http://localhost:3000/profile',
-  loginUrl: 'http://localhost:3000/auth/login',
-  registerUrl: 'http://localhost:3000/auth/register',
-  createListingUrl: 'http://localhost:3000/catalog/create',
-  savedListingsUrl: 'http://localhost:3000/profile/saved-listings'
+  aboutUrl: `${mainUrl}/about`,
+  catalogUrl: `${mainUrl}/catalog`,
+  profileUrl: `${mainUrl}/profile`,
+  loginUrl: `${mainUrl}/auth/login`,
+  registerUrl: `${mainUrl}/auth/register`,
+  createListingUrl: `${mainUrl}/catalog/create`,
+  savedListingsUrl: `${mainUrl}/profile/saved-listings`
 };
 
 /*

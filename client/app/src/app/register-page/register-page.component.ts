@@ -77,12 +77,14 @@ export class RegisterPageComponent implements OnInit {
           this.router.navigate(['/']);
         },
         error: (err) => {
-          console.log(err);
-          if (err.message.startsWith('Http failure response')) {
+          if (
+            err.message.startsWith('Http failure response') &&
+            !err.error.errorMessage
+          ) {
             this.errorMessage = 'Server error! Please try again later!';
             return;
           }
-          this.errorMessage = err.message;
+          this.errorMessage = err.error.errorMessage;
         },
       });
   }

@@ -46,11 +46,23 @@
 }
 
 .register .welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   width: 350px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+
+.register .welcome img {
+  max-width:  90%;
+  margin-top: 16px;
+  object-fit: contain;
+  background-color: var(--blue-main);
+  border-radius: 6px;
 }
 
 .register .welcome h1 {
@@ -174,6 +186,10 @@
 @media screen and (width <= 840px) {
   .register-page {
     padding: 0px;
+  }
+
+  .left-side img {
+    width: 320px !important;
   }
 
   .register {

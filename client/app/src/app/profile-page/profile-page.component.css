@@ -350,7 +350,7 @@ form {
   }
 }
 
-@media screen and (width <= 740px) {
+@media screen and (width <= 760px) {
   .my-listings ul li {
     width: 80% !important;
   }
@@ -372,17 +372,13 @@ form {
   .my-listings ul li {
     width: 80% !important;
   }
-
-  *:hover {
-    transform: scale(1) !important;
-    z-index: 0;
-  }
 }
 
 @media screen and (width <= 400px) {
   .profile-page {
     margin: 92px 12px 32px 12px !important;
   }
+  
   .profile-page * {
     padding: 6px !important;
     margin: 0 !important;

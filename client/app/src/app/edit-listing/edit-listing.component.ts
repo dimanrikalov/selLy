@@ -94,7 +94,7 @@ export class EditListingComponent implements OnInit {
       value.country = `${this.country}`;
     }
 
-    if (value.price.length === 0) {
+    if (!value.price || Number(value.price) <= 0) {
       value.price = `${this.price}`;
     }
 

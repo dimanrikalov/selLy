@@ -65,6 +65,19 @@
   border: 1px solid transparent;
 }
 
+.search-params form .textbox:focus,
+.search-params form select {
+  outline: none;
+}
+
+.search-params form button i {
+  transition: 350ms ease-in-out;
+}
+
+.search-params form button:hover > i {
+  transform: scale(1.25) rotate(90deg);
+}
+
 /* saved-listings */
 
 .saved-listings {
@@ -163,7 +176,7 @@
 .no-saved-listings {
   margin: 256px 0px;
   text-align: center;
-  color: grey;
+  color: var(--blue-main);
 }
 
 @media screen and (width <= 920px) {

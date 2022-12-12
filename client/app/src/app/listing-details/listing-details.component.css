@@ -5,9 +5,16 @@
 }
 
 .no-comments {
-  margin: 192px auto;
   text-align: center;
   color: var(--blue-main);
+}
+
+.isLogged {
+  margin: 192px 0px;
+}
+
+.isNotLogged {
+  margin: 300px 0px;
 }
 
 .details-page-container {
@@ -99,7 +106,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .details-page .listing .description div .listing-operations a,
@@ -123,6 +130,11 @@
 
 .details-page .listing .description div .listing-operations button:hover {
   cursor: pointer;
+}
+
+.details-page .listing .description div .listing-operations a:hover,
+.details-page .listing .description div .listing-operations button:hover {
+  transform: scale(1.1);
 }
 
 .details-page .listing .description p {
@@ -215,7 +227,7 @@
 }
 
 .comments .comment:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   z-index: 1;
 }
 
@@ -307,6 +319,7 @@
   font-weight: 600;
   box-shadow: 5px 5px 15px rgb(135, 135, 135);
   transition: 250ms ease-in-out;
+  cursor: pointer;
 }
 
 .text-input button:hover {

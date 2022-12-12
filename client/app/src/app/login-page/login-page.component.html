@@ -4,9 +4,10 @@
       <img src="./assets/imgs/pexels-cottonbro-3206080.jpg" alt="" />
     </div>
     <div class="right-side">
-      <i class="fa-brands fa-css3 logo"></i>
       <div class="welcome">
-        <h1>Hello Again!</h1>
+        <div>
+          <img src="../../../assets/imgs/logo.png" alt="logo-img">
+        </div>
         <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
       </div>
       <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm.value)">

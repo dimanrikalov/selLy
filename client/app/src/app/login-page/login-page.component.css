@@ -33,18 +33,12 @@
 }
 
 .login .right-side {
+  align-self: center;
   width: 550px;
   display: flex;
   flex-direction: column;
-
   align-items: center;
   gap: 16px;
-}
-
-.login .logo {
-  margin-top: 64px;
-  font-size: 64px;
-  color: var(--blue-main);
 }
 
 .login .welcome {
@@ -52,7 +46,20 @@
   width: 350px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
+}
+
+.login .welcome {
+  width: 80%;
+}
+
+.login .welcome img {
+  width: 100%;
+  margin-top: 16px;
+  object-fit: contain;
+  background-color: var(--blue-main);
+  border-radius: 6px;
 }
 
 .login .welcome h1 {
@@ -207,6 +214,10 @@
 @media screen and (width <= 840px) {
   .login-page {
     padding: 0px;
+  }
+
+  .welcome img {
+    width: 100% !important;
   }
 
   .login {

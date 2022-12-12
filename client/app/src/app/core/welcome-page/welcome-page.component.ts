@@ -7,7 +7,7 @@ import { ProfileService } from 'src/app/services/profile.service';
   styleUrls: ['./welcome-page.component.css'],
 })
 export class WelcomePageComponent implements OnInit {
-  userName: string = ' to Selly';
+  userName: string = ' to SelLy';
   userId: string | null = null;
 
   constructor(private profileService: ProfileService) {}
