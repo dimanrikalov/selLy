@@ -32,6 +32,7 @@ Main URL: "http://localhost:3000"
         2. "password" : the password used when registered 
 
 2. Catalog: sub URL: "/catalog"
+
     2.1 sub URL: "/" (GET request), returns all listings from the database
 
     2.2 sub URL: "/create" (POST request), create a new listing
@@ -95,7 +96,8 @@ Main URL: "http://localhost:3000"
         2. "listingId"
         3. "userId" Mandatory for veryfing that the user is logged and to know which user listing collection to update
 
-3. Profile: sub URL: "/profile" (POST request) method: 'POST', credentials 'include', headers: 'Content-Type': 'application/json', body: JSON.stringify(body),
+3. Profile: sub URL: "/profile" (POST request) method: 'POST', credentials 'include', headers: 'Content-Type': 'application/json', body: JSON.stringify(body)
+
 The body must include these key-value pairs:
     1. "userId" Mandatory for veryfing that the user is logged and to know which user listing collection to 
     
