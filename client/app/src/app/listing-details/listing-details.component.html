@@ -66,7 +66,8 @@
             </div>
             <div
               class="operations"
-              *ngIf="comment.userId._id.toString() === loggedUserId"
+              *ngIf="comment.userId._id.toString() === loggedUserId && 
+              !this.editingMode"
             >
               <button
                 (click)="changeMode(comment._id)"
@@ -78,7 +79,7 @@
               >
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
-              <button *ngIf="!this.editingMode"
+              <button
                 [ngClass]="{
                   'operations-color-reversed':
                     comment.userId._id.toString() !==
