@@ -4,6 +4,7 @@ const isLogged = require('../middlewares/isLogged');
 const isSeller = require('../middlewares/isSeller');
 const userService = require('../services/userService');
 const commentsController = require('./commentsController');
+const commentService = require('../services/commentService');
 const saveListingController = require('../controllers/saveListingController');
 const passListingIdMiddleware = require('../middlewares/passListingIdMiddleware');
 
@@ -29,11 +30,11 @@ router.post('/create', isLogged, async (req, res) => {
     }
 
     const payload = {
-        item: req.body.item,
-        brand: req.body.brand,
-        imageUrl: req.body.imageUrl,
-        description: req.body.description,
-        location: `${req.body.city}, ${req.body.country}`,
+        item: req.body.item.trim(),
+        brand: req.body.brand.trim(),
+        imageUrl: req.body.imageUrl.trim(),
+        description: req.body.description.trim(),
+        location: `${req.body.city.trim()}, ${req.body.country.trim()}`,
         price: Number(req.body.price),
         userId: req.body.userId,
     };
@@ -109,7 +110,7 @@ router.post('/:listingId/delete', isLogged, isSeller, async (req, res) => {
         const listing = await api.getByIdDetailed(req.params.listingId);
         await Promise.all(
             listing.comments.map(async (x) => {
-                const commentAuthor = await userService.getById(x.author);
+                const commentAuthor = await userService.getById(x.userId._id);
                 commentAuthor.comments = commentAuthor.comments.filter(
                     (y) => y._id.toString() !== y._id.toString()
                 );
@@ -125,9 +126,9 @@ router.post('/:listingId/delete', isLogged, isSeller, async (req, res) => {
 
         return res.json({ message: 'Listing deleted successfully!' });
     } catch (err) {
+        console.log(err);
         return res.status(400).json({
-            errorMessage:
-                'Server internal error! Try again later!',
+            errorMessage: 'Server internal error! Try again later!',
         });
     }
 });
