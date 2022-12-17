@@ -144,6 +144,8 @@ export class ListingDetailsComponent implements OnInit {
           console.log(err);
         },
       });
+    value.content = '';
+    this.textValue = '';
     this.editingMode = false;
   };
 
