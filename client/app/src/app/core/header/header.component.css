@@ -101,7 +101,7 @@ button.link:hover {
   }
 }
 
-@media screen and (width < 970px) {
+@media screen and (width < 1003px) {
   .nav-a {
     display: block;
   }
