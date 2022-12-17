@@ -104,7 +104,7 @@ export class ListingDetailsComponent implements OnInit {
   ) => {
     this.textValue = value.content;
 
-    if (!editingMode) {
+    if (!editingMode && this.textValue) {
       this.commentOperationsService
         .create(value.content, this.loggedUserId!, this.listingId!)
         .subscribe({
@@ -123,6 +123,10 @@ export class ListingDetailsComponent implements OnInit {
     
     if(!this.textValue) {
       this.editingMode = false;
+      const button = document.querySelector(
+        '.submit-btn'
+      ) as HTMLElement | null;
+      button!.innerText = 'Comment';
       return 
     }
     this.commentOperationsService
