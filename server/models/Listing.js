@@ -8,10 +8,10 @@ const listingSchema = new mongoose.Schema({
         maxLength: [20, 'Item name must be at most 20 characters long'],
         validate: {
             validator: function () {
-                const regex = new RegExp('[A-Z][a-z]+');
+                const regex = new RegExp('[A-Za-z0-9 ]+');
                 return regex.test(this.item);
             },
-            message: 'Listing name must start with a capital letter!',
+            message: 'Listing name must include only letters, numbers and spaces!',
         },
     },
     brand: {
